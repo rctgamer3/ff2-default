@@ -197,3 +197,15 @@ filefield[disabled="true"] .fileFieldIcon {
 .bottomBox {
   padding-bottom: 4px;
 }
+
+/* Rules for inline links */
+.inline-link {
+	color: -moz-nativehyperlinktext;
+	text-decoration: underline;
+}
+
+.inline-link:not(:focus) {
+	outline-color: transparent;
+	outline-style: dotted;
+	outline-width: 1px;
+}

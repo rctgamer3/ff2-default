@@ -1834,3 +1834,17 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   padding-right: 2px;
 }
 
+
+/* Adds icon on mouseover to item of forward-back overlay menu */
+
+.unified-nav-forward[_moz-menuactive],
+menupopup[chromedir="rtl"] > .unified-nav-back[_moz-menuactive] {
+  list-style-image: url("chrome://browser/skin/menu-forward.png") !important;
+}
+
+.unified-nav-back[_moz-menuactive],
+menupopup[chromedir="rtl"] > .unified-nav-forward[_moz-menuactive] {
+  list-style-image: url("chrome://browser/skin/menu-back.png") !important;
+}
+
+

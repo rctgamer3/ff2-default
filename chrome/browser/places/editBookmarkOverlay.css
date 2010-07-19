@@ -113,7 +113,6 @@
 }
 
 #editBMPanel_namePicker[droppable="false"] > .menulist-editable-box {
-  padding: 0;
   padding: 2px 2px 3px; 
   -moz-padding-start: 4px;
 }

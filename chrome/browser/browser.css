@@ -1586,7 +1586,8 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-text {
 }
 
 /* Feed icon */
-#feed-button, #feed-button > .button-box,
+#feed-button,
+#feed-button > .button-box,
 #feed-button:hover:active > .button-box {
   padding: 0px;
   margin: 0px;
@@ -1606,23 +1607,21 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-text {
   padding: 0 2px !important;
 }
 
-#feed-button[feeds] {
+
+#feed-button {
   list-style-image: url("chrome://browser/skin/livemark-item.png");
   -moz-image-region: rect(0px 36px 18px 18px);
 }
 
-#feed-button[feeds]:hover {
+#feed-button:hover {
   -moz-image-region: rect(18px 36px 36px 18px);
 }
 
-#feed-button[feeds][open="true"],
-#feed-button[feeds]:hover:active {
+#feed-button[open="true"],
+#feed-button:hover:active {
   -moz-image-region: rect(54px 36px 72px 18px);
 }
 
-#feed-button:not([feeds]) {
-  visibility: collapse;
-}
 
 /* ::::: About Popup Blocking dialog ::::: */
 #pageReportFirstTime statusbarpanel.statusbar-resizerpanel {

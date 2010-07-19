@@ -101,9 +101,9 @@
  */
 #editBMPanel_namePicker[droppable="false"] {
   /* These rules come from the textbox element in textbox.css. */
-  -moz-appearance: textfield; /* Normal editable menulists set this to "menulist". */
+/*   -moz-appearance: textfield; /* Normal editable menulists set this to "menulist". */ 
   cursor: text;
-  border: 2px solid;
+  border: none;
   -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
   -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
   -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;

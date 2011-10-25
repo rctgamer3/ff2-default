@@ -85,7 +85,8 @@ tab {
 tab[selected="true"] {
   z-index: 1;
   margin-top: 0;
-  margin-bottom: -2px;
+  margin-bottom: 0;
+  /* margin-bottom: -2px; --removed because of cssed bottom bar */
   -moz-border-radius-bottomleft: 3px;
   -moz-border-radius-bottomright: 3px;
   padding-top: 4px;

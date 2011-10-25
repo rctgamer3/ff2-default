@@ -209,3 +209,8 @@ filefield[disabled="true"] .fileFieldIcon {
 	outline-style: dotted;
 	outline-width: 1px;
 }
+
+/* 4.0 sync icon */
+radio[pane=paneSync] {
+  list-style-image: url("chrome://browser/skin/preferences/Options-sync.png") !important;
+}

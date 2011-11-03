@@ -1,8 +1,8 @@
-skin	global	ff2-default	chrome/global/
-skin	browser	ff2-default	chrome/browser/
-skin	mozapps	ff2-default	chrome/mozapps/
+skin	global		ff2-default	chrome/global/
+skin	browser		ff2-default	chrome/browser/
+skin	mozapps		ff2-default	chrome/mozapps/
 
-skin   os_target         ff2-default chrome/os_target/common/
-skin   os_target         ff2-default chrome/os_target/mac/ os=Darwin
-skin   os_target         ff2-default chrome/os_target/win/ os=WINNT
+skin	os_target	ff2-default	chrome/os_target/common/
+skin	os_target	ff2-default	chrome/os_target/mac/		os=Darwin
+skin	os_target	ff2-default	chrome/os_target/win/		os=WINNT
 

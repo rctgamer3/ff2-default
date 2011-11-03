@@ -4,7 +4,9 @@ body.private > #errorPageContainer {
 }
 
 body.normal > #errorPageContainer {
-  background-image: url("chrome://global/skin/icons/question-48.png");
+/* using a 32x32 as a 48x48 isn't available (..yet)
+  background-image: url("chrome://global/skin/icons/question-48.png"); */
+  background-image: url("chrome://global/skin/icons/Question.png");
 }
 
 #clearRecentHistoryDesc {

@@ -155,8 +155,8 @@ toolbarbutton.bookmark-item[open="true"] {
 }
 
 .bookmarks-toolbar-customize {
-  display: none;
   max-width: 15em !important;
+  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important;
 }
 
 toolbarpaletteitem[place="toolbar"] .bookmarks-toolbar-customize {
@@ -212,7 +212,7 @@ menuitem.bookmark-item {
 
 .bookmark-item  {
   list-style-image: url("chrome://global/skin/icons/folder-item.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px)
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
 .bookmark-item[container] {
@@ -225,18 +225,6 @@ menuitem.bookmark-item {
 
 /* livemarks have the same layout as folder-item, but in the browser-only livemark-item.png */
 /* only the folder icon has any effect for now, item icon is unused */
-.bookmark-item  {
-  list-style-image: url("chrome://global/skin/icons/folder-item.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-.bookmark-item[container] {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-.bookmark-item[container][open] {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
 
 .bookmark-item[container][livemark] { 
   list-style-image: url("chrome://browser/skin/livemark-folder.png");
@@ -273,11 +261,21 @@ menuitem.bookmark-item {
   -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
+.bookmark-item[cutting] > .toolbarbutton-icon,
+.bookmark-item[cutting] > .menu-iconic-left > .menu-iconic-icon {
+  opacity: 0.5;
+}
+
+.bookmark-item[cutting] > .toolbarbutton-text,
+.bookmark-item[cutting] > .menu-iconic-left > .menu-iconic-text {
+  opacity: 0.7;
+}
+
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-  -moz-box-orient: vertical;
-  min-width: 0;
+/*  -moz-box-orient: vertical;
+  min-width: 0; */
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
@@ -292,6 +290,11 @@ toolbar[mode="full"] .toolbarbutton-menubutton-button {
 
 .toolbarbutton-1, .toolbarbutton-menubutton-button {
   padding: 5px;
+}
+
+.toolbarbutton-1[disabled="true"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+.toolbarbutton-1[disabled="true"] > .toolbarbutton-icon {
+  opacity: .4;
 }
 
 .toolbarbutton-1[checked="true"] {
@@ -1900,11 +1903,14 @@ at the bottom of #TabsToolbar for tabs-on-bottom mode */
 }
 
 #addon-bar {
-/* top line shade */
-  -moz-border-top-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow
+/* top line shade + height */
+  min-height: 20px;
+  border-top: 1px solid !important;
+  -moz-border-top-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
+
 }
 
-/* searchbar fix (Hi Harry!)*/
+/* searchbar fix */
 /* dirty, but it works. */
 .searchbar-textbox > hbox > hbox {height: 22px; margin-left: -3px; padding-left: 3px;}
  .searchbar-textbox > hbox {height: 22px;}
@@ -2085,11 +2091,44 @@ at the bottom of #TabsToolbar for tabs-on-bottom mode */
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 
+/* zoom controls */
+
+#zoom-out-button {
+list-style-image: url(chrome://browser/skin/Toolbar-new.png);
+  -moz-image-region: rect(4px, 13px, 8px, 1px);
+}
+
+#zoom-in-button {
+list-style-image: url(chrome://browser/skin/Toolbar-new.png);
+  -moz-image-region: rect(0, 27px, 12px, 15px);
+}
+
+#nav-bar #zoom-out-button {
+  -moz-margin-end: 0;
+}
+
+#nav-bar #zoom-in-button {
+  -moz-border-start: none;
+  -moz-margin-start: 0;
+}
+
+#nav-bar #zoom-out-button:-moz-locale-dir(ltr),
+#nav-bar #zoom-in-button:-moz-locale-dir(rtl) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#nav-bar #zoom-out-button:-moz-locale-dir(rtl),
+#nav-bar #zoom-in-button:-moz-locale-dir(ltr) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 /* sync button */
-/* still disabled because there is no image in the toolbar png yet.
 #sync-button {
-  -moz-image-region: rect(0, 324px, 18px, 306px);
-} */
+list-style-image: url(chrome://browser/skin/Toolbar-new.png);
+  -moz-image-region: rect(0, 46px, 18px, 28px);
+}
 
 #sync-button[status="active"] {
   list-style-image: url("chrome://browser/skin/sync-throbber.png");
@@ -2112,3 +2151,332 @@ at the bottom of #TabsToolbar for tabs-on-bottom mode */
   border: 0;
   padding-right: 6px;
 }
+
+/* Fullscreen button */
+/* button made by: Patrick H. Lauke / www.splintered.co.uk */
+
+#fullscreen-button {
+  list-style-image: url(chrome://browser/skin/Toolbar-fullscreen.png);
+  -moz-image-region: rect(0 26px 24px 0);
+}
+
+#fullscreen-button:hover {
+  -moz-image-region: rect(0 52px 24px 26px);
+}
+
+toolbar[iconsize="small"] #fullscreen-button {
+  -moz-image-region: rect(0 70px 16px 52px);
+}
+
+toolbar[iconsize="small"] #fullscreen-button:hover {
+  -moz-image-region: rect(0 88px 16px 70px);
+}
+
+/* ::::: app menu button ::::: */
+
+#appmenu-button {
+  -moz-appearance: none;
+  background: -moz-linear-gradient(rgb(247,182,82), rgb(215,98,10) 95%);
+  background-clip: padding-box;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid rgba(83,42,6,.9);
+  border-top: none;
+  box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
+              0 0 0 1px rgba(255,255,255,.25) inset;
+  color: white;
+  text-shadow: 0 0 1px rgba(0,0,0,.7),
+               0 1px 1.5px rgba(0,0,0,.5);
+  font-weight: bold;
+  padding: 0 1.5em .05em;
+  margin: 0 0 2px;
+}
+
+@media all and (-moz-windows-classic) {
+  #appmenu-button {
+    margin-bottom: 1px;
+  }
+}
+
+@media all and (-moz-windows-default-theme) {
+  #main-window[sizemode="normal"] #appmenu-button {
+    margin-bottom: 5px;
+  }
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button {
+  background-image: -moz-linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
+  border-color: rgba(43,8,65,.9);
+}
+
+#appmenu-button:hover:not(:active):not([open]) {
+  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
+                    -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
+                    -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
+  border-color: rgba(83,42,6,.9);
+  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+              0 0 1.5px 1px rgba(250,234,169,.7) inset,
+              0 -1px 0 rgba(250,234,169,.5) inset;
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
+  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
+                    -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
+                    -moz-linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+  border-color: rgba(43,8,65,.9);
+  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+              0 0 2px 1px rgba(240,193,255,.7) inset,
+              0 -1px 0 rgba(240,193,255,.5) inset;
+}
+
+#appmenu-button:hover:active,
+#appmenu-button[open] {
+  background-image: -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
+  border-radius: 0;
+  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+              0 1px 1px rgba(0,0,0,.2) inset;
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
+#main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
+  background-image: -moz-linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+}
+
+#appmenu-button > .button-box {
+  border-style: none;
+  padding: 0;
+}
+
+#appmenu-button > .button-box > .button-menu-dropmarker {
+  list-style-image: url(appmenu-dropmarker.png);
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  -moz-margin-start: .5em;
+}
+
+.splitmenu-menuitem {
+  -moz-margin-end: 1px;
+}
+
+.splitmenu-menu {
+  -moz-box-pack: end;
+}
+
+.appmenu-edit-button {
+  -moz-appearance: none;
+  border: 1px solid transparent;
+  padding: 2px;
+  background: transparent;
+  border-radius: 3px;
+}
+
+.appmenu-edit-button[disabled="true"] {
+  opacity: .3;
+}
+
+#appmenuPrimaryPane {
+  -moz-border-end: 1px solid ThreeDShadow;
+}
+
+@media all and (-moz-windows-default-theme) {
+  #appmenu-popup {
+    -moz-appearance: none;
+    background: white;
+    border: 1px solid ThreeDShadow;
+  }
+  #appmenuPrimaryPane {
+    background-color: rgba(255,255,255,0.5);
+    padding: 2px;
+    -moz-border-end: none;
+  }
+  #appmenuSecondaryPane {
+    background-color: #f1f5fb;
+    box-shadow: 1px 0 2px rgb(204,214,234) inset;
+    -moz-padding-start: 3px;
+    -moz-padding-end: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  }
+  #appmenuSecondaryPane:-moz-locale-dir(rtl) {
+    box-shadow: -1px 0 2px rgb(204,214,234) inset;
+  }
+
+
+  #appmenuSecondaryPane menupopup {
+    -moz-appearance: none;
+    background-color: #f1f5fb;
+    border: 1px solid ThreeDShadow;
+    padding: 2px;
+  }
+
+
+  .appmenu-menuseparator {
+    -moz-appearance: none;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    -moz-margin-start: -moz-calc(1.45em + 4px);
+    padding: 0;
+    border-top: 1px solid #d6e5f5;
+    border-bottom: none;
+  }
+
+  .appmenu-edit-button:not([disabled]):hover {
+    border: 1px solid #b8d6fb;
+    box-shadow: inset 0 0 1px white;
+    background: -moz-linear-gradient(#fafbfd, #ebf3fd);
+    -moz-transition: .2s ease-in;
+  }
+}
+
+#appmenuSecondaryPane-spacer {
+  min-height: 1em;
+}
+
+#appmenu-editmenu {
+  -moz-box-pack: end;
+}
+
+#appmenu_print,
+#appmenu_print_popup,
+.appmenu-edit-button,
+#appmenu-editmenu-cut,
+#appmenu-editmenu-copy,
+#appmenu-editmenu-paste,
+#appmenu-quit {
+  list-style-image: url("appmenu-icons.png");
+}
+
+#appmenu-cut,
+#appmenu-editmenu-cut {
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+#appmenu-copy,
+#appmenu-editmenu-copy {
+  -moz-image-region: rect(0 32px 16px 16px);
+}
+
+#appmenu-paste,
+#appmenu-editmenu-paste {
+  -moz-image-region: rect(0 48px 16px 32px);
+}
+
+#appmenu_print,
+#appmenu_print_popup {
+  -moz-image-region: rect(0 64px 16px 48px);
+}
+
+#appmenu-quit {
+  -moz-image-region: rect(0 80px 16px 64px);
+}
+
+#appmenu-edit-label {
+  -moz-appearance: none;
+  background: transparent;
+  font-style: italic;
+}
+
+#appmenu_bookmarks {
+  list-style-image: url("chrome://browser/skin/places/bookmark.png");
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+#appmenu_privateBrowsing {
+  list-style-image: url("chrome://browser/skin/Privacy-16.png");
+}
+
+#appmenu_addons {
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
+}
+
+#BMB_bookmarkThisPage,
+#appmenu_bookmarkThisPage {
+  list-style-image: url("chrome://browser/skin/places/bookmark.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+#appmenu_fullScreen {
+  list-style-image: url(chrome://browser/skin/Toolbar-fullscreen.png);
+  -moz-image-region: rect(0 68px 16px 52px);
+}
+
+/* ::::: titlebar ::::: */
+
+#main-window[sizemode="normal"] > #titlebar {
+  -moz-appearance: -moz-window-titlebar;
+}
+
+#main-window[sizemode="maximized"] > #titlebar {
+  -moz-appearance: -moz-window-titlebar-maximized;
+}
+
+@media all and (-moz-windows-classic) {
+  #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
+    margin-top: 4px;
+  }
+}
+
+#titlebar-buttonbox {
+  -moz-appearance: -moz-window-button-box;
+}
+
+#main-window[sizemode="maximized"] #titlebar-buttonbox {
+  -moz-appearance: -moz-window-button-box-maximized;
+}
+
+.titlebar-placeholder[type="appmenu-button"] {
+  margin-left: 4px;
+}
+
+.titlebar-placeholder[type="caption-buttons"] {
+  margin-left: 10px;
+}
+
+/* titlebar command buttons */
+
+#titlebar-min {
+  -moz-appearance: -moz-window-button-minimize;
+}
+
+#titlebar-max {
+  -moz-appearance: -moz-window-button-maximize;
+}
+
+#main-window[sizemode="maximized"] #titlebar-max {
+  -moz-appearance: -moz-window-button-restore;
+}
+
+#titlebar-close {
+  -moz-appearance: -moz-window-button-close;
+}
+
+@media not all and (-moz-windows-classic) {
+  #titlebar-min {
+    -moz-margin-end: 2px;
+  }
+}
+
+/* beta, persona fixing */
+
+/* works */
+.tabbrowser-tab:-moz-lwtheme {
+  color: inherit;
+}
+
+
+/* tabsontop testing */
+
+#TabsToolbar:not([tabsontop=true]) > #tabbrowser-tabs {
+  margin-bottom: -4px !important;
+}
+#TabsToolbar > #tabbrowser-tabs {
+  margin-bottom: -4px !important;
+}
+#navigator-toolbox[tabsontop="true"] #TabsToolbar {
+  border: none !important;
+  border-bottom: 4px solid !important;
+  -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
+}
+

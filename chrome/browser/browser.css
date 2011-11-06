@@ -2466,8 +2466,9 @@ toolbar[iconsize="small"] #fullscreen-button:hover {
 }
 
 
-/* tabsontop testing */
+/* v0.9.9pre3 stuff */
 
+/* TabsOnTop fixes */
 #TabsToolbar:not([tabsontop=true]) > #tabbrowser-tabs {
   margin-bottom: -4px !important;
 }
@@ -2480,3 +2481,75 @@ toolbar[iconsize="small"] #fullscreen-button:hover {
   -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
 }
 
+/* Reload/Stop Uncombine, disabled urlbar-reloadstop buttons as they aren't needed anymore */
+#urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {display: none !important;}
+
+#urlbar-container[combined] + #reload-button,
+#urlbar-container[combined] + #reload-button + #stop-button{
+  visibility: visible !important;
+}
+
+/* Tabs Scrollbar up fix, should fix properly before 0.9.9 / 1.0 */
+.tabbrowser-arrowscrollbox > .scrollbutton-up {
+  border-left-style: solid;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.tabbrowser-arrowscrollbox > .scrollbutton-up > .toolbarbutton-icon {    
+  margin: 6px 2px 0px 2px;
+}
+
+/* ^ left border becomes activated even when first in the tabs toolbar */
+/* but it should be when an app tab is there, should fix sometime soon [minor] */
+
+/* scrollbutton down & alltabs */
+.tabbrowser-arrowscrollbox > .scrollbutton-down,
+#TabsToolbar[tabsontop=true] > .tabs-alltabs-button {
+  border-right-style: solid !important;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.tabbrowser-arrowscrollbox > .scrollbutton-down > .toolbarbutton-icon {    
+  margin: 6px 3px 0px 2px !important;
+}
+/* margin 6px 4px/3px 0px 2px ? */
+/* #TabsToolbar #alltabs-button .toolbarbutton-menu-dropmarker {} */
+
+/* addonbar close button, same style as tabs close, simple X button is ugly */
+/* rctgamer3: note, adding this, but everybody should just install Statusbar4Evar ;) */
+#addonbar-closebutton > .toolbarbutton-icon {
+  -moz-margin-end: 0px;
+  margin-top: 1px;
+}
+
+#addonbar-closebutton  {
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+  -moz-appearance: none;
+  -moz-margin-end: 6px;
+  border: none;
+  padding: 0px;
+}
+#addonbar-closebutton:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#addonbar-closebutton:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+#addonbar-closebutton:focus {
+  outline: none;
+}
+
+/* This is a fix for the icon next to the "Switch to tab" */
+/* option when typing the name, url or just % in the urlbar */
+richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
+  list-style-image: url("chrome://browser/skin/actionicon-tab.png");
+}
+
+/* notification popup bg, icon still needs a fix */
+#notification-popup {
+  background: -moz-dialog;
+}

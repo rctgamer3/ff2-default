@@ -1852,7 +1852,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   padding-right: 2px;
 }
 
-/* pulls tabs down to eliminate the effect of their bottom margins in 4.0, thanks patrickjdempsey [http://creative.mozilla.org/people/patrickjdempsey] ! */
+/* pulls tabs down to eliminate the effect of their bottom margins in 4.0 */
+/* thanks patrickjdempsey ! */
 #TabsToolbar > .tabbrowser-tabs {
   margin-bottom: -4px;
 }
@@ -2458,15 +2459,12 @@ toolbar[iconsize="small"] #fullscreen-button:hover {
   }
 }
 
-/* beta, persona fixing */
-
+/* Persona fixes, still in development, not important for 0.9.9 release */
 /* works */
 .tabbrowser-tab:-moz-lwtheme {
   color: inherit;
 }
-
-
-/* v0.9.9pre3 stuff */
+/* end of persona fixes */
 
 /* TabsOnTop fixes */
 #TabsToolbar:not([tabsontop=true]) > #tabbrowser-tabs {
@@ -2481,7 +2479,7 @@ toolbar[iconsize="small"] #fullscreen-button:hover {
   -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
 }
 
-/* Reload/Stop Uncombine, disabled urlbar-reloadstop buttons as they aren't needed anymore */
+/* Reload/Stop Uncombine, displaynone'd urlbar buttons as they aren't needed anymore */
 #urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {display: none !important;}
 
 #urlbar-container[combined] + #reload-button,
@@ -2514,10 +2512,9 @@ toolbar[iconsize="small"] #fullscreen-button:hover {
   margin: 6px 3px 0px 2px !important;
 }
 /* margin 6px 4px/3px 0px 2px ? */
-/* #TabsToolbar #alltabs-button .toolbarbutton-menu-dropmarker {} */
 
-/* addonbar close button, same style as tabs close, simple X button is ugly */
-/* rctgamer3: note, adding this, but everybody should just install Statusbar4Evar ;) */
+/* addonbar close button, same style as tabs close */
+/* Adding this for the people without Status4Evar, S4E usage is recommended */
 #addonbar-closebutton > .toolbarbutton-icon {
   -moz-margin-end: 0px;
   margin-top: 1px;
@@ -2549,7 +2546,39 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://browser/skin/actionicon-tab.png");
 }
 
-/* notification popup bg, icon still needs a fix */
+/* notification popup bg, urlbar icon still needs a fix */
+/* will fix after first major (0.9.9) release */
 #notification-popup {
   background: -moz-dialog;
+}
+
+/* aero fixes, oonly thing we should use it on is the titlebar (0.9.9) */
+
+@media all and (-moz-windows-compositor) {
+  /* These should be hidden w/ glass enabled. Windows draws its own buttons. */
+  .titlebar-button {
+    display: none;
+  }
+
+  #main-window[sizemode="maximized"] #titlebar-buttonbox {
+    -moz-margin-end: 3px;
+  }
+
+  #main-window {
+    -moz-appearance: -moz-win-borderless-glass;
+    background: transparent;
+  }
+
+  #appcontent {
+    -moz-appearance: -moz-win-exclude-glass;
+  }
+
+  #main-window[chromemargin^="0,"][sizemode=normal] #navigator-toolbox {
+    margin-top: -7px;
+  }
+
+/* status and find box MUST be excluded from aero */
+  #browser-bottombox {
+    -moz-appearance: statusbar !important;
+  }
 }

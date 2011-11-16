@@ -1893,11 +1893,6 @@ at the bottom of #TabsToolbar for tabs-on-bottom mode */
   background: -moz-dialog url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x !important;
 }
 
-/* border fix tabs not-on-top */
-#navigator-toolbox {
-  border-top: none;
-}
-
 /* alltabs button fix */
 .tabs-alltabs-button {
   margin: 3px 0px 0px;
@@ -2582,3 +2577,31 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
     -moz-appearance: statusbar !important;
   }
 }
+
+
+/* Status panel (url hover) */
+
+.statuspanel-label {
+  margin: 0;
+  padding: 2px 4px;
+  background: -moz-linear-gradient(white, #ddd);
+  border: 1px none #ccc;
+  border-top-style: solid;
+  color: #333;
+  text-shadow: none;
+}
+
+.statuspanel-label:-moz-locale-dir(ltr):not([mirror]),
+.statuspanel-label:-moz-locale-dir(rtl)[mirror] {
+  border-right-style: solid;
+  border-top-right-radius: .3em;
+  margin-right: 1em;
+}
+
+.statuspanel-label:-moz-locale-dir(rtl):not([mirror]),
+.statuspanel-label:-moz-locale-dir(ltr)[mirror] {
+  border-left-style: solid;
+  border-top-left-radius: .3em;
+  margin-left: 1em;
+}
+

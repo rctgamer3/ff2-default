@@ -1228,6 +1228,9 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   border-bottom: none;
   border-top-left-radius: 4px; /* like in firefox 2 */
   border-top-right-radius: 4px;
+  /* we need to add bottom radii, they appear to be rounded if we don't */
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   -moz-border-top-colors: ThreeDShadow rgba(255,255,255,.3);
   -moz-border-right-colors: rgba(0,0,0,.1);
   -moz-border-left-colors: ThreeDShadow rgba(255,255,255,.3);

@@ -2604,3 +2604,12 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin-left: 1em;
 }
 
+/* pinned tab doesn't display correctly when in overflow mode */
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] {
+  padding-bottom: 3px;
+}
+
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] .tab-icon-image {
+  margin-bottom: -2px;
+}
+

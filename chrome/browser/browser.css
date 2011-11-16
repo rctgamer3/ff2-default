@@ -1880,12 +1880,11 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
   border-bottom: 1px solid ThreeDShadow;
 }
 
-/* reproduces .tabs-bottom with a dark border
-at the bottom of #TabsToolbar for tabs-on-bottom mode */
+/* reproduces .tabs-bottom at the bottom of #TabsToolbar for tabs-on-bottom mode */
 #navigator-toolbox[tabsontop="false"] #TabsToolbar {
   border: none;
   border-bottom: 4px solid;
-  -moz-border-bottom-colors: ThreeDDarkShadow -moz-dialog -moz-dialog ThreeDShadow !important;
+  -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
 }
 /* 4.0 tab background fix */
 #TabsToolbar,

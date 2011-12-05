@@ -2033,16 +2033,25 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
   background-color: #fff;
   background-clip: padding-box;
   padding-left: 3px;
-  border-radius: 2.5px 0 0 2.5px;
+  /*border-radius: 2.5px 0 0 2.5px;*/
   -moz-border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 / 0 8px 0 0;
   -moz-margin-end: -8px;
-  margin-top: -2px;
-  margin-bottom: -2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
   -moz-padding-start: 10px;
   border-radius: 0;
+}
+
+/* apply different background colors for verified identities and domains */
+#notification-popup-box:not([hidden]) + #identity-box.verifiedIdentity{
+  background: rgb(87, 196, 51) !important;
+}
+
+#notification-popup-box:not([hidden]) + #identity-box.verifiedDomain{
+  background: rgb(91, 150, 223) !important;
 }
 
 #notification-popup-box:-moz-locale-dir(rtl),

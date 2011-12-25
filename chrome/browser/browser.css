@@ -2101,13 +2101,31 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
 /* zoom controls */
 
 #zoom-out-button {
-list-style-image: url(chrome://browser/skin/Toolbar-new.png);
-  -moz-image-region: rect(4px, 13px, 8px, 1px);
+  list-style-image: url(chrome://browser/skin/Toolbar-new.png);
+  -moz-image-region: rect(4px, 12px, 8px, 0);
+}
+#zoom-out-button:hover {
+  -moz-image-region: rect(17px, 12px, 21px, 0);
+}
+#zoom-out-button[disabled] {
+  -moz-image-region: rect(30px, 12px, 34px, 0);
+}
+#zoom-out-button:hover:active {
+  -moz-image-region: rect(43px, 12px, 47px, 0);
 }
 
 #zoom-in-button {
-list-style-image: url(chrome://browser/skin/Toolbar-new.png);
-  -moz-image-region: rect(0, 27px, 12px, 15px);
+  list-style-image: url(chrome://browser/skin/Toolbar-new.png);
+  -moz-image-region: rect(0, 26px, 12px, 14px);
+}
+#zoom-in-button:hover {
+  -moz-image-region: rect(13px, 26px, 25px, 14px);
+}
+#zoom-in-button[disabled] {
+  -moz-image-region: rect(26px, 26px, 38px, 14px);
+}
+#zoom-in-button:hover:active {
+  -moz-image-region: rect(39px, 26px, 51px, 14px);
 }
 
 #nav-bar #zoom-out-button {

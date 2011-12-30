@@ -1348,6 +1348,7 @@ tabpanels {
   outline: none;
 }
 
+/* Extension styles */
 /* tabmixplus fixes, why I should do this? */
 .tabbrowser-tabs[closeIcon="v3"] .tab-close-button {
 	-moz-image-region:rect(0px, 16px, 16px, 0px) !important; /* default close-button presentation */
@@ -1361,6 +1362,25 @@ tabpanels {
 .tabbrowser-tabs[closeIcon="v3"] .tab-close-button:hover, .tabbrowser-tabs[closeIcon="v3"] .tabbrowser-tab[tabx="always"]:not([selected="true"]) .tab-close-button:hover {
 	-moz-image-region:rect(0px, 32px, 16px, 16px) !important;
 }
+
+/* Adblock Plus close button */
+#abp-sidebar-close {
+  list-style-image: url("chrome://global/skin/icons/close.png") !important;
+  -moz-image-region: rect(0px, 64px, 16px, 48px) !important;
+  -moz-appearance: none !important;
+  padding: 0px !important;
+  border: none !important;
+  -moz-user-focus: ignore !important;
+}
+
+#abp-sidebar-close:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px) !important;
+}
+
+#abp-sidebar-close:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+}
+/* end of Extension styles */
 
 /* Tab scrollbox arrow and all-tabs buttons */
 .tabbrowser-arrowscrollbox > .scrollbutton-up,

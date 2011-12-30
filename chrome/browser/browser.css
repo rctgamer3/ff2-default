@@ -1422,6 +1422,42 @@ tabpanels {
 #abp-sidebar-close:hover:active {
   -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
 }
+
+/* Status4Evar downloads button */
+
+#status4evar-download-button .toolbarbutton-icon {
+  padding-right: 6px !important;
+}
+#status4evar-download-button {
+  -moz-image-region: rect(0px 144px 24px 120px) !important;
+}
+#status4evar-download-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(24px 144px 48px 120px) !important;
+}
+#status4evar-download-button[disabled="true"] {
+  -moz-image-region: rect(48px 144px 72px 120px) !important;
+}
+#status4evar-download-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 144px 120px 120px) !important;
+}
+
+/* small S4E download button */
+toolbar[iconsize="small"] #status4evar-download-button .toolbarbutton-icon {
+  padding-left: 1px !important;
+  padding-right: 4px !important;
+}
+toolbar[iconsize="small"] #status4evar-download-button {
+  -moz-image-region: rect(0px 96px 16px 80px) !important;
+}
+toolbar[iconsize="small"] #status4evar-download-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(16px 96px 32px 80px) !important;
+}
+toolbar[iconsize="small"] #status4evar-download-button[disabled="true"] {
+  -moz-image-region: rect(32px 96px 48px 80px) !important;
+}
+toolbar[iconsize="small"] #status4evar-download-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 96px 80px 80px) !important;
+}
 /* end of Extension styles */
 
 

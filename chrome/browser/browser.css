@@ -2112,11 +2112,9 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
   background-color: #fff;
   background-clip: padding-box;
   padding-left: 3px;
-  /*border-radius: 2.5px 0 0 2.5px;*/
+  border-radius: 2.5px 0 0 2.5px;
   -moz-border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 / 0 8px 0 0;
   -moz-margin-end: -8px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {

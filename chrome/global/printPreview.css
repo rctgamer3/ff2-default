@@ -1,18 +1,18 @@
 /* ..... page navigation ..... */
 
-.home-arrow, .end-arrow[chromedir="rtl"] {
+.home-arrow, .end-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-lft-sharp-end.gif");
 }
 
-.end-arrow, .home-arrow[chromedir="rtl"] {
+.end-arrow, .home-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp-end.gif");
 }
 
-.left-arrow, .right-arrow[chromedir="rtl"] {
+.left-arrow, .right-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-lft-sharp.gif");
 }
 
-.right-arrow, .left-arrow[chromedir="rtl"] {
+.right-arrow, .left-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp.gif");
 }
 

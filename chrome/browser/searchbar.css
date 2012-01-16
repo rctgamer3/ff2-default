@@ -39,7 +39,7 @@
   -moz-outline-radius-bottomleft: 2px;
 }
 
-.searchbar-engine-button[chromedir="rtl"] {
+.searchbar-engine-button:-moz-locale-dir(rtl) {
   -moz-outline-radius-topleft: 0;
   -moz-outline-radius-bottomleft: 0;
   -moz-outline-radius-topright: 2px;
@@ -62,7 +62,7 @@
   background: transparent url("chrome://browser/skin/Search-addengines.png") no-repeat right center;
 }
 
-.searchbar-engine-button[addengines="true"][chromedir="rtl"] {
+.searchbar-engine-button:-moz-locale-dir(rtl)[addengines="true"] {
   background-position: left center;
 }
 
@@ -87,7 +87,7 @@
   padding: 2px 4px 2px 4px; /* not sure if this is correct - it may cause other problems */
 }
 
-.search-go-button[chromedir="rtl"] {
+.search-go-button:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://browser/skin/Search-glass-rtl.png");
 }
 

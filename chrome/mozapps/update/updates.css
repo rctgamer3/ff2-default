@@ -1,6 +1,10 @@
-/**
- * General
- */
+/* General */
+/* Specify the size for the wizardpage so the billboard has a fixed size. 3rd
+   party themes should typically specify the same values. */
+wizardpage {
+  height: 360px;
+  width: 700px;
+}
 .wizard-button[dlgtype="finish"] {
   font-weight: bold;
 }
@@ -29,9 +33,7 @@ link:focus {
   border: 1px dotted black;
 }
 
-/**
- * License Page
- */
+/* License Page */
 license {
   margin-top: 1px;
   margin-bottom: 2px;
@@ -54,9 +56,7 @@ license {
   list-style-image: url("chrome://global/skin/icons/notfound.png");
 }
 
-/**
- * Update Found Page
- */
+/* Update Found Page */
 #moreDetails {
   margin: 1px 5px 4px 3px;
 }
@@ -92,9 +92,7 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
   margin: 1px 5px 4px 5px;
 }
 
-/**
- * Downloading Page
- */
+/* Downloading Page */
 #downloadName {
   margin-top: 3px;
 }
@@ -119,9 +117,7 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
   margin: 5px 3px 0px 5px;
 }
 
-/**
- * Error Page
- */
+/* Error Page */
 #errorReason {
   margin-top: 1px;
   margin-bottom: 2px;
@@ -130,9 +126,7 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
   font-weight: bold;
 }
 
-/**
- * Update History Window
- */
+/* Update History Window */
 update {
   border-bottom: 1px dotted #C0C0C0;
 }

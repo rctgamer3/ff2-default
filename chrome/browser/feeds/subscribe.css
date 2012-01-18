@@ -33,6 +33,10 @@ html {
   color: InfoText;
 }
 
+#feedIntroText {
+  display: none;
+}
+
 .feedBackground {
   background: url("chrome://browser/skin/feeds/feedIcon.png") 0% 10% no-repeat InfoBackground;
 }
@@ -47,10 +51,6 @@ html {
 
 #feedHeader[dir="rtl"] {
   background-position: 100% 10%;
-}
-
-#feedIntroText {
-  display: none;
 }
 
 #feedHeader[firstrun="true"] #feedIntroText {

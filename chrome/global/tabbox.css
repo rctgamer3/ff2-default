@@ -42,7 +42,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-
 /* ::::: tabs ::::: */
 
 tabs {
@@ -82,6 +81,15 @@ tab {
   color: -moz-DialogText;
 }
 
+tab:-moz-locale-dir(rtl) {
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 0px;
+}
+
+.tab-text {
+  margin: 0 !important;
+}
+
 tab[selected="true"] {
   z-index: 1;
   margin-top: 0;
@@ -98,9 +106,7 @@ tab + tab {
   -moz-margin-start: -2px;
 }
 
-.tab-text {
-  margin: 0 !important;
-}
+
 
 tab:focus > .tab-middle {
   /* Don't specify the outline-color, we should always use initial value. */

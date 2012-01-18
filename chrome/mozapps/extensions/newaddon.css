@@ -80,7 +80,6 @@
 #addon-container {
   max-width: 600px;
   margin: 20px;
-/*  padding: 30px 90px; */
 }
 
 #addon-info {
@@ -139,7 +138,6 @@
   margin-top: 25px;
   -moz-box-pack: end;
   -moz-box-align: end;
-/* -moz-box-align: center */
 }
 
 #continuePanel {

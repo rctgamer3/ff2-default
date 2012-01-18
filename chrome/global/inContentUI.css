@@ -64,3 +64,10 @@
   border: 1px solid #C3CEDF;
   border-radius: 5px;
 }
+
+
+colorpicker[type="button"] {
+  margin: 1px 5px 2px 5px;
+  padding: 3px;
+  height: 25px;
+}

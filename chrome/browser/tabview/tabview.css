@@ -17,7 +17,7 @@ body {
   -moz-padding-end: 6px;
   padding-bottom: 6px;
   -moz-padding-start: 4px;
-  background-color: #C0C0C0;
+  background-color: #E0EAF5;
   border-radius: 0.4em;
   box-shadow:
     0 1px 0 #FFFFFF inset,
@@ -52,7 +52,7 @@ html[dir=rtl] .thumb {
 }
 
 .favicon {
-  background-color: #C0C0C0;
+  background-color: #E0EAF5;
   padding-top: 4px;
   -moz-padding-end: 6px;
   padding-bottom: 6px;
@@ -221,7 +221,7 @@ html[dir=rtl] .tab.focus {
 }
 
 .groupItem {
-  cursor: move;
+  cursor: pointer;
   background-color: #E0EAF5;
   border-radius: 0.4em;
   box-shadow:
@@ -318,9 +318,12 @@ html[dir=rtl] .appTabTrayContainer {
 
 .undo {
   background-color: #A0A0A0;
-  width: 150px;
-  height: 30px;
-  line-height: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 20px;
+  width: 135px;
+  line-height: 25px;
   box-shadow: 0px 1px 0px rgba(255,255,255,.5), 0px -1px 0px rgba(0,0,0,.24);
   text-shadow: 0px -1px 0px rgba(255,255,255,.2);
   color: rgba( 0,0,0, .8);
@@ -335,14 +338,14 @@ html[dir=rtl] .appTabTrayContainer {
 }
 
 .undo .close {
-  top: 4px;
-  left: 4px;
+  top: 7px;
+  right: 7px;
   opacity: 0.5;
 }
 
 html[dir=rtl] .undo .close {
-  left: auto;
-  right: 4px;
+  right: auto;
+  left: 7px;
 }
 
 .undo .close:hover{
@@ -448,6 +451,7 @@ html[dir=rtl] .acceptsDrop {
 }
 
 .titlebar {
+  cursor: move;
   font-size: 12px;
   height: 18px;
 }
@@ -625,7 +629,7 @@ html[dir=rtl] .iq-resizable-se {
   width: 29px;
   border: none;
   text-align: center;
-  background-color: #C0C0C0;
+  background-color: #E0EAF5;
   border-radius: 0.4em;
   box-shadow:
     0 1px 0 #FFFFFF inset,

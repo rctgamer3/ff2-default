@@ -5,6 +5,22 @@ wizardpage {
   height: 360px;
   width: 700px;
 }
+
+/* Remove margin and padding so the billboard will extend to the edge of the
+   window. 3rd party themes should typically specify the same values. */
+#updates, .wizard-page-box {
+  margin: 0;
+  padding: 0;
+}
+
+.update-header {
+  padding: 0px 10px;
+}
+
+.update-content {
+  padding: 10px;
+}
+
 .wizard-button[dlgtype="finish"] {
   font-weight: bold;
 }
@@ -33,26 +49,19 @@ link:focus {
   border: 1px dotted black;
 }
 
-/* License Page */
-license {
-  margin-top: 1px;
-  margin-bottom: 2px;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 5px;
-  -moz-appearance: listbox;
-  padding-bottom: 1px;
-}
-
 .loadingBox {
   padding: 3px 5px 3px 5px;
 }
-.licenseLoadingThrobber {
+
+.remoteLoadingThrobber {
   margin-top: 3px;
 }
-.licenseLoadingThrobber[state="loading"] {
-  list-style-image: url("chrome://global/skin/throbber/Throbber-small.gif");
+
+.remoteLoadingThrobber[state="loading"] {
+  list-style-image: url("chrome://global/skin/icons/loading_16.png");
 }
-.licenseLoadingThrobber[state="error"] {
+
+.remoteLoadingThrobber[state="error"] {
   list-style-image: url("chrome://global/skin/icons/notfound.png");
 }
 
@@ -74,9 +83,20 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
   margin-left: 5px;
 }
 
+/* Update Found Basic Page */
 #updateName, #updateFinishedName {
   font-weight: bold;
   font-size: larger;
+}
+
+/* License Page */
+license {
+  margin-top: 1px;
+  margin-bottom: 2px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: 5px;
+  -moz-appearance: listbox;
+  padding-bottom: 1px;
 }
 
 #alertImage {
@@ -112,9 +132,54 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
   -moz-box-align: start;
 }
 
+#pauseButton {
+  list-style-image: url(chrome://mozapps/skin/update/downloadButtons.png);
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* !Important must be used otherwise this won't immediately take affect */
+#pauseButton > .button-box {
+  padding: 0 !important;
+}
+
+#pauseButton:hover {
+  -moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+#pauseButton:active {
+  -moz-image-region: rect(32px, 48px, 48px, 32px);
+}
+
+#pauseButton[disabled="true"] {
+  -moz-image-region: rect(48px, 48px, 64px, 32px);
+}
+
+#pauseButton[paused="true"] {
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#pauseButton[paused="true"]:hover {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+#pauseButton[paused="true"]:active {
+  -moz-image-region: rect(32px, 16px, 48px, 0px);
+}
+
+#pauseButton[paused="true"][disabled="true"] {
+  -moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+
 #verificationFailedIcon {
-  list-style-image: url("chrome://global/skin/icons/notfound.png");
   margin: 5px 3px 0px 5px;
+  list-style-image: url("chrome://global/skin/icons/notfound.png");
 }
 
 /* Error Page */

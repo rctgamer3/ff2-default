@@ -111,6 +111,11 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   border-top: none;
 }
 
+/* negative margin for the border */
+toolbar[type="menubar"][autohide="true"][inactive="true"]:not([customizing="true"]) {
+margin-bottom: -1px;
+}
+
 /* ::::: bookmark buttons ::::: */
 
 toolbarbutton.bookmark-item {

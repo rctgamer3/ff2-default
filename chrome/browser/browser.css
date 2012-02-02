@@ -272,8 +272,8 @@ menuitem.bookmark-item {
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-/*  -moz-box-orient: vertical;
-  min-width: 0; */
+  -moz-box-orient: vertical;
+  min-width: 0;
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 

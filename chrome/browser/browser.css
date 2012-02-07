@@ -3097,3 +3097,35 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .inspector-breadcrumbs-button:last-of-type[checked]:hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected-pressed.png") 2 13 2 13 stretch;
 }
+
+@media not all and (-moz-windows-classic) {
+  #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
+    margin-top: 1px;
+  }
+
+  #appmenu-button {
+    border-width: 2px;
+    -moz-border-left-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
+    -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
+    -moz-border-right-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
+    margin-bottom: 1px; /* compensate white outer border */
+    box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
+                0 0 2px 1px rgba(255,255,255,.25) inset;
+  }
+
+  #main-window[privatebrowsingmode=temporary] #appmenu-button {
+    -moz-border-left-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+    -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+    -moz-border-right-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+  }
+
+  #appmenu-popup {
+    margin-top: -1px;
+    -moz-margin-start: 1px;
+  }
+
+  .panel-promo-message {
+    font-style: italic;
+  }
+}
+

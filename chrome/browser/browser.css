@@ -1050,6 +1050,13 @@ statusbarpanel#statusbar-display {
   -moz-padding-start: 0;
 }
 
+#addon-bar[customizing] > #status-bar {-moz-appearance: none;
+  opacity: 0.5;
+  background-image: -moz-repeating-linear-gradient(-45deg,
+                                                   rgba(255,255,255,.3), rgba(255,255,255,.3) 5px,
+                                                   rgba(0,0,0,.3) 5px, rgba(0,0,0,.3) 10px);
+}
+
 /* ::::: autocomplete ::::: */
 
 #treecolAutoCompleteImage {

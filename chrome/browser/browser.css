@@ -2644,6 +2644,7 @@ list-style-image: url(chrome://browser/skin/Toolbar-new.png);
   list-style-image: url("chrome://global/skin/icons/close.png");
   -moz-image-region: rect(0px, 64px, 16px, 48px);
   -moz-appearance: none;
+  -moz-padding-start: 5px;
   -moz-margin-end: 6px;
   border: none;
   padding: 0px;

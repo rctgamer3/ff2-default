@@ -2703,6 +2703,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   #browser-bottombox {
     -moz-appearance: statusbar !important;
   }
+
+/* make status-bar look different when using aero */
+  #status-bar {
+    -moz-appearance: none;
+    border: none;
+    background-color: inherit;
+  }
 }
 
 

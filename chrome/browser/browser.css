@@ -2710,6 +2710,28 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
     border: none;
     background-color: inherit;
   }
+
+ /* Artificially draw window borders that are covered by lwtheme, see bug 591930. */
+  #main-window[sizemode="normal"] > #titlebar > #titlebar-content:-moz-lwtheme {
+    border-top: 2px solid;
+    -moz-border-top-colors: rgb(37, 44, 51) rgba(255,255,255,.6);
+  }
+
+  #main-window[sizemode="normal"] > #titlebar > #titlebar-content:-moz-lwtheme:-moz-window-inactive {
+    -moz-border-top-colors: rgb(102, 102, 102) rgba(255,255,255,.6);
+  }
+
+  #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container:-moz-lwtheme {
+    margin-top: -1px;
+  }
+
+  #main-window[sizemode="normal"] #titlebar-buttonbox:-moz-lwtheme {
+    margin-top: -2px;
+  }
+
+  #appmenu-button {
+    margin-bottom: -1px; /* compensate white outer border */
+  }
 }
 
 

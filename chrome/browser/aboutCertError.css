@@ -72,7 +72,6 @@ h2 {
   -moz-padding-start: 30px;
   background: url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat -moz-Field;
   background-origin: content-box;
-  -moz-background-origin: content-box;
 }
 
 body[dir="rtl"] #errorPageContainer {

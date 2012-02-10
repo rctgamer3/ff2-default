@@ -1321,14 +1321,6 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
-.tabs-bottom {
-  height: 4px;
-  margin: 0px;
-  background: -moz-dialog url("chrome://browser/skin/tabbrowser/tabstrip-bottom.png") repeat;
-  border-top: 1px solid threedshadow;
-  border-bottom: 1px solid threedshadow;
-}
-
 tabpanels {
   -moz-appearance: none;
 }

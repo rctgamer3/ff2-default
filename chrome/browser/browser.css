@@ -2259,8 +2259,8 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
 
 /* sync button */
 #sync-button {
-list-style-image: url(chrome://browser/skin/Toolbar-new.png);
-  -moz-image-region: rect(0, 46px, 18px, 28px);
+list-style-image: url(chrome://browser/skin/sync-buttonIcon.png);
+  -moz-image-region: rect(0, 19px, 18px, 1px);
 }
 
 #sync-button[status="active"] {

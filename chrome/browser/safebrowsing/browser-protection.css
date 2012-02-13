@@ -10,7 +10,7 @@
   background-color: white;
   color: black;
   -moz-box-sizing: border-box;
-  -moz-border-radius: 10px;
+  border-radius: 10px;
   padding: 10px;
   border-top: 1px solid;
   border-left: 1px solid;

@@ -46,7 +46,8 @@
 
 /* ::::: autocomplete ::::: */
 
-textbox {
+/* .padded is used by autocomplete widgets that don't have an icon. Gross. -dwh */
+textbox:not(.padded) {
   cursor: default;
   padding: 0;
 }
@@ -63,8 +64,11 @@ textbox.padded {
   -moz-box-align: center;
 }
 
-.textbox-input-box {
+textbox:not(.padded) .textbox-input-box {
   margin: 0 3px;
+}
+
+.textbox-input-box {
   -moz-box-align: center;
 }
 
@@ -127,6 +131,7 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 /* ::::: richlistbox autocomplete ::::: */
 
 .autocomplete-richlistbox {
+  -moz-appearance: none;
   margin: 0;
 }
 
@@ -149,6 +154,14 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 .ac-type-icon {
   width: 16px; 
   height: 16px;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
 }
 
 .ac-ellipsis-after {

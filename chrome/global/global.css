@@ -152,12 +152,14 @@ statusbarpanel {
   -moz-box-align: end;
   -moz-box-pack: end;
   -moz-appearance: resizerpanel;
-  padding: 0px;
+  padding: 0;
   border: none;
 }
 
-.statusbarpanel-iconic,  .statusbarpanel-iconic-text, .statusbarpanel-menu-iconic {
-  padding: 0px 1px 0px 1px;
+.statusbarpanel-iconic,
+.statusbarpanel-iconic-text,
+.statusbarpanel-menu-iconic {
+  padding: 0 1px;
 }
 
 resizer[dir="bottomright"] {

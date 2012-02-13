@@ -23,6 +23,7 @@
  *   Steven Garrity <steven@silverorange.com>
  *   Henrik Skupin  <mozilla@hskupin.info>
  *   Johnathan Nightingale <johnath@mozilla.com>
+ *   Ehsan Akhgari <ehsan.akhgari@gmail.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -66,12 +67,11 @@ h2 {
   max-width: 52em;
   margin: 4em auto;
   border: 1px solid #FFBD09; /* pale yellow extracted from yellow passport icon */
-  -moz-border-radius: 10px;
+  border-radius: 10px;
   padding: 3em;
   -moz-padding-start: 30px;
   background: url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat -moz-Field;
   background-origin: content-box;
-  -moz-background-origin: content-box;
 }
 
 body[dir="rtl"] #errorPageContainer {
@@ -90,7 +90,17 @@ body[dir="rtl"] #errorPageContainer {
   background : url("chrome://browser/skin/section_expanded.png") left center no-repeat;
 }
 
+body[dir="rtl"] #technicalContent > h2,
+body[dir="rtl"] #expertContent > h2 {
+  background-position: right center;
+}
+
 #technicalContent[collapsed] > h2,
 #expertContent[collapsed] > h2{
   background-image: url("chrome://browser/skin/section_collapsed.png");
+}
+
+body[dir="rtl"] #technicalContent[collapsed] > h2,
+body[dir="rtl"] #expertContent[collapsed] > h2 {
+  background-image: url("chrome://browser/skin/section_collapsed-rtl.png");
 }

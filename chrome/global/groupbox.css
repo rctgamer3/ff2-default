@@ -46,7 +46,7 @@
 groupbox {
   margin: 5px;
   border: 1px solid ThreeDShadow;
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   padding: 5px;
 }
 

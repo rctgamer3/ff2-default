@@ -18,7 +18,7 @@ html {
 
 #feedHeaderContainer {
   border: 1px solid ThreeDShadow;
-  -moz-border-radius: 10px;
+  border-radius: 10px;
   margin: -4em auto 0 auto;
   background-color: InfoBackground;
 }
@@ -31,6 +31,10 @@ html {
   -moz-padding-start: 2.9em;
   font-size: 110%;
   color: InfoText;
+}
+
+#feedIntroText {
+  display: none;
 }
 
 .feedBackground {
@@ -47,10 +51,6 @@ html {
 
 #feedHeader[dir="rtl"] {
   background-position: 100% 10%;
-}
-
-#feedIntroText {
-  display: none;
 }
 
 #feedHeader[firstrun="true"] #feedIntroText {

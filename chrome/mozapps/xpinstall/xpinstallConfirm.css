@@ -33,6 +33,9 @@ installitem {
 }
 
 .alert-icon {
+  list-style-image: url("chrome://global/skin/icons/warning-large.png");
+  width: 48px;
+  height: 48px;
   -moz-margin-end: 20px;
 }
 
@@ -42,11 +45,9 @@ installitem {
   margin-bottom: 1em;
 }
 
-.xpinstallItemIcon {
+.xpinstallIconContainer {
   width: 32px;
   height: 32px;
-  max-width: 32px !important;
-  max-height: 32px !important;
   -moz-margin-end: 5px;
 }
 
@@ -72,5 +73,19 @@ installitem {
 }
 
 .xpinstallItemIcon {
-  list-style-image: url("chrome://mozapps/skin/xpinstall/xpinstallItemGeneric.png");
+  max-width: 32px;
+  max-height: 32px;
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+}
+
+installitem[type="theme"] .xpinstallItemIcon {
+  list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
+}
+
+installitem[type="locale"] .xpinstallItemIcon {
+  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
+}
+
+installitem[type="plugin"] .xpinstallItemIcon {
+  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
 }

@@ -54,14 +54,14 @@
   height: 20px;
   background: url("chrome://global/skin/icons/tab-left.png") no-repeat;
   background-color: -moz-dialog;
-  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
 }
 
-.tabbrowser-tab[chromedir="rtl"] > .tab-image-left {
+.tabbrowser-tab:-moz-locale-dir(rtl) > .tab-image-left {
   background: url("chrome://global/skin/icons/tab-right.png") no-repeat;
   background-color: -moz-dialog;
-  -moz-border-radius-topleft: 0px;
-  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 3px;
 }
 
 .tabbrowser-tab:not([selected="true"]) > .tab-image-left {
@@ -71,7 +71,7 @@
   background-color: -moz-dialog;
 }
 
-.tabbrowser-tab[chromedir="rtl"]:not([selected="true"]) > .tab-image-left {
+.tabbrowser-tab:not([selected="true"]):-moz-locale-dir(rtl) > .tab-image-left {
   background: url("chrome://global/skin/icons/tab-right-bkgnd.png") no-repeat;
   background-color: -moz-dialog;
 }
@@ -81,7 +81,7 @@
   background-color: -moz-dialog;
 }
 
-.tabbrowser-tab[chromedir="rtl"]:hover:not([selected="true"]) > .tab-image-left {
+.tabbrowser-tab:hover:not([selected="true"]):-moz-locale-dir(rtl) > .tab-image-left {
   background: url("chrome://global/skin/icons/tab-right-hover.png") no-repeat;
   background-color: -moz-dialog;
 }
@@ -109,15 +109,15 @@
   height: 20px;
   background: url("chrome://global/skin/icons/tab-right.png") no-repeat;
   background-position: -5px 0px;
-    background-color: -moz-dialog;
-  -moz-border-radius-topright: 3px;
+  background-color: -moz-dialog;
+  border-top-right-radius: 3px;
 }
 
-.tabbrowser-tab[chromedir="rtl"] > .tab-image-right {
+.tabbrowser-tab:-moz-locale-dir(rtl) > .tab-image-right {
   background: url("chrome://global/skin/icons/tab-left.png") no-repeat;
   background-color: -moz-dialog;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 0px;
 }
 
 .tabbrowser-tab:not([selected="true"]) > .tab-image-right {
@@ -128,7 +128,7 @@
   background-color: -moz-dialog;
 }
 
-.tabbrowser-tab[chromedir="rtl"]:not([selected="true"]) > .tab-image-right {
+.tabbrowser-tab:not([selected="true"]):-moz-locale-dir(rtl) > .tab-image-right {
   background: url("chrome://global/skin/icons/tab-left-bkgnd.png") no-repeat;
   background-color: -moz-dialog;
 }
@@ -139,7 +139,7 @@
   background-color: -moz-dialog;
 }
 
-.tabbrowser-tab[chromedir="rtl"]:hover:not([selected="true"]) > .tab-image-right {
+.tabbrowser-tab:hover:not([selected="true"]):-moz-locale-dir(rtl) > .tab-image-right {
   background: url("chrome://global/skin/icons/tab-left-hover.png") no-repeat;
   background-color: -moz-dialog;
 }
@@ -286,14 +286,14 @@ tabpanels {
   background-repeat: no-repeat;
   background-image: url("chrome://global/skin/icons/tab-arrow-start-bkgnd-enabled.png");
   background-color: -moz-dialog;
-  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > .scrollbutton-up {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > .scrollbutton-up {
   list-style-image: url("chrome://global/skin/icons/tab-arrow-end.png");
   background-image: url("chrome://global/skin/icons/tab-arrow-end-bkgnd-enabled.png");
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0px;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled="true"] {
@@ -301,7 +301,7 @@ tabpanels {
   background-image: url("chrome://global/skin/icons/tab-arrow-start-bkgnd-disabled.png");
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > .scrollbutton-up[disabled="true"] {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > .scrollbutton-up[disabled="true"] {
   background-image: url("chrome://global/skin/icons/tab-arrow-end-bkgnd-disabled.png");
 }
 
@@ -310,7 +310,7 @@ tabpanels {
   -moz-image-region: rect(0, 22px, 14px, 11px);
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > .scrollbutton-up:not([disabled="true"]):hover {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > .scrollbutton-up:not([disabled="true"]):hover {
   background-image: url("chrome://global/skin/icons/tab-arrow-end-bkgnd-hover.png");
 }
 
@@ -335,20 +335,20 @@ tabpanels {
   background-image: url("chrome://global/skin/icons/tab-arrow-end-bkgnd-enabled.png");
   background-repeat: no-repeat;	
   background-color: -moz-dialog;
-  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > stack > .scrollbutton-rel-box > .scrollbutton-down-box {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > stack > .scrollbutton-rel-box > .scrollbutton-down-box {
   background-image: url("chrome://global/skin/icons/tab-arrow-start-bkgnd-enabled.png");
-  -moz-border-radius-topleft: 0px;
-  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 5px;
 }
 
 .scrollbutton-rel-box > .scrollbutton-down-box[disabled="true"] {
   background-image: url("chrome://global/skin/icons/tab-arrow-end-bkgnd-disabled.png");
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > stack > .scrollbutton-rel-box > .scrollbutton-down-box[disabled="true"] {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > stack > .scrollbutton-rel-box > .scrollbutton-down-box[disabled="true"] {
   background-image: url("chrome://global/skin/icons/tab-arrow-start-bkgnd-disabled.png");
 }
 
@@ -358,7 +358,7 @@ tabpanels {
   opacity: 0.0;
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > stack > .scrollbutton-rel-box > .scrollbutton-down-box-animate {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > stack > .scrollbutton-rel-box > .scrollbutton-down-box-animate {
   background-image: url("chrome://global/skin/icons/tab-arrow-start-bkgnd-animate.png");
 }
 
@@ -372,7 +372,7 @@ tabpanels {
   padding: 0px;
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > stack > .scrollbutton-rel-box > .scrollbutton-down {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > stack > .scrollbutton-rel-box > .scrollbutton-down {
   list-style-image: url("chrome://global/skin/icons/tab-arrow-start.png");
 }
 
@@ -387,7 +387,7 @@ tabpanels {
   background-position: top left;
 }
 
-.tabbrowser-arrowscrollbox[chromedir="rtl"] > stack > .scrollbutton-rel-box > .scrollbutton-down:not([disabled="true"]):hover {
+.tabbrowser-arrowscrollbox:-moz-locale-dir(rtl) > stack > .scrollbutton-rel-box > .scrollbutton-down:not([disabled="true"]):hover {
   background-image: url("chrome://global/skin/icons/tab-arrow-start-bkgnd-hover.png");
 }
 
@@ -411,22 +411,22 @@ tabpanels {
   background-image: url("chrome://global/skin/icons/alltabs-box-end-bkgnd.png");
   background-repeat: no-repeat;
   background-color: -moz-dialog; 
-  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
 }
 
-stack[chromedir="rtl"] > hbox > .tabs-alltabs-box {
+stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box {
   background-image: url("chrome://global/skin/icons/alltabs-box-start-bkgnd.png");
-  -moz-border-radius-topleft: 0px;
-  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 5px;
 }
 
 .tabbrowser-tabs[overflow="true"] .tabs-alltabs-box {
   background-image: url("chrome://global/skin/icons/alltabs-box-overflow-end-bkgnd.png");
-  -moz-border-radius-topleft: 0px;
-  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
-.tabbrowser-tabs[overflow="true"] stack[chromedir="rtl"] > hbox > .tabs-alltabs-box {
+.tabbrowser-tabs[overflow="true"] stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box {
   background-image: url("chrome://global/skin/icons/alltabs-box-overflow-start-bkgnd.png");
 }
 
@@ -460,7 +460,7 @@ stack[chromedir="rtl"] > hbox > .tabs-alltabs-box {
   background-repeat: no-repeat;
 }
 
-stack[chromedir="rtl"] > hbox > .tabs-alltabs-button:hover {
+stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-button:hover {
   background-image: url("chrome://global/skin/icons/alltabs-box-start-bkgnd-hover.png");
 }
 
@@ -468,7 +468,7 @@ stack[chromedir="rtl"] > hbox > .tabs-alltabs-button:hover {
   background-image: url("chrome://global/skin/icons/alltabs-box-overflow-end-bkgnd-hover.png");
 }
 
-.tabbrowser-tabs[overflow="true"] stack[chromedir="rtl"] > hbox > .tabs-alltabs-button:hover {
+.tabbrowser-tabs[overflow="true"] stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-button:hover {
   background-image: url("chrome://global/skin/icons/alltabs-box-overflow-start-bkgnd-hover.png");
 }
 
@@ -482,7 +482,7 @@ stack[chromedir="rtl"] > hbox > .tabs-alltabs-button:hover {
   opacity: 0.0;
 }
 
-stack[chromedir="rtl"] > hbox > .tabs-alltabs-box-animate {
+stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box-animate {
   background-image: url("chrome://global/skin/icons/alltabs-box-overflow-start-bkgnd-animate.png");
 }
 

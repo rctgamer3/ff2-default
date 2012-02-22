@@ -63,10 +63,6 @@ menulist {
   margin: 1px 3px !important;
 }
 
-.menulist-dropmarker {
-  display: none;
-}
-
 menulist:hover {
   color: -moz-buttonhovertext;
 }
@@ -75,6 +71,19 @@ menulist:hover:active,
 menulist[open="true"] {
   color: ButtonText;
 }
+
+/* ..... focused state ..... */
+
+menulist:focus:not([open="true"]):not(.menulist-compact) > .menulist-label-box {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+menulist:-moz-focusring:not([open="true"]) > .menulist-label-box {
+  border: 1px dotted #F5DB95;
+}
+
+/* ..... disabled state ..... */
 
 menulist[disabled="true"],
 menulist[disabled="true"]:hover,
@@ -115,7 +124,6 @@ html|*.menulist-editable-input {
   font: inherit;
 }
 
-
 /* ::::: compact menulists ::::: */
 
 .menulist-compact {
@@ -138,7 +146,7 @@ html|*.menulist-editable-input {
 
 .menulist-compact > .menulist-label-box > .menulist-label {
   margin: 0 3px !important;
-  text-align: right;
+  text-align: end;
 }  
 
 .menulist-compact > .menulist-label-box > .menulist-icon {
@@ -156,7 +164,7 @@ html|*.menulist-editable-input {
   list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
 }
 
-.menulist-compact:focus > .menulist-label-box {
+.menulist-compact:-moz-focusring:not([open="true"]) > .menulist-label-box {
   border: 1px dotted;
   background-color: transparent;
   color: inherit;

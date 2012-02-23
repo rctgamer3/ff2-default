@@ -2316,6 +2316,22 @@ list-style-image: url(chrome://browser/skin/sync-buttonIcon.png);
   }
 }
 
+/* appmenu styles for Aurora and Nightly */
+
+#appmenu-button[label="Aurora"] {
+  background-image: -moz-linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%)!important;
+  border-color: hsla(214,89%,21%,.9)!important;
+  box-shadow: 0 1px 0 hsla(205,100%,72%,.2) inset,
+              0 0 2px 1px hsla(205,100%,72%,.25) inset!important;
+}
+
+#appmenu-button[label="Nightly"] {
+  background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%);
+  border-color: hsla(210,59%,13%,.9);
+  box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+              0 0 2px 1px hsla(211,65%,85%,.15) inset;
+}
+
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
   background-image: -moz-linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
   border-color: rgba(43,8,65,.9);

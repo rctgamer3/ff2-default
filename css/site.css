@@ -1,0 +1,84 @@
+body {
+  margin-top: 1.0em;
+  color: -moz-FieldText;
+  font-family: message-box, Segoe UI;
+  font-size: 12px;
+  color: #000000;
+  background: #f0f0f0;
+  padding: 3em
+}
+
+#container {
+  margin: 0 auto;
+  width: 960px;
+  border: 1px solid #a0a0a0;
+  border-radius: 10px;
+  background: #fff;
+  padding-left: 30px
+}
+
+/*h1 {
+  margin-bottom: 3px;
+}*/
+
+h1 .small {
+  font-size: 0.4em
+}
+
+h1 a {
+  text-decoration: none
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #000
+}
+
+h3 {
+  text-align: center;
+  color: #000
+}
+
+a {
+  color: #000
+}
+
+.description {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+/*margin-top: 30px;*/
+  font-style: italic
+}
+
+.download {
+  float: right
+}
+
+pre {
+  background: #000;
+  color: #fff;
+  padding: 15px
+}
+
+hr {
+  border: 0;
+  width: 80%;
+  border-bottom: 1px solid #aaa
+}
+
+.footer {
+  text-align:center;
+  padding-top:30px;
+  font-style: italic
+}
+
+img {
+  border: 0
+}
+
+img.favicon {
+  width: 16px;
+  height: 16px;
+  padding-right: 5px;
+  vertical-align:text-bottom
+}

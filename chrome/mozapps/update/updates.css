@@ -62,7 +62,7 @@ link:focus {
 }
 
 .remoteLoadingThrobber[state="error"] {
-  list-style-image: url("chrome://global/skin/icons/notfound.png");
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
 }
 
 /* Update Found Page */
@@ -90,7 +90,7 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
 }
 
 /* License Page */
-license {
+#licenseContent {
   margin-top: 1px;
   margin-bottom: 2px;
   -moz-margin-start: 6px;

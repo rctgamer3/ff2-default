@@ -3168,9 +3168,34 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
     margin-top: -1px;
     -moz-margin-start: 1px;
   }
-
-  .panel-promo-message {
-    font-style: italic;
-  }
 }
 
+/* Bookmark Sync promo */
+
+.panel-promo-box {
+  color: GrayText;
+}
+
+.panel-promo-message {
+   font-style: italic;
+}
+ 
+.panel-promo-icon {
+  list-style-image: url("chrome://browser/skin/sync-32.png");
+}
+
+.panel-promo-closebutton {
+  -moz-appearance: none;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+  border: none;
+  padding: 0px;
+}
+
+.panel-promo-closebutton:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.panel-promo-closebutton:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}

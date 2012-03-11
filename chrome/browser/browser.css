@@ -1579,6 +1579,11 @@ toolbar[iconsize="small"] #status4evar-download-button:not([disabled="true"]):ho
   -moz-margin-end: 2px;
 }
 
+/* FF12 all tabs button override (bug 714281) */
+#tabbrowser-tabs:not([overflow="true"]) ~ #alltabs-button {
+  visibility: visible;
+}
+
 .tabs-alltabs-button > .toolbarbutton-text,
 .tabs-alltabs-button > .toolbarbutton-icon {
   display: none;

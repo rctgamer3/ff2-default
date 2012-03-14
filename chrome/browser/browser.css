@@ -444,19 +444,26 @@ toolbar[mode="full"] .toolbarbutton-menubutton-button {
 
 /* bookmark sidebar button */
 
-#bookmarks-button,#bookmarks-menu-button {
+#bookmarks-button, #bookmarks-menu-button {
   -moz-image-region: rect(0px 192px 24px 168px);
 }
-#bookmarks-button:not([disabled="true"]):not([checked="true"]):hover {
+#bookmarks-button:not([disabled="true"]):not([checked="true"]):hover,
+#bookmarks-menu-button:not([disabled="true"]):not([checked="true"]):hover {
   -moz-image-region: rect(24px 192px 48px 168px);
 }
-#bookmarks-button[disabled="true"] {
+#bookmarks-button[disabled="true"], #bookmarks-menu-button[disabled="true"] {
   -moz-image-region: rect(48px 192px 72px 168px);
 }
-#bookmarks-button[checked="true"] {
+#bookmarks-button[checked="true"], #bookmarks-menu-button[checked="true"]  {
   -moz-image-region: rect(72px 192px 96px 168px);
 }
 #bookmarks-button:not([disabled="true"]):not([checked="true"]):hover:active {
+  -moz-image-region: rect(96px 192px 120px 168px);
+}
+
+/* bookmark menu button */
+
+#bookmarks-menu-button:hover:active, #bookmarks-menu-button[open] {
   -moz-image-region: rect(96px 192px 120px 168px);
 }
 
@@ -782,10 +789,8 @@ toolbar[iconsize="small"] #bookmarks-button:not([disabled="true"]):not([checked=
 
 /* ff4 bookmarks button */
 
-toolbar[iconsize="small"] #bookmarks-menu-button .toolbarbutton-icon {
-  padding-left: 2px;
-}
 toolbar[iconsize="small"] #bookmarks-menu-button {
+  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
   -moz-image-region: rect(0px 128px 16px 112px);
 }
 toolbar[iconsize="small"] #bookmarks-menu-button:not([disabled="true"]):not([checked="true"]):hover {
@@ -797,7 +802,8 @@ toolbar[iconsize="small"] #bookmarks-menu-button[disabled="true"] {
 toolbar[iconsize="small"] #bookmarks-menu-button[checked="true"] {
   -moz-image-region: rect(48px 128px 64px 112px);
 }
-toolbar[iconsize="small"] #bookmarks-menu-button:not([disabled="true"]):not([checked="true"]):hover:active {
+toolbar[iconsize="small"] #bookmarks-menu-button:not([disabled="true"]):not([checked="true"]):hover:active,
+toolbar[iconsize="small"] #bookmarks-menu-button[open] {
   -moz-image-region: rect(64px 128px 80px 112px);
 }
 

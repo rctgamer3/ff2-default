@@ -2664,6 +2664,8 @@ list-style-image: url(chrome://browser/skin/sync-buttonIcon.png);
    Adding this for the people without Status4Evar, S4E usage is recommended */
 #addonbar-closebutton > .toolbarbutton-icon {
   -moz-margin-end: 0px;
+  -moz-padding-end: 2px ;
+  -moz-padding-start: 2px;
   margin-top: 1px;
 }
 
@@ -2671,10 +2673,8 @@ list-style-image: url(chrome://browser/skin/sync-buttonIcon.png);
   list-style-image: url("chrome://global/skin/icons/close.png");
   -moz-image-region: rect(0px, 64px, 16px, 48px);
   -moz-appearance: none;
-  -moz-padding-start: 5px;
-  -moz-margin-end: 6px;
+  padding: 3px 2px 4px 2px;
   border: none;
-  padding: 0px;
 }
 #addonbar-closebutton:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);

@@ -2023,9 +2023,12 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
 #addon-bar {
 /* top line shade + height */
   min-height: 20px;
-  border-top: 1px solid !important;
-  -moz-border-top-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
+  border-top: 2px solid;
+  -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
+}
 
+#FindToolbar:not([hidden="true"]) ~ #addon-bar {
+  border-top: 0px;
 }
 
 /* searchbar fix

@@ -46,8 +46,8 @@
 
 toolbarbutton {
   /*-moz-appearance: toolbarbutton;*/
-  -moz-box-align: center;
-  -moz-box-pack: center;
+  -moz-box-align: center !important;
+  -moz-box-pack: center !important;
   margin: 0;
   border: 1px solid transparent;
   padding: 3px;

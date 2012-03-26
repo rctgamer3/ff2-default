@@ -18,7 +18,7 @@
   margin-right: -22px; /* 1/2 of scrubber thumb width, for overhang. */
   position: relative; /* Trick to work around negative margin interfering with clicking on the button. */
 }
-.playButton[paused] {
+.playButton[paused="true"] {
   background: url(chrome://global/skin/media/playButton.png) no-repeat center;
 }
 
@@ -32,7 +32,7 @@
   min-width: 33px;
   border: none;
 }
-.muteButton[muted] {
+.muteButton[muted="true"] {
   background: url(chrome://global/skin/media/unmuteButton.png) no-repeat center;
 }
 

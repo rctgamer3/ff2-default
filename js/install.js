@@ -2,7 +2,7 @@ function install (aEvent)
 {
   var params = {
     "Foo": { URL: aEvent.target.href,
-             IconURL: aEvent.target.getAttribute("iconURL"),
+             IconURL: aEvent.target.getAttribute("data-iconURL"),
              Hash: aEvent.target.getAttribute("hash"),
              toString: function () { return this.URL; }
     }

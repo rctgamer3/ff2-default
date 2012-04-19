@@ -2154,6 +2154,10 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
   list-style-image: url(chrome://mozapps/skin/passwordmgr/key-64.png);
 }
 
+.popup-notification-icon[popupid="webapps-install"] {
+  list-style-image: url(chrome://browser/skin/webapps-64.png);
+}
+
 /* Notification icon box */
 #notification-popup-box {
   position: relative;
@@ -2214,6 +2218,10 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
 
 #password-notification-icon {
   list-style-image: url(chrome://mozapps/skin/passwordmgr/key-16.png);
+}
+
+#webapps-notification-icon {
+  list-style-image: url(chrome://browser/skin/webapps-16.png);
 }
 
 #identity-popup-container {
@@ -2338,10 +2346,26 @@ list-style-image: url(chrome://browser/skin/sync-buttonIcon.png);
 /* appmenu styles for Aurora and Nightly */
 
 #appmenu-button[label="Aurora"] {
-  background-image: -moz-linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%)!important;
-  border-color: hsla(214,89%,21%,.9)!important;
+  background-image: -moz-linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%);
+  border-color: hsla(214,89%,21%,.9);
   box-shadow: 0 1px 0 hsla(205,100%,72%,.2) inset,
-              0 0 2px 1px hsla(205,100%,72%,.25) inset!important;
+              0 0 2px 1px hsla(205,100%,72%,.25) inset;
+}
+
+#appmenu-button[label="Aurora"]:hover:not(:active):not([open]) {
+  background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
+                    -moz-radial-gradient(center bottom, farthest-side, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
+                    -moz-linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%);
+  border-color: hsla(214,89%,21%,.9);
+  box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
+              0 0 2px 1px hsla(205,100%,72%,.5) inset,
+              0 -1px 0 hsla(205,100%,72%,.2) inset;
+}
+#appmenu-button[label="Aurora"]:hover:active,
+#appmenu-button[label="Aurora"][open] {
+  background-image: -moz-linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
+  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+              0 1px 1px rgba(0,0,0,.2) inset;
 }
 
 #appmenu-button[label="Nightly"] {
@@ -2349,6 +2373,22 @@ list-style-image: url(chrome://browser/skin/sync-buttonIcon.png);
   border-color: hsla(210,59%,13%,.9);
   box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
               0 0 2px 1px hsla(211,65%,85%,.15) inset;
+}
+
+#appmenu-button[label="Nightly"]:hover:not(:active):not([open]) {
+  background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
+                    -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
+                    -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%);
+  border-color: hsla(210,59%,13%,.9);
+  box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+              0 0 2px 1px hsla(210,48%,90%,.4) inset,
+              0 -1px 0 hsla(210,48%,90%,.2) inset;
+}
+#appmenu-button[label="Nightly"]:hover:active,
+#appmenu-button[label="Nightly"][open] {
+  background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+              0 1px 1px rgba(0,0,0,.2) inset;
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
@@ -2826,6 +2866,15 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 /* Highlighter toolbar */
 
+#inspector-inspect-toolbutton {
+  list-style-image: url("chrome://browser/skin/devtools/inspect-button.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+#inspector-inspect-toolbutton[checked] {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
 #inspector-toolbar {
   -moz-appearance: none;
   padding: 4px 3px;
@@ -3050,56 +3099,68 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .inspector-breadcrumbs-button {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:not([checked]),
 .inspector-breadcrumbs-button:not([checked]):hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[checked] {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle-selected.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle-selected.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[checked][siblings-menu-open],
 .inspector-breadcrumbs-button[checked]:hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle-selected-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-middle-selected-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:first-of-type {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:first-of-type:not([checked]),
 .inspector-breadcrumbs-button:first-of-type:not([checked]):hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:first-of-type[checked] {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start-selected.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start-selected.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:first-of-type[checked],
 .inspector-breadcrumbs-button:first-of-type[checked]:hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start-selected-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-start-selected-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:last-of-type {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:last-of-type:not([checked]),
 .inspector-breadcrumbs-button:last-of-type:not([checked]):hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:last-of-type[checked] {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-selected.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-selected.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:last-of-type[checked],
 .inspector-breadcrumbs-button:last-of-type[checked]:hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-selected-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-selected-pressed.png") 2 13 2 13 fill stretch;
 }
 
 /* Highlighter toolbar - breadcrumbs - RTL */
@@ -3110,56 +3171,68 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .inspector-breadcrumbs-button:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:not([checked]):-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button:not([checked]):hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[checked]:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle-selected.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle-selected.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[checked][siblings-menu-open]:-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button[checked]:hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle-selected-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-middle-selected-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:first-of-type:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:first-of-type:not([checked]):-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button:first-of-type:not([checked]):hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:first-of-type[checked]:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start-selected.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start-selected.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:first-of-type[checked]:-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button:first-of-type[checked]:hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start-selected-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-start-selected-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:last-of-type:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:last-of-type:not([checked]):-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button:last-of-type:not([checked]):hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-pressed.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button:last-of-type[checked]:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected.png") 2 13 2 13 fill stretch;
 }
 
 .inspector-breadcrumbs-button[siblings-menu-open]:last-of-type[checked]:-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button:last-of-type[checked]:hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected-pressed.png") 2 13 2 13 stretch;
+  -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected-pressed.png") 2 13 2 13 fill stretch;
 }
 
 @media not all and (-moz-windows-classic) {

@@ -79,10 +79,6 @@ menulist:focus:not([open="true"]):not(.menulist-compact) > .menulist-label-box {
   color: HighlightText;
 }
 
-menulist:-moz-focusring:not([open="true"]) > .menulist-label-box {
-  border: 1px dotted #F5DB95;
-}
-
 /* ..... disabled state ..... */
 
 menulist[disabled="true"],

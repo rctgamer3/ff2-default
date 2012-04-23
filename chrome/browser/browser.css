@@ -2887,6 +2887,10 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin: 0;
 }
 
+#devtools-sidebar-box {
+  background-color: -moz-Field;
+}
+
 #inspector-inspect-toolbutton:not([checked]):hover:active,
 #inspector-tools > toolbarbutton:not([checked]):hover:active,
 #devtools-sidebar-toolbar > toolbarbutton:not([checked]):hover:active {
@@ -2939,21 +2943,29 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 /* Highlighter - Node Infobar - text */
 
+html|*#highlighter-nodeinfobar-tagname,
 #highlighter-nodeinfobar-tagname {
   color: white;
 }
 
+html|*#highlighter-nodeinfobar-id,
 #highlighter-nodeinfobar-id {
   color: hsl(90, 79%, 52%);
 }
 
+html|*#highlighter-nodeinfobar-classes,
 .highlighter-nodeinfobar-class {
   color: hsl(200, 100%, 65%);
+}
+
+html|*#highlighter-nodeinfobar-pseudo-classes {
+  color: hsl(20, 100%, 70%);
 }
 
 /* Highlighter - Node Infobar - box & arrow */
 
 #highlighter-nodeinfobar {
+  color: hsl(200, 100%, 65%);
   border: 1px solid hsla(210, 19%, 63%, .5);
   border-radius: 3px;
   padding: 8px 16px;
@@ -3026,9 +3038,15 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin: -1px 0;
 }
 
+#inspector-breadcrumbs > .scrollbutton-up,
+#inspector-breadcrumbs > .scrollbutton-down {
+  -moz-appearance: none;
+}
+
 .inspector-breadcrumbs-button {
   -moz-appearance: none;
   background-color: transparent;
+  border-style: solid;
   border-width: 2px 13px;
   outline: none;
   color: hsl(210,30%,85%);
@@ -3048,9 +3066,17 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   color: hsl(200,100%,70%);
 }
 
+.inspector-breadcrumbs-button[checked] > .inspector-breadcrumbs-pseudo-classes {
+  color: hsl(20, 100%, 70%);
+}
+
 .inspector-breadcrumbs-id,
 .inspector-breadcrumbs-classes {
   color: #8d99a6;
+}
+
+.inspector-breadcrumbs-pseudo-classes {
+  color: hsl(20, 100%, 85%);
 }
 
 /* Highlighter toolbar - breadcrumbs - LTR */
@@ -3195,6 +3221,18 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .inspector-breadcrumbs-button:last-of-type[checked]:hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected-pressed.png") 2 13 2 13 stretch;
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-selected-pressed.png") 2 13 2 13 fill stretch;
+}
+
+/* Highlighter toolbar - HTML Tree */
+
+#inspector-tree-splitter {
+  -moz-appearance: none;
+  border-top: 1px solid black;
+  border-bottom-width: 0;
+  min-height: 3px;
+  height: 3px;
+  margin-bottom: -3px;
+  position: relative;
 }
 
 @media not all and (-moz-windows-classic) {

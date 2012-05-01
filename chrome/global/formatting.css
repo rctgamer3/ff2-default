@@ -2,14 +2,13 @@
 
 /* inset areas */
 
-.inset
-  {
-    border-left           : 1px solid ThreeDShadow;
-    border-top            : 1px solid ThreeDShadow;
-    border-right          : 1px solid ThreeDHighlight;
-    border-bottom         : 1px solid ThreeDHighlight;
-    margin                : 0px 5px 5px 5px;
-  }
+.inset {
+  border-left: 1px solid ThreeDShadow;
+  border-top: 1px solid ThreeDShadow;
+  border-right: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDHighlight;
+  margin: 0px 5px 5px 5px;
+}
   
 .box-inset {
   margin: 2px 4px;
@@ -20,214 +19,180 @@
   -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
   background-color: -moz-Field;
   color: -moz-FieldText;
-}  
-  
+}
+
 /* formatting */
-.groove-top
-  {
-    border-top            : 2px groove ThreeDFace;  
-  }
-  
-.groove-right
-  {
-    border-right          : 2px groove ThreeDFace;
-  }
-  
-.groove-left
-  {
-    border-left           : 2px groove ThreeDFace;
-  }
-  
-.groove-bottom
-  {
-    border-bottom         : 2px groove ThreeDFace;
-  }
-  
-.outset
-  {
-    border-left           : 1px solid ThreeDHighlight;
-    border-top            : 1px solid ThreeDHighlight;
-    border-right          : 1px solid ThreeDShadow;
-    border-bottom         : 1px solid ThreeDShadow;
-  }
-  
-.outset-top-bottom
-  {
-    border-top            : 1px solid ThreeDHighlight;
-    border-bottom         : 1px solid ThreeDShadow;
-  }   
+.groove-top {
+  border-top: 2px groove ThreeDFace;
+}
+
+.groove-right {
+  border-right: 2px groove ThreeDFace;
+}
+
+.groove-left {
+  border-left: 2px groove ThreeDFace;
+}
+
+.groove-bottom {
+  border-bottom: 2px groove ThreeDFace;
+}
+
+.outset {
+  border-left: 1px solid ThreeDHighlight;
+  border-top: 1px solid ThreeDHighlight;
+  border-right: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+.outset-top-bottom {
+  border-top: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDShadow;
+}
 
 
-  
+
 /** separator rules **/
 /* standard separators */
-  separator, separator[orient="horizontal"] 
-    {
-      height: 1.5em;
-    }
-  
-  separator[orient="vertical"] 
-    {
-      width: 1.5em;
-    }
+separator, separator[orient="horizontal"] {
+  height: 1.5em;
+}
+
+separator[orient="vertical"] {
+  width: 1.5em;
+}
 
 /* thinner separators (50% size) */
-  separator.thin, separator.thin[orient="horizontal"] 
-    {
-      height: 0.5em;
-    }
-  
-  separator.thin[orient="vertical"] 
-    {
-      width: 0.5em;
-    }
+separator.thin, separator.thin[orient="horizontal"] {
+  height: 0.5em;
+}
+separator.thin[orient="vertical"] {
+  width: 0.5em;
+}
 
 /* groove separators (50% size) */
-  separator.groove,
-  separator.groove[orient="horizontal"] 
-    {
-      border-top: 1px solid ThreeDShadow;
-      border-bottom: 1px solid ThreeDHighlight;
-      height: 0px;
-      margin-top: 0.4em;
-      margin-bottom: 0.4em;
-    }
-  
-  separator.groove[orient="vertical"] 
-    {
-      border-left: 1px solid ThreeDShadow;
-      border-right: 1px solid ThreeDHighlight;
-      -moz-margin-start: 0.4em;
-      -moz-margin-end: 0.4em;
-    }
-  
-/* groove separators (0 padding, for dividing effects) */  
-  separator.groove-thin 
-    {
-      border-top: 1px solid ThreeDShadow;
-      border-bottom: 1px solid ThreeDHighlight;
-      height: 0px;
-    }
-  
-  separator[orient="vertical"].groove-thin 
-    {
-      border-left: 1px solid ThreeDShadow;
-      border-right: 1px solid ThreeDHighlight;
-    }
+separator.groove,
+separator.groove[orient="horizontal"] {
+  border-top: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDHighlight;
+  height: 0;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
 
+separator.groove[orient="vertical"] {
+  border-left: 1px solid ThreeDShadow;
+  border-right: 1px solid ThreeDHighlight;
+  -moz-margin-start: 0.4em;
+  -moz-margin-end: 0.4em;
+}
+
+/* groove separators (0 padding, for dividing effects) */  
+  separator.groove-thin {
+  border-top: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDHighlight;
+  height: 0px;
+}
+
+separator[orient="vertical"].groove-thin {
+  border-left: 1px solid ThreeDShadow;
+  border-right: 1px solid ThreeDHighlight;
+}
 /** text formatting rules **/
 /* label (with margins) */
 
 /** Reduced Margin for some UI **/
-  .small-margin
-    {
-      margin              : 1px 2px 1px 2px;
-    }
-    
-  .plain 
-    {
-      margin: 0px !important;
-      border: none;
-      padding: 0px;
-    }
+.small-margin {
+  margin: 1px 2px;
+}
 
-  label[disabled="true"] 
-    {
-      color                 : GrayText;
-    }    
+.plain {
 
-  description, label
-    {
-      cursor              : default;
-    }
-    
-  description
-    {
-      margin              : 1px 5px 4px 5px;
-    }
+  margin: 0 !important;
+  border: none;
+  padding: 0;
+}
 
-  label
-    {
-      margin-top: 1px;
-      margin-bottom: 2px;
-      -moz-margin-start: 6px;
-      -moz-margin-end: 5px;
-    }
+description,
+label {
+  cursor: default;
+}
 
-  .header 
-    {
-      font-weight         : bold;
-    }
+description {
+  margin: 1px 5px 4px 5px;
+}
 
-  .larger-text 
-    {
-      font-size           : larger;
-    }
+label[disabled="true"] {
+  color: GrayText;
+}
 
-  .smaller-text 
-    {
-      font-size           : smaller;
-    }
-   
-  .monospace
-    {
-      font-family         : monospace;
-    }
-    
-  .indent
-    {
-      -moz-margin-start         : 23px;
-    }
+label {
+  margin-top: 1px;
+  margin-bottom: 2px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: 5px;
+}
 
-  .box-padded
-    {
-      padding             : 5px;
-    }    
+.header {
+  font-weight: bold;
+}
 
-  .spaced
-    {
-      margin              : 3px 5px 4px 5px;
-    }    
+.larger-text {
+  font-size: larger;
+}
 
-  .wizard-box
-    {
-      padding             : 20px 44px 10px 44px;
-    }    
+.smaller-text {
+  font-size: smaller;
+}
 
-  .caption-text
-    {
-      margin-top: 0px !important;
-      margin-bottom: 0px !important;
-      -moz-margin-start: 1px !important;
-      -moz-margin-end: 2px !important;
-    }
+.monospace {
+  font-family: monospace;
+}
+
+.indent {
+  -moz-margin-start: 23px;
+}
+
+.box-padded {
+  padding: 5px;
+}
+
+.spaced {
+  margin: 3px 5px 4px;
+}
+
+.wizard-box {
+  padding: 20px 44px 10px;
+}
+
+.caption-text {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  -moz-margin-start: 1px !important;
+  -moz-margin-end: 2px !important;
+}
 
 
 /* class for text with a 'link' appearance */
-  .text-link
-    {
-      color                 : blue;
-      text-decoration       : underline;
-      border                : 1px solid transparent;
-    }
-  
-  .text-link:focus
-    {
-      color                 : red;
-      border                : 1px dotted -moz-DialogText;
-    }
+.text-link {
+  color: blue;
+  text-decoration: underline;
+  border: 1px solid transparent;
+}
 
-  .text-link:hover
-    {
-      cursor                : pointer;
-    } 
-  
-  .text-link:hover:active
-    {
-      color                 : red;
-    } 
+.text-link:-moz-focusring {
+  color: red;
+  border: 1px dotted -moz-DialogText;
+}
 
-  .text-link[visited="true"] 
-    {
-      color                 : purple;
-    }
+.text-link:hover {
+  cursor: pointer;
+} 
+  
+.text-link:hover:active {
+  color: red;
+}
+
+.text-link[visited="true"] {
+  color: purple;
+}

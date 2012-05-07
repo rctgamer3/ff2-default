@@ -3055,7 +3055,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   border-width: 2px 13px;
   outline: none;
   color: hsl(210,30%,85%);
-  max-width: 85px;
+  width: 85px; /* Can't use max-width. See bug 723132 */
   /* The content of the button can be larger than the button */
   overflow: hidden;
   min-height: 25px;

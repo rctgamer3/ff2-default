@@ -3230,6 +3230,26 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 
 /* Highlighter toolbar - HTML Tree */
 
+#inspector-treepanel-toolbutton {
+  list-style-image: url("chrome://browser/skin/devtools/treepanel-button.png");
+  -moz-margin-end: 0;
+  -moz-image-region: rect(0px 18px 16px 0px);
+}
+
+#inspector-treepanel-toolbutton[checked] {
+  -moz-image-region: rect(0px 36px 16px 18px);
+}
+
+#inspector-breadcrumbs > .scrollbutton-down:-moz-locale-dir(rtl),
+#inspector-treepanel-toolbutton:-moz-locale-dir(ltr) {
+  border-radius: 3px 0 0 3px;
+}
+
+#inspector-breadcrumbs > .scrollbutton-down:-moz-locale-dir(ltr),
+#inspector-treepanel-toolbutton:-moz-locale-dir(rtl) {
+  border-radius: 0 3px 3px 0;
+}
+
 #inspector-tree-splitter {
   -moz-appearance: none;
   border-top: 1px solid black;

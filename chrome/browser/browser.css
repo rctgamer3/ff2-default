@@ -2087,6 +2087,12 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
   height: 32px;
 }
 
+.popup-notification-icon[popupid="click-to-play-plugins"] {
+  list-style-image: url(chrome://mozapps/skin/plugins/pluginGeneric.png);
+  width: 32px;
+  height: 32px;
+}
+
 .addon-progress-description {
   width: 350px;
   max-width: 350px;
@@ -2196,6 +2202,10 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
 
 #webapps-notification-icon {
   list-style-image: url(chrome://browser/skin/webapps-16.png);
+}
+
+#plugins-notification-icon {
+  list-style-image: url(chrome://mozapps/skin/plugins/pluginGeneric-16.png);
 }
 
 #identity-popup-container {

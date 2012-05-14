@@ -1786,6 +1786,21 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   -moz-border-bottom-colors: #000000;
 }
 
+/* rules for menupopup drop indicators */
+.menupopup-drop-indicator-bar {
+  position: relative;
+  /* these two margins must together compensate the indicator's height */
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.menupopup-drop-indicator {
+  list-style-image: none;
+  height: 2px;
+  -moz-margin-end: -4em;
+  background-color: Highlight;
+}
+
 /* ::::: Identity Indicator Styling ::::: */
 
 /* Location bar visuals */

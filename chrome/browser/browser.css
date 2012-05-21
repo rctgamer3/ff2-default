@@ -2710,6 +2710,12 @@ menupopup:-moz-locale-dir(rtl) > .unified-nav-forward[_moz-menuactive] {
 
 richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
   list-style-image: url("chrome://browser/skin/actionicon-tab.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+  padding: 0 3px;
+}
+
+richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-box > .ac-action-icon {
+  -moz-image-region: rect(16px, 16px, 32px, 0);
 }
 
 /* notification popup bg, doesn't display properly on

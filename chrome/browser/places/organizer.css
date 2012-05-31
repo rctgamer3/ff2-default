@@ -1,20 +1,19 @@
-
 /* Toolbar */
 #placesToolbar {
   border: none;
   min-height: 36px;
 }
 
-/* back & forward buttons */
-#back-button, #forward-button {
+#back-button,
+#forward-button {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
   -moz-appearance: none;
   padding: 0;
   border: none;
 }
 
-#placesToolbar > toolbarbutton > image,
-#placesToolbar > toolbarbutton > label {
+#placesToolbar > toolbarbutton > .toolbarbutton-icon,
+#placesToolbar > toolbarbutton > .toolbarbutton-text {
   margin: 0;
   padding: 0;
 }
@@ -25,16 +24,16 @@
   -moz-image-region: rect(0px, 24px, 24px, 0px);
 }
 #back-button:not([disabled="true"]):hover,
-#forward-button:not([disabled="true"]):hover:-moz-locale-dir(rtl){
- -moz-image-region: rect(24px, 24px, 48px, 0px);
+#forward-button:not([disabled="true"]):hover:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(24px, 24px, 48px, 0px);
 }
 #back-button[disabled="true"],
 #forward-button:-moz-locale-dir(rtl)[disabled="true"] {
- -moz-image-region: rect(48px, 24px, 72px, 0px) !important;
+  -moz-image-region: rect(48px, 24px, 72px, 0px) !important;
 }
 #back-button:not([disabled="true"]):hover:active,
-#forward-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl){
- -moz-image-region: rect(96px, 24px, 120px, 0px);
+#forward-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(96px, 24px, 120px, 0px);
 }
 
 #forward-button,
@@ -43,15 +42,15 @@
   -moz-image-region: rect(0px, 48px, 24px, 24px);
 }
 #forward-button:not([disabled="true"]):hover,
-#back-button:not([disabled="true"]):hover:-moz-locale-dir(rtl){
+#back-button:not([disabled="true"]):hover:-moz-locale-dir(rtl) {
   -moz-image-region: rect(24px, 48px, 48px, 24px);
 }
 #forward-button[disabled="true"],
 #back-button:-moz-locale-dir(rtl)[disabled="true"] {
- -moz-image-region: rect(48px, 48px, 72px, 24px) !important;
+  -moz-image-region: rect(48px, 48px, 72px, 24px) !important;
 }
 #forward-button:not([disabled="true"]):hover:active,
-#back-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl){
+#back-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl) {
   -moz-image-region: rect(96px, 48px, 120px, 24px);
 }
 
@@ -92,19 +91,38 @@
   background-position: left center;
 }
 
+/* organize, view and maintenance buttons icons */
+#organizeButton, 
+#viewMenu, 
+#maintenanceButton {
+  list-style-image: url("chrome://browser/skin/places/libraryToolbar.png");
+}
+
 /* organize button */
 #organizeButton {
-  list-style-image: url("chrome://browser/skin/places/organize.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#organizeButton:hover,
+#organizeButton[open="true"] {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
 }
 
 /* view button */
 #viewMenu {
-  list-style-image: url("chrome://browser/skin/places/view.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+#viewMenu:hover,
+#viewMenu[open="true"] {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
 /* maintenance button */
 #maintenanceButton {
-  list-style-image: url("chrome://browser/skin/places/importAndBackup.png");
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+#maintenanceButton:hover,
+#maintenanceButton[open="true"] {
+  -moz-image-region: rect(16px, 48px, 32px, 32px);
 }
 
 /* Root View */
@@ -134,7 +152,7 @@
   margin: 6px -4px 0px 2px;
 }
 
-#infoPaneBox {
+#detailsDeck {
   border-top: 1px solid ThreeDShadow;
   padding: 5px;
 }
@@ -189,7 +207,6 @@
   padding: 2px 2px 3px 4px;
 }
 
-
 #organizerScopeBar {
   -moz-appearance: toolbox;
   padding: 2px 0;
@@ -204,8 +221,8 @@
   margin: 0 1px;
 }
 
-#organizerScopeBar > toolbarbutton > label,
-#organizerScopeBar > toolbarbutton > image {
+#organizerScopeBar > toolbarbutton > .toolbarbutton-text,
+#organizerScopeBar > toolbarbutton > .toolbarbutton-icon {
   padding: 0;
   margin: 0;
 }

@@ -10,13 +10,13 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp-end.gif");
 }
 
-.left-arrow,
-.right-arrow:-moz-locale-dir(rtl) {
+.previous-arrow,
+.next-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-lft-sharp.gif");
 }
 
-.right-arrow,
-.left-arrow:-moz-locale-dir(rtl) {
+.next-arrow,
+.previous-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp.gif");
 }
 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -6,7 +6,7 @@
     <!-- properties -->
     <em:id>{fd2f951f-77ea-4938-9493-0c892c027a13}</em:id>
     <em:name>Firefox 2, the theme, reloaded</em:name>
-    <em:version>1.0.1</em:version>
+    <em:version>1.0.2b1</em:version>
     <em:type>4</em:type>
     <em:targetApplication>
       <Description>

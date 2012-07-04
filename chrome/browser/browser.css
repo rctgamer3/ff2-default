@@ -2807,6 +2807,11 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   background-color: transparent;
 }
 
+/* disable the 5px end padding */
+.highlighter-nodeinfobar-button > .toolbarbutton-icon {
+  -moz-margin-end: 0px;
+}
+
 #highlighter-nodeinfobar-inspectbutton {
   -moz-border-end-width: 1px;
   box-shadow: 1px 0 0 hsla(210,16%,76%,.15), -1px 0 0 hsla(210,16%,76%,.15) inset;
@@ -2817,6 +2822,14 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 
 #highlighter-nodeinfobar-inspectbutton:-moz-locale-dir(rtl) {
   box-shadow: -1px 0 0 hsla(210,16%,76%,.15), 1px 0 0 hsla(210,16%,76%,.15) inset;
+}
+
+#highlighter-nodeinfobar-inspectbutton[checked=true] {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-image: none;
+  -moz-border-end-color: hsla(210,8%,5%,.45) !important;
+  -moz-padding-start: 2px !important;
 }
 
 #highlighter-nodeinfobar-inspectbutton:active:hover,

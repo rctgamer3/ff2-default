@@ -2774,6 +2774,10 @@ html|*#highlighter-nodeinfobar-tagname,
   color: white;
 }
 
+#highlighter-nodeinfobar label#highlighter-nodeinfobar-tagname {
+  padding: 4px 0 4px 8px;
+}
+
 html|*#highlighter-nodeinfobar-id,
 #highlighter-nodeinfobar-id {
   color: hsl(90, 79%, 52%);
@@ -2782,6 +2786,10 @@ html|*#highlighter-nodeinfobar-id,
 html|*#highlighter-nodeinfobar-classes,
 .highlighter-nodeinfobar-class {
   color: hsl(200, 100%, 65%);
+}
+
+#highlighter-nodeinfobar hbox#highlighter-nodeinfobar-classes {
+  padding: 4px 8px 4px 0;
 }
 
 html|*#highlighter-nodeinfobar-pseudo-classes {

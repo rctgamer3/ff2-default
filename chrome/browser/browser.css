@@ -3458,21 +3458,27 @@ stack[anonid=browserStack][responsivemode] {
 }
 
 /* Adblock Plus close button */
+#abp-bottombar-close,
+.abp-contributebutton-close,
 #abp-sidebar-close {
   list-style-image: url("chrome://global/skin/icons/close.png") !important;
-  -moz-image-region: rect(0px, 64px, 16px, 48px) !important;
+  -moz-image-region: rect(0px 64px 16px 48px) !important;
   -moz-appearance: none !important;
   padding: 0px !important;
   border: none !important;
   -moz-user-focus: ignore !important;
 }
 
+#abp-bottombar-close:hover,
+.abp-contributebutton-close:hover,
 #abp-sidebar-close:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px) !important;
+  -moz-image-region: rect(0px 32px 16px 16px) !important;
 }
 
+#abp-bottombar-close:hover:active,
+.abp-contributebutton-close:hover:active,
 #abp-sidebar-close:hover:active {
-  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+  -moz-image-region: rect(0px 48px 16px 32px) !important;
 }
 
 /* Status4Evar downloads button */

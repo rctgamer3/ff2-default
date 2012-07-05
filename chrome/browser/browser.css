@@ -23,6 +23,16 @@
   border-top: none;
 }
 
+/* #go-button position fixes */
+#navigator-toolbox[customizing] #urlbar {
+margin-right: 26px !important;
+}
+
+#navigator-toolbox[customizing] #go-button {
+  margin-left: 2px !important;
+  margin-right: -22px !important;
+}
+
 /* negative margin for the border */
 toolbar[type="menubar"][autohide="true"][inactive="true"]:not([customizing="true"]) {
 margin-bottom: -1px;
@@ -1086,6 +1096,16 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 #urlbar[pageproxystate="invalid"] > #urlbar-icons > :not(#go-button),
 #urlbar[pageproxystate="valid"] > #urlbar-icons > #go-button {
   visibility: collapse;
+}
+
+/* #go-button position fixes */
+#urlbar[readonly="true"] {
+  margin-right: 26px !important;
+}
+#urlbar[readonly="true"] #go-button {
+
+  margin-left: 2px !important;
+  margin-right: -22px !important;
 }
 
 #urlbar-search-splitter {

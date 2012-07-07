@@ -3560,4 +3560,10 @@ toolbar[iconsize="small"] #status4evar-download-button[disabled="true"] {
 toolbar[iconsize="small"] #status4evar-download-button:not([disabled="true"]):hover:active {
   -moz-image-region: rect(64px 96px 80px 80px) !important;
 }
+
+/* S4E urlbar progressmeter fix */
+#urlbar-container:not([combined]) #urlbar-progress-alt {
+margin-right: 0 !important;
+}
+
 /* end of Extension styles */

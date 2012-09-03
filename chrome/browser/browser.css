@@ -1163,14 +1163,14 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   background: rgb(91, 150, 223) !important;
 }
 
-#identity-box.verifiedDomain > hbox {
+#identity-box.verifiedDomain {
   color: #ffffff;
-  background-color: rgba(91, 150, 223, 1);
+  background-color: rgba(91, 150, 223, 1) !important;
 }
 
-#identity-box.verifiedIdentity > hbox {
+#identity-box.verifiedIdentity {
   color: #ffffff;
-  background-color: rgba(87, 196, 51, 1);
+  background-color: rgba(87, 196, 51, 1) !important;
 }
 
 #identity-box:focus {
@@ -1227,7 +1227,8 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   cursor: pointer !important;
 }
 
-#page-proxy-stack {
+#page-proxy-stack,
+#identity-box > #page-proxy-favicon {
   margin: 2px;
 }
 
@@ -1242,6 +1243,22 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 #page-proxy-favicon[pageproxystate="invalid"] {
   cursor: default;
   -moz-image-region: rect(32px, 16px, 48px, 0px) !important;
+}
+
+#identity-box.verifiedDomain #page-proxy-favicon[pageproxystate="valid"]:not([src]),
+#identity-box.verifiedIdentity #page-proxy-favicon[pageproxystate="valid"]:not([src]){
+  list-style-image: url(chrome://browser/skin/identity-icons-https.png) !important;
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#identity-box.verifiedDomain  #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover,
+#identity-box.verifiedIdentity #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+#identity-box.verifiedDomain #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover:active,
+#identity-box.verifiedIdentity #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 /* ::::: 16px primary toolbar buttons ::::: */

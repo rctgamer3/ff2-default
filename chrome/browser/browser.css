@@ -2692,6 +2692,17 @@ statusbarpanel#statusbar-display {
   outline-color: white;
 }
 
+#highlighter-outline {
+box-shadow: 0 0 0 1px black;
+outline: 1px dashed white;
+outline-offset: -1px;
+}
+
+#highlighter-outline[locked]  {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+  outline-color: rgba(255,255,255,0.7);
+}
+
 /* Highlighter toolbar */
 
 #inspector-inspect-toolbutton {

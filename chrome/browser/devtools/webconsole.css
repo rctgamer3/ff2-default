@@ -1,41 +1,6 @@
-/* ***** BEGIN LICENSE BLOCK *****
- * Version: MPL 1.1/GPL 2.0/LGPL 2.1
- *
- * The contents of this file are subject to the Mozilla Public License Version
- * 1.1 (the "License"); you may not use this file except in compliance with
- * the License. You may obtain a copy of the License at
- * http://www.mozilla.org/MPL/
- *
- * Software distributed under the License is distributed on an "AS IS" basis,
- * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
- * for the specific language governing rights and limitations under the
- * License.
- *
- * The Original Code is DevTools code
- *
- * The Initial Developer of the Original Code is
- *   Mozilla Corporation
- * Portions created by the Initial Developer are Copyright (C) 2010
- * the Initial Developer. All Rights Reserved.
- *
- * Contributor(s):
- *   David Dahl <ddahl@mozilla.com>
- *   Patrick Walton <pcwalton@mozilla.com>
- *   Rob Campbell <rcampbell@mozilla.com>
- *
- * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or
- * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
- * in which case the provisions of the GPL or the LGPL are applicable instead
- * of those above. If you wish to allow use of your version of this file only
- * under the terms of either the GPL or the LGPL, and not to allow others to
- * use your version of this file under the terms of the MPL, indicate your
- * decision by deleting the provisions above and replace them with the notice
- * and other provisions required by the GPL or the LGPL. If you do not delete
- * the provisions above, a recipient may use your version of this file under
- * the terms of any one of the MPL, the GPL or the LGPL.
- *
- * ***** END LICENSE BLOCK ***** */
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 .hud-box {
   border-bottom: 1px solid #aaa;
@@ -44,6 +9,7 @@
 
 .hud-box.animated {
   -moz-transition: height 100ms;
+  transition: height 100ms;
 }
 
 .hud-splitter {
@@ -66,7 +32,7 @@
   color: GrayText;
   margin-top: 0;
   margin-bottom: 0;
-  font: 12px Consolas, Lucida Console, monospace;
+  font-family: Consolas, Lucida Console, monospace;
 }
 
 .hud-msg-node {
@@ -91,7 +57,7 @@
   -moz-margin-start: 3px;
   -moz-margin-end: 6px;
   white-space: pre-wrap;
-  font: 12px Consolas, Lucida Console, monospace;
+  font-family: Consolas, Lucida Console, monospace;
 }
 
 .webconsole-msg-body-piece {
@@ -111,7 +77,7 @@
   background-color: red;
   border-radius: 40px;
   font: message-box;
-  font-size: 10px;
+  font-size: 0.9em;
   font-weight: 600;
 }
 
@@ -136,7 +102,7 @@
 
 .jsterm-input-node,
 .jsterm-complete-node {
-  font: 12px Consolas, Lucida Console, monospace;
+  font-family: Consolas, Lucida Console, monospace;
 }
 
 .hud-output-node {
@@ -151,29 +117,27 @@
   display: none;
 }
 
-.webconsole-clear-console-button > .toolbarbutton-icon {
-  display: none;
+/* WebConsole colored drops */
+
+.webconsole-filter-button[checked=true] {
+  color: white !important;
 }
 
-.webconsole-filter-button > .toolbarbutton-menubutton-button {
-  -moz-box-orient: horizontal;
-  list-style-image: url("chrome://browser/skin/devtools/webconsole.png");
-}
-
-.webconsole-filter-button > .toolbarbutton-menubutton-button,
-.webconsole-filter-button > .toolbarbutton-menubutton-button:hover:active {
-  -moz-padding-start: 6px;
-  -moz-padding-end: 3px;
-}
-
-.webconsole-filter-button {
-  -moz-margin-start: 3px;
-  -moz-margin-end: 3px;
+.webconsole-filter-button > .toolbarbutton-menubutton-button:before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+  border-width: 1px;
+  border-style: solid;
 }
 
 /* Network styles */
-.webconsole-filter-button[category="net"] {
-  -moz-image-region: rect(0, 8px, 8px, 0);
+.webconsole-filter-button[category="net"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#444444, #000000);
+  border-color: #777;
 }
 
 .webconsole-msg-network > .webconsole-msg-icon-container {
@@ -185,8 +149,9 @@
 }
 
 /* CSS styles */
-.webconsole-filter-button[category="css"] {
-  -moz-image-region: rect(8px, 8px, 16px, 0);
+.webconsole-filter-button[category="css"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#2DC3F3, #00B6F0);
+  border-color: #1BA2CC;
 }
 
 .webconsole-msg-cssparser > .webconsole-msg-icon-container {
@@ -202,8 +167,9 @@
 }
 
 /* JS styles */
-.webconsole-filter-button[category="js"] {
-  -moz-image-region: rect(16px, 8px, 24px, 0);
+.webconsole-filter-button[category="js"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#FCB142, #FB9500);
+  border-color: #E98A00;
 }
 
 .webconsole-msg-exception > .webconsole-msg-icon-container {
@@ -219,8 +185,9 @@
 }
 
 /* Web Developer styles */
-.webconsole-filter-button[category="logging"] {
-  -moz-image-region: rect(24px, 8px, 32px, 0);
+.webconsole-filter-button[category="logging"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#B9B9B9, #AAAAAA);
+  border-color: #929292;
 }
 
 .webconsole-msg-console > .webconsole-msg-icon-container {
@@ -238,6 +205,15 @@
 
 .webconsole-msg-console.webconsole-msg-info {
   -moz-image-region: rect(24px, 32px, 32px, 24px);
+}
+
+.webconsole-mixed-content {
+  color: #FF0000;
+}
+
+.webconsole-mixed-content-link {
+  color: #0000EE;
+  margin: 0;
 }
 
 /* Input and output styles */
@@ -342,4 +318,16 @@
   height: 100%;
   width: 100%;
   background-color: white;
+}
+
+
+/* Filter */
+
+/*
+ * This hardcoded width likely due to a toolkit Windows specific bug.
+ * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
+ */
+
+.hud-filter-box {
+  width: 200px;
 }

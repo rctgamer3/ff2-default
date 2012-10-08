@@ -51,10 +51,6 @@ window.dialog {
   -moz-padding-end: 10px;
 }
 
-[wait-cursor] {
-  cursor: wait !important;
-}
-
 /* ::::: alert icons :::::*/
 
 .message-icon,
@@ -257,7 +253,7 @@ separator[orient="vertical"].groove-thin {
 }
 
 .plain {
-
+  -moz-appearance: none;
   margin: 0 !important;
   border: none;
   padding: 0;

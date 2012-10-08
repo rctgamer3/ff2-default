@@ -1916,6 +1916,11 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   opacity: 0.6;
 }
 
+/* fix for new OSX tabbox styles */
+.tabbrowser-tabbox {
+  margin: 0;
+}
+
 .tab-icon-image {
   width: 16px;
   height: 16px;
@@ -1924,10 +1929,6 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   margin-top: 1px;
   -moz-margin-start: 7px;
   -moz-margin-end: 3px;
-}
-
-tabpanels {
-  -moz-appearance: none;
 }
 
 /* tabbrowser-tab focus ring */

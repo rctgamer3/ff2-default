@@ -3413,6 +3413,9 @@ stack[anonid=browserStack][responsivemode] {
   color: hsl(208,100%,60%) !important;
   background: rgba(0,0,0,.4);
   text-shadow: 0 0 6px hsl(208,100%,60%);
+  /* checked fix */
+  margin: 0 5px !important;
+  padding: 0 10px !important;
 }
 
 #developer-toolbar-webconsole {

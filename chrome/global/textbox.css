@@ -61,6 +61,12 @@ textbox[disabled="true"] {
   color: GrayText;
 }
 
+/* ..... focused state ..... */
+
+textbox[focused="true"] html|*.textbox-input:-moz-placeholder {
+  color: transparent;
+}
+
 /* ::::: plain textbox ::::: */
 
 textbox.plain {

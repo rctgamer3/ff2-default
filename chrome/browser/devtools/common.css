@@ -44,7 +44,7 @@
 }
 
 .devtools-toolbarbutton:not([label]) {
-  min-width: 32px !important;
+  min-width: 32px;
 }
 
 .devtools-toolbarbutton:not([checked=true]):hover:active {

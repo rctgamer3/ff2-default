@@ -3665,4 +3665,10 @@ toolbar[iconsize="small"] #status4evar-download-button:not([disabled="true"]):ho
 margin-right: 0 !important;
 }
 
+/* Roboform BG fix */
+#rf-autosave-bar-top,
+#rf-autosave-bar-bottom {
+background: -moz-dialog !important;
+}
+
 /* end of Extension styles */

@@ -522,6 +522,10 @@ menuitem.bookmark-item {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
+.bookmark-item[container][livemark] .bookmark-item[visited] {
+  -moz-image-region: rect(36px, 16px, 52px, 0px);
+}
+
 .bookmark-item[container][query] {
   list-style-image: url("chrome://browser/skin/places/query.png");
   -moz-image-region: auto;

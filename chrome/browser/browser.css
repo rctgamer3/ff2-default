@@ -1730,6 +1730,51 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   display: -moz-box;
 }
 
+/* social recommending panel */
+
+#share-button {
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#socialUserPortrait {
+  width: 48px;
+  height: 48px;
+}
+
+#socialUserDisplayName,
+#socialUserPortrait {
+  cursor: pointer;
+}
+
+#socialUserDisplayName {
+  -moz-appearance: none;
+  border: none;
+  background-color: transparent;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+#socialUserDisplayName > .button-box {
+  -moz-padding-start: 0;
+  padding-top: 0;
+  border-top-width: 0;
+}
+
+#socialUserDisplayName:hover {
+  color: -moz-nativehyperlinktext;
+  text-decoration: underline;
+}
+
+#unsharePopupText {
+  height: 48px;
+}
+
+#unsharePopupBottomButtons {
+  margin-top: 1em;
+}
+
 /* star button */
 
 #star-button {
@@ -3456,6 +3501,269 @@ stack[anonid=browserStack][responsivemode],
   text-shadow: none;
   background-image: -moz-linear-gradient(top, #B4211B, #8A1915);
   border-radius: 1px;
+}
+
+/* Social toolbar item */
+
+#social-provider-button > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+#social-toolbar-item > .toolbarbutton-1 {
+  padding: 5px;
+}
+
+#social-provider-button .toolbarbutton-icon {
+padding-right: 5px !important;
+}
+
+.social-notification-icon-stack {
+  padding: 3px;
+  border: 1px solid transparent;
+  -moz-margin-end: 0px;
+  border: 1px solid transparent;
+}
+
+.social-notification-icon-stack.toolbarbutton-icon:hover {
+  border-color:  ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;
+}
+
+.social-notification-icon-stack:hover:active,
+.social-notification-icon-stack[open="true"] {
+  border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 2px;
+}
+
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1 {
+  padding: 6px 0;
+}
+
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:first-child {
+  -moz-padding-start: 5px;
+}
+
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:last-child {
+  -moz-padding-end: 5px;
+}
+
+.social-notification-icon-hbox {
+  pointer-events: none;
+  margin-top: -5px;
+  -moz-margin-end: -12px;
+}
+
+.social-notification-icon-label {
+  text-align: end;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 0 1px;
+  color: white;
+  background-color: rgb(240,61,37);
+  border: 1px solid rgb(216,55,34);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0,39,121,0.77);
+}
+
+.social-notification-icon-label[value=""] {
+  display: none;
+}
+
+.social-notification-icon-image {
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+/* social toolbar provider menu */
+.social-statusarea-popup {
+  margin-top: 0;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.social-statusarea-user {
+  -moz-appearance: none;
+  border-bottom: 1px solid rgb(221,221,221);
+  background-color: -moz-Dialog;
+  position: relative;
+  cursor: pointer;
+}
+
+.social-statusarea-user-portrait {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.social-statusarea-loggedInStatus {
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  color: -moz-nativehyperlinktext;
+  min-width: 0;
+  margin: 0 6px;
+  list-style-image: none;
+}
+
+.social-statusarea-user[_moz-menuactive] > vbox > .social-statusarea-loggedInStatus {
+  text-decoration: underline;
+}
+
+.social-panel > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+}
+
+.social-panel-frame {
+  border-radius: inherit;
+}
+
+.chat-status-icon {
+  max-height: 16px;
+  max-width: 16px;
+  padding: 0;
+}
+
+.chat-toolbarbutton {
+  -moz-appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.chat-toolbarbutton > .toolbarbutton-text {
+  display: none;
+}
+
+.chat-close-button {
+  list-style-image: url('chrome://browser/skin/social/chat-close.png');
+  -moz-image-region: rect(0, 14px, 14px, 0);
+}
+
+.chat-close-button:hover:active {
+  -moz-image-region: rect(14px, 14px, 28px, 0);
+}
+
+.chat-close-button:hover {
+  -moz-image-region: rect(28px, 14px, 42px, 0);
+}
+
+.chat-title {
+  font-weight: bold;
+  color: black;
+  text-shadow: none;
+  cursor: inherit;
+}
+
+.chat-titlebar {
+  background-color: #c4cfde;
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  height: 20px;
+  min-height: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  -moz-padding-start: 6px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.chat-titlebar[minimized="true"] {
+  border-bottom: none;
+}
+
+.chat-titlebar[selected] {
+  background-color: #dae3f0;
+}
+
+.chat-titlebar[activity] {
+  background-image: radial-gradient(ellipse closest-side at center, rgb(255,255,255), rgba(255,255,255,0));
+  background-repeat: no-repeat;
+  background-size: 100% 20px;
+  background-position: 0 -10px;
+}
+
+.chat-frame {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.chatbar-button {
+  /* XXX get a real image for this */
+  -moz-appearance: none;
+  list-style-image: url("chrome://browser/skin/social/social.png");
+  background-color: #c4cfde;
+  border: none;
+  margin: 0;
+  padding: 2px;
+  height: 21px;
+  width: 21px;
+  border-top: 1px solid #ccc;
+  -moz-border-end: 1px solid #ccc;
+}
+
+.chatbar-button > menupopup > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  width: auto;
+  height: auto;
+  max-height: 16px;
+  max-width: 16px;
+}
+
+.chatbar-button > .toolbarbutton-icon {
+  opacity: .6;
+  -moz-margin-end: 0;
+}
+.chatbar-button:hover > .toolbarbutton-icon,
+.chatbar-button[open="true"] > .toolbarbutton-icon {
+  opacity: 1;
+}
+
+.chatbar-button[open="true"] {
+  background-color: #dae3f0;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.6), 0 1px rgba(255,255,255,0.2);
+}
+
+.chatbar-button > .toolbarbutton-text,
+.chatbar-button > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+.chatbar-button[activity]:not([open="true"]) {
+  background-image: radial-gradient(circle farthest-corner at center 3px, rgb(255,255,255) 3%, rgba(186,221,251,0.75) 40%, rgba(127,179,255,0.5) 80%, rgba(127,179,255,0.25));
+}
+
+.chatbar-button > menupopup > menuitem[activity] {
+  font-weight: bold;
+}
+
+.chatbar-innerbox {
+  background: transparent;
+  margin: -285px 0 0;
+  overflow: hidden;
+}
+
+chatbar {
+  -moz-margin-end: 20px;
+}
+
+chatbox {
+  height: 285px;
+  width: 260px;
+  -moz-margin-start: 4px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-top-left-radius: 2.5px;
+  border-top-right-radius: 2.5px;
+}
+
+chatbox[minimized="true"] {
+  width: 160px;
+  height: 20px;
 }
 
 .click-to-play-plugins-notification-content {

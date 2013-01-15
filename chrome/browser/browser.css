@@ -2544,6 +2544,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://global/skin/icons/information-16.png);
 }
 
+#identity-notification-icon {
+  list-style-image: url(chrome://mozapps/skin/profile/profileicon.png);
+}
+
 #geo-notification-icon {
   list-style-image: url(chrome://browser/skin/Geolocation-16.png);
 }
@@ -2566,6 +2570,23 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 #plugins-notification-icon {
   list-style-image: url(chrome://mozapps/skin/plugins/pluginGeneric-16.png);
+}
+
+#blocked-plugins-notification-icon {
+  list-style-image: url(chrome://mozapps/skin/plugins/notifyPluginBlocked.png);
+}
+
+#blocked-plugins-notification-icon[showing] {
+  animation: pluginBlockedNotification 500ms ease 0s 5 alternate both;
+}
+
+@keyframes pluginBlockedNotification {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Popup Bounding Box */

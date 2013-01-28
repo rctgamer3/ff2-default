@@ -4126,4 +4126,10 @@ toolbar[iconsize="small"] #hidebookmarksbarButton {
   -moz-image-region: rect(0 16px 15px 0);
 }
 
+/* Qualys BrowserCheck -  Removes the (useless) empty statusbar item */
+
+#qbc-panel {
+  display: none
+}
+
 /* end of Extension styles */

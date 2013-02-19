@@ -150,6 +150,9 @@
   display: none;
 }
 
+.devtools-searchinput > .textbox-input-box > .textbox-input::-moz-placeholder {
+  color: hsl(208,10%,66%);
+}
 .devtools-searchinput > .textbox-input-box > .textbox-input:-moz-placeholder {
   color: hsl(208,10%,66%);
 }

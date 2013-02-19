@@ -1,4 +1,8 @@
-﻿body {
+﻿/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+body {
   font: message-box;
   color: rgba(0, 0, 0, 0.6);
   font-size: 13px;
@@ -471,6 +475,13 @@ input.name:focus {
   color: #555;
 }
 
+input.name::-moz-placeholder {
+  font-style: italic !important;
+  color: transparent;
+  background-image: url(chrome://browser/skin/tabview/edit-light.png);
+  background-repeat: no-repeat;
+  -moz-padding-start: 20px;
+}
 input.name:-moz-placeholder {
   font-style: italic !important;
   color: transparent;
@@ -479,6 +490,9 @@ input.name:-moz-placeholder {
   -moz-padding-start: 20px;
 }
 
+.title-container:hover input.name::-moz-placeholder {
+  color: #CCC;
+}
 .title-container:hover input.name:-moz-placeholder {
   color: #CCC;
 }

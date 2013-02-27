@@ -4107,6 +4107,13 @@ toolbar[iconsize="small"] #status4evar-download-button:not([disabled="true"]):ho
 margin-right: 0 !important;
 }
 
+/* S4E Secure site coloring */
+#urlbar[level="high"][pageproxystate="valid"] > .progress-stack,
+#urlbar[level="low"][pageproxystate="valid"] > .progress-stack {
+  background-color: #F5F6BE;
+  color: #000;
+}
+
 /* Roboform BG fix */
 #rf-autosave-bar-top,
 #rf-autosave-bar-bottom {

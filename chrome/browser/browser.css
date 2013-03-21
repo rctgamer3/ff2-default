@@ -1985,7 +1985,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   border: 1px dotted transparent;
 }
 
-.tabbrowser-tab:focus > .tab-text {
+.tabbrowser-tab:focus .tab-text {
   border: 1px dotted -moz-DialogText;
 }
 

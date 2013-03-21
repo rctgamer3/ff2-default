@@ -93,13 +93,13 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   margin: 0 0 2px;
 }
 
-@media all and (-moz-windows-classic) {
+@media (-moz-windows-classic) {
   #appmenu-button {
     margin-bottom: 1px;
   }
 }
 
-@media all and (-moz-windows-default-theme) {
+@media (-moz-windows-default-theme) {
   #main-window[sizemode="normal"] #appmenu-button {
     margin-bottom: 5px;
   }
@@ -232,7 +232,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   -moz-border-end: 1px solid ThreeDShadow;
 }
 
-@media all and (-moz-windows-default-theme) {
+@media (-moz-windows-default-theme) {
   #appmenu-popup {
     -moz-appearance: none;
     background: white;
@@ -360,7 +360,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   -moz-appearance: -moz-window-titlebar-maximized;
 }
 
-@media all and (-moz-windows-classic) {
+@media (-moz-windows-classic) {
   #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
     margin-top: 4px;
   }

@@ -111,45 +111,45 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 }
 
 #appmenu-button {
-  background-image: -moz-linear-gradient(rgb(247,182,82), rgb(215,98,10) 95%);
+  background-image: linear-gradient(rgb(247,182,82), rgb(215,98,10) 95%);
   border-color: rgba(83,42,6,.9);
   box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
               0 0 0 1px rgba(255,255,255,.25) inset;
 }
 #appmenu-button[label="Aurora"] {
-  background-image: -moz-linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%);
+  background-image: linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%);
   border-color: hsla(214,89%,21%,.9);
   box-shadow: 0 1px 0 hsla(205,100%,72%,.2) inset,
               0 0 2px 1px hsla(205,100%,72%,.25) inset;
 }
 #appmenu-button[label="Nightly"] {
-  background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%);
+  background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%);
   border-color: hsla(210,59%,13%,.9);
   box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
               0 0 2px 1px hsla(211,65%,85%,.15) inset;
 }
 #appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
-                    -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
+  background-image: radial-gradient(farthest-side at bottom, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
+                    radial-gradient(farthest-side at bottom, rgb(236,133,0), rgba(255,229,172,0)),
+                    linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
   border-color: rgba(83,42,6,.9);
   box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
               0 0 2px 1px rgba(250,234,169,.7) inset,
               0 -1px 0 rgba(250,234,169,.5) inset;
 }
 #appmenu-button[label="Aurora"]:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
-                    -moz-linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%);
+  background-image: radial-gradient(farthest-side at bottom, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
+                    radial-gradient(farthest-side at bottom, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
+                    linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%);
   border-color: hsla(214,89%,21%,.9);
   box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
               0 0 2px 1px hsla(205,100%,72%,.5) inset,
               0 -1px 0 hsla(205,100%,72%,.2) inset;
 }
 #appmenu-button[label="Nightly"]:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                    -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%);
+  background-image: radial-gradient(farthest-side at bottom, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
+                    radial-gradient(farthest-side at bottom, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
+                    linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%);
   border-color: hsla(210,59%,13%,.9);
   box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
               0 0 2px 1px hsla(210,48%,90%,.4) inset,
@@ -157,32 +157,32 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 }
 #appmenu-button:hover:active,
 #appmenu-button[open] {
-  background-image: -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
+  background-image: linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
   box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
               0 1px 1px rgba(0,0,0,.2) inset;
 }
 #appmenu-button[label="Aurora"]:hover:active,
 #appmenu-button[label="Aurora"][open] {
-  background-image: -moz-linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
+  background-image: linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
   box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
               0 1px 1px rgba(0,0,0,.2) inset;
 }
 #appmenu-button[label="Nightly"]:hover:active,
 #appmenu-button[label="Nightly"][open] {
-  background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+  background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
   box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
               0 1px 1px rgba(0,0,0,.2) inset;
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
-  background-image: -moz-linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
+  background-image: linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
   border-color: rgba(43,8,65,.9);
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
-                    -moz-linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+  background-image: radial-gradient(farthest-side at bottom, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
+                    radial-gradient(farthest-side at bottom, rgb(192,81,247), rgba(236,172,255,0)),
+                    linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
   border-color: rgba(43,8,65,.9);
   box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
               0 0 2px 1px rgba(240,193,255,.7) inset,
@@ -191,7 +191,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
 #main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
-  background-image: -moz-linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+  background-image: linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
 }
 
 #appmenu-button > .button-box {
@@ -269,7 +269,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
     -moz-appearance: none;
     margin-top: 3px;
     margin-bottom: 3px;
-    -moz-margin-start: -moz-calc(1.45em + 4px);
+    -moz-margin-start: calc(1.45em + 4px);
     padding: 0;
     border-top: 1px solid #d6e5f5;
     border-bottom: none;
@@ -278,8 +278,8 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   .appmenu-edit-button:not([disabled]):hover {
     border: 1px solid #b8d6fb;
     box-shadow: inset 0 0 1px white;
-    background: -moz-linear-gradient(#fafbfd, #ebf3fd);
-    -moz-transition: .2s ease-in;
+    background: linear-gradient(#fafbfd, #ebf3fd);
+    transition: .2s ease-in;
   }
 }
 
@@ -2527,7 +2527,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 #notification-popup-box:-moz-locale-dir(rtl),
 .notification-anchor-icon:-moz-locale-dir(rtl) {
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .notification-anchor-icon {
@@ -2659,7 +2659,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #addon-bar[customizing] > #status-bar {
   -moz-appearance: none;
   opacity: .5;
-  background-image: -moz-repeating-linear-gradient(-45deg,
+  background-image: repeating-linear-gradient(135deg,
                                                    rgba(255,255,255,.3), rgba(255,255,255,.3) 5px,
                                                    rgba(0,0,0,.3) 5px, rgba(0,0,0,.3) 10px);
 }
@@ -2702,7 +2702,7 @@ statusbarpanel#statusbar-display {
 .statuspanel-label {
   margin: 0;
   padding: 2px 4px;
-  background: -moz-linear-gradient(white, #ddd);
+  background: linear-gradient(#fff, #ddd);
   border: 1px none #ccc;
   border-top-style: solid;
   color: #333;
@@ -2885,7 +2885,7 @@ outline-offset: -1px;
   color: hsl(200, 100%, 65%);
   border: 1px solid hsla(210, 19%, 63%, .5);
   border-radius: 3px;
-  background: -moz-linear-gradient(hsl(209, 18%, 30%), hsl(210, 24%, 16%)) no-repeat padding-box;
+  background: linear-gradient(hsl(209, 18%, 30%), hsl(210, 24%, 16%)) no-repeat padding-box;
 }
 
 /* Highlighter - Node Infobar - text */
@@ -2980,8 +2980,8 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 .highlighter-nodeinfobar-arrow {
   width: 14px;
   height: 14px;
-  -moz-margin-start: -moz-calc(50% - 7px);
-  -moz-transform: rotate(-45deg);
+  -moz-margin-start: calc(50% - 7px);
+  transform: rotate(-45deg);
   border: 1px solid transparent;
   background-clip: padding-box;
   background-repeat: no-repeat;
@@ -2992,7 +2992,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   margin-top: 8px;
   border-right-color: hsla(210, 19%, 63%, .5);
   border-top-color: hsla(210, 19%, 63%, .5);
-  background-image: -moz-linear-gradient(bottom left, transparent 50%, hsl(209, 18%, 30%) 50%);
+  background-image: linear-gradient(to top right, transparent 50%, hsl(209, 18%, 30%) 50%);
 }
 
 #highlighter-nodeinfobar-arrow-bottom {
@@ -3000,7 +3000,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   margin-bottom: 8px;
   border-left-color: hsla(210, 19%, 63%, .5);
   border-bottom-color: hsla(210, 19%, 63%, .5);
-  background-image: -moz-linear-gradient(top right, transparent 50%, hsl(210, 24%, 16%) 50%);
+  background-image: linear-gradient(to bottom left, transparent 50%, hsl(210, 24%, 16%) 50%);
 }
 
 #highlighter-nodeinfobar-container[position="top"] > #highlighter-nodeinfobar,
@@ -3520,7 +3520,7 @@ stack[anonid=browserStack][responsivemode],
   color: #FDF3DE;
   min-width: 16px;
   text-shadow: none;
-  background-image: -moz-linear-gradient(top, #B4211B, #8A1915);
+  background-image: linear-gradient(#B4211B, #8A1915);
   border-radius: 1px;
 }
 

@@ -12,19 +12,15 @@
  * Debugger content
  */
 
-#dbg-content {
-  padding: 0;
-}
-
-#scripts {
-  min-width: 150px;
+#chrome-globals, #sources {
+  width: 200px;
 }
 
 /**
  * This hardcoded width likely due to a toolkit Windows specific bug.
  * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
  */
-#scripts-search {
+#searchbox {
   width: 200px;
 }
 
@@ -47,20 +43,24 @@
 
 .list-item.empty {
   color: GrayText;
-  padding: 4px;
+  padding: 2px;
 }
 
 /**
- * Scripts searching
+ * Sources searching
  */
 
 #globalsearch {
   background-color: white;
-  min-height: 50px;
+  min-height: 10px;
+}
+
+#globalsearch > vbox:not(:empty) {
+  min-height: 10px;
   max-height: 150px;
 }
 
-.dbg-script-results:not(:last-child) {
+.dbg-source-results:not(:last-child) {
   border-bottom: 1px dotted #aaa;
 }
 
@@ -68,7 +68,7 @@
   -moz-padding-start: 6px;
 }
 
-.dbg-results-header .script-url {
+.dbg-results-header .location {
   font-weight: 600;
 }
 
@@ -78,12 +78,13 @@
 }
 
 .dbg-results-container .line-number {
-  background: #eee;
-  min-width: 35px;
+  background: hsl(0,0%,89%);
+  min-width: 40px;
   -moz-padding-end: 4px;
   -moz-border-end: 1px dotted #aaa;
   text-align: end;
   font: 8pt monospace;
+  color: hsl(0,0%,55%);
 }
 
 .dbg-results-container .line-contents {
@@ -105,8 +106,7 @@
   border: 1px solid #aaa;
   border-radius: 4px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  transform: scale(1, 1);
+  transition: transform 0.25s ease-in-out;
 }
 
 .dbg-results-container .line-contents > .string[match=true][focused] {
@@ -114,36 +114,92 @@
   transform: scale(1.75, 1.75);
 }
 
-#scripts-search-panel .description {
-  margin-top: -6px;
-  margin-bottom: 8px;
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+/**
+ * Searchbox panel
+ */
+
+#searchbox-panel .description {
+  margin: -6px 0 8px 0;
 }
 
-#scripts-search-panel button.operator {
+#searchbox-panel button.operator {
   min-width: 0;
   margin: 0;
   padding: 0;
   font: 9pt monospace;
 }
 
-#scripts-search-panel label.operator {
+#searchbox-panel label.operator {
   -moz-padding-start: 6px;
   padding-bottom: 1px;
 }
 
 /**
- * Stack frames and breakpoints panel
+ * Filtered sources panel
+ */
+
+#filtered-sources-panel {
+  padding: 4px;
+}
+
+.dbg-source-item {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-top-color: #fff;
+}
+
+.dbg-source-item.selected {
+  background: #cddae5;
+}
+
+.dbg-source-item:first-of-type {
+  border-top-color: #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.dbg-source-item:last-of-type {
+  border-radius: 0 0 4px 4px;
+}
+
+.dbg-source-item:only-of-type {
+  border-radius: 4px 4px 4px 4px;
+}
+
+.dbg-source-item:not(:hover) {
+  text-shadow: 0 1px #fff;
+}
+
+.dbg-source-item-name {
+  color: #333;
+  font-weight: 600;
+}
+
+.dbg-source-item-details {
+  color: #888;
+}
+
+/**
+ * Stack frames and breakpoints pane
  */
 
 #stackframes\+breakpoints {
-  background-color: white;
   min-width: 50px;
 }
 
 #stackframes\+breakpoints[animated] {
-  -moz-transition: margin 0.25s ease-in-out;
+  transition: margin 0.25s ease-in-out;
+}
+
+/**
+ * Variables and watch expressions pane
+ */
+
+#variables\+expressions {
+  min-width: 50px;
+}
+
+#variables\+expressions[animated] {
+  transition: margin 0.25s ease-in-out;
 }
 
 /**
@@ -151,7 +207,7 @@
  */
 
 #stackframes {
-  background-color: white;
+  min-height: 10px;
 }
 
 .dbg-stackframe {
@@ -160,8 +216,11 @@
 }
 
 .dbg-stackframe-name {
-  -moz-padding-end: 4px;
   font-weight: 600;
+}
+
+.dbg-stackframe-details {
+  -moz-padding-start: 4px;
 }
 
 /**
@@ -169,7 +228,16 @@
  */
 
 #breakpoints {
-  background-color: white;
+  min-height: 10px;
+}
+
+#breakpoints > vbox:not(:empty) {
+  min-height: 10px;
+  max-height: 200px;
+}
+
+.dbg-breakpoint:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 .dbg-breakpoint-info {
@@ -180,47 +248,115 @@
   font: 8pt monospace;
 }
 
+#conditional-breakpoint-panel .description {
+  margin: -6px 0 8px 0;
+}
+
+#conditional-breakpoint-panel textbox {
+  margin: 0 0 -2px 0;
+}
+
 /**
- * Properties view
+ * Watch expressions view
+ */
+
+#expressions {
+  min-height: 10px;
+  max-height: 125px;
+}
+
+.dbg-expression {
+  height: 20px;
+  -moz-padding-start: 8px;
+}
+
+.dbg-expression-arrow {
+  width: 10px;
+  height: auto;
+  background: url("chrome://browser/skin/devtools/commandline.png") 0px 4px no-repeat;
+}
+
+.dbg-expression-input {
+  font: 9pt monospace;
+}
+
+.dbg-expression-delete {
+  opacity: 0;
+}
+
+.dbg-expression-delete:not(:hover) {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.dbg-expression-delete:hover {
+  opacity: 1;
+}
+
+.dbg-expression:hover > .dbg-expression-delete:not(:hover) {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/**
+ * Variables view
  */
 
 #variables {
-  background-color: white;
-  min-width: 50px;
+  min-height: 10px;
 }
 
-#variables[animated] {
-  -moz-transition: margin 0.25s ease-in-out;
+.dbg-variable-delete {
+  opacity: 0;
 }
 
-/**
- * Property element details container
- */
+.dbg-variable-delete:not(:hover) {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
 
-.details {
-  -moz-margin-start: 10px;
+.dbg-variable-delete:hover {
+  opacity: 1;
+}
+
+.variable-or-property:hover > .title > .dbg-variable-delete:not(:hover),
+.variable-or-property:focus > .title > .dbg-variable-delete:not(:hover) {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.dbg-variable-edit {
+  background: url("chrome://browser/skin/tabview/edit-light.png") center no-repeat;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.dbg-variable-throbber {
+  background: url("chrome://global/skin/icons/loading_16.png") center no-repeat;
+  width: 16px;
+  height: 16px;
 }
 
 /**
  * Scope element
  */
 
+.scope:focus > .title {
+  background: Highlight;
+  color: HighlightText;
+}
+
 .scope > .title {
   text-shadow: 0 1px #222;
   color: #fff;
 }
 
-.scope > .title > .arrow {
-  margin-top: -2px;
-}
-
-.scope > .title > .name {
-  padding-top: 2px;
-}
-
 .scope > .details {
   -moz-margin-start: 2px;
-  -moz-margin-end: 2px;
+  -moz-margin-end: 1px;
+}
+
+.scope > .details.nonenum:not(:empty) {
+  border-top: 1px solid #ddd;
 }
 
 /**
@@ -230,68 +366,96 @@
 .variable {
   -moz-margin-start: 1px;
   -moz-margin-end: 1px;
-  margin-top: 2px;
+  border-bottom: 1px solid #eee;
   transition: background 1s ease-in-out;
-  background: #fff;
-}
-
-.variable:not(:last-child) {
-  border-bottom: 1px dotted #ddd;
-  border-radius: 8px;
-}
-
-.variable:last-child {
-  margin-bottom: 2px;
 }
 
 .variable[changed] {
-  transition-duration: 0.4s;
   background: rgba(255, 255, 0, 0.65);
-}
-
-.variable[added] {
   transition-duration: 0.4s;
-  background: rgba(0, 255, 0, 0.15);
 }
 
-.variable > .title > .arrow {
-  margin-top: -2px;
+.variable:focus > .title {
+  background: Highlight;
+  color: HighlightText;
+  border-radius: 4px;
 }
 
 .variable > .title > .name {
-  color: #048;
   font-weight: 600;
+}
+
+.variable:not(:focus) > .title > .name {
+  color: #048;
+}
+
+.variable > .title > .value {
+  -moz-padding-start: 6px;
+  -moz-padding-end: 4px;
+}
+
+.variable[editable] > .title > .value {
+  cursor: text;
+}
+
+.variable:not([non-header]) > .details {
+  -moz-margin-start: 10px;
 }
 
 /**
  * Property element
  */
 
-.property > .title > .arrow {
-  margin-top: -2px;
+.property {
+  transition: background 1s ease-in-out;
 }
 
-.property > .title > .key {
+.property[changed] {
+  background: rgba(255, 255, 0, 0.65);
+  transition-duration: 0.4s;
+}
+
+.property:focus > .title {
+  background: Highlight;
+  color: HighlightText;
+  border-radius: 4px;
+}
+
+.property:not(:focus) > .title > .name {
   color: #881090;
 }
 
+.property > .title > .value {
+  -moz-padding-start: 6px;
+  -moz-padding-end: 4px;
+}
+
+.property[editable] > .title > .value {
+  cursor: text;
+}
+
+.property:not([non-header]) > .details {
+  -moz-margin-start: 10px;
+}
+
 /**
- * Non enumerable, configurable and writable variables and properties.
+ * Non enumerable, configurable and writable variables and properties
  */
 
-.property[proto] > .title > .key,
-.variable[non-enumerable] > .title > .name,
-.property[non-enumerable] > .title > .key {
+.variable[proto] > .title > .name,
+.property[proto] > .title > .name,
+.variable[non-enumerable]:not([self]):not([exception]) > .title > .name,
+.property[non-enumerable]:not([self]):not([exception]) > .title > .name {
   opacity: 0.5;
 }
 
 .variable[non-configurable] > .title > .name,
-.property[non-configurable] > .title > .key {
+.property[non-configurable] > .title > .name {
   border-bottom: 1px dashed #99f;
 }
 
-.variable[non-writable] > .title > .name,
-.property[non-writable] > .title > .key {
+.variable[non-configurable][non-writable] > .title > .name,
+.property[non-configurable][non-writable] > .title > .name {
   border-bottom: 1px dashed #f99;
 }
 
@@ -305,47 +469,95 @@
   opacity: 0.5;
 }
 
-#element-tooltip > label {
+@media (min-resolution: 2dppx) {
+  .variable[non-writable] > .title:after,
+  .property[non-writable] > .title:after {
+    background-image: url("chrome://browser/skin/identity-icons-https@2x.png");
+    background-size: 32px;
+  }
+}
+
+.variable[exception]:not(:focus) > .title > .name,
+.property[exception]:not(:focus) > .title > .name {
+  color: #a00;
+  text-shadow: 0 0 8px #fcc;
+}
+
+.variable > tooltip > label,
+.property > tooltip > label {
   margin: 0 2px 0 2px;
 }
 
-#element-tooltip > label[non-enumerable],
-#element-tooltip > label[non-configurable],
-#element-tooltip > label[non-writable]{
+.variable[non-enumerable] > tooltip > label[value="enumerable"],
+.property[non-enumerable] > tooltip > label[value="enumerable"],
+.variable[non-configurable] > tooltip > label[value="configurable"],
+.property[non-configurable] > tooltip > label[value="configurable"],
+.variable[non-writable] > tooltip > label[value="writable"],
+.property[non-writable] > tooltip > label[value="writable"] {
   text-decoration: line-through;
 }
 
 /**
- * Property values colors
+ * Variables and properties editing
  */
 
-.token-undefined {
-  -moz-padding-start: 6px;
+.element-value-input {
+  -moz-margin-start: 4px !important;
+}
+
+.element-name-input {
+  -moz-margin-start: -2px !important;
+  color: #048;
+  font-weight: 600;
+}
+
+.element-value-input,
+.element-name-input {
+  max-width: 30em;
+  border: 1px solid #999 !important;
+  box-shadow: 1px 2px 4px #aaa;
+}
+
+/**
+ * Variables and properties searching
+ */
+
+.variables-searchinput.devtools-searchinput {
+  min-height: 24px;
+}
+
+.variable[non-match],
+.property[non-match] {
+  border: none;
+  margin: 0;
+}
+
+/**
+ * Token value colors
+ */
+
+.variable-or-property:not(:focus) > .title > .token-undefined {
   color: #bbb;
 }
 
-.token-null {
-  -moz-padding-start: 6px;
+.variable-or-property:not(:focus) > .title > .token-null {
   color: #999;
 }
 
-.token-boolean {
-  -moz-padding-start: 6px;
+.variable-or-property:not(:focus) > .title > .token-boolean {
   color: #777;
 }
 
-.token-number {
-  -moz-padding-start: 6px;
+.variable-or-property:not(:focus) > .title > .token-number {
   color: #c40a16;
 }
 
-.token-string {
-  -moz-padding-start: 6px;
+.variable-or-property:not(:focus) > .title > .token-string {
+  max-width: 30em;
   color: #1c00cf;
 }
 
-.token-other {
-  -moz-padding-start: 6px;
+.variable-or-property:not(:focus) > .title > .token-other {
   color: #333;
 }
 
@@ -366,44 +578,8 @@
   background-image: url("chrome://global/skin/tree/twisty-open.png");
 }
 
-/**
- * Animations
- */
-
-.details[open][animated],
-.dbg-results-container[open][animated] {
-  -moz-animation-duration: 0.25s;
-  -moz-animation-name: showblock;
-  animation-duration: 0.25s;
-  animation-name: showblock;
-}
-
-@-moz-keyframes showblock {
-  from {
-    opacity: 0;
-    -moz-transform-origin: top;
-    -moz-transform: scaleY(0);
-  }
-
-  to {
-    opacity: 1;
-    -moz-transform-origin: top;
-    -moz-transform: scaleY(1);
-  }
-}
-
-@keyframes showblock {
-  from {
-    opacity: 0;
-    transform-origin: top;
-    transform: scaleY(0);
-  }
-
-  to {
-    opacity: 1;
-    transform-origin: top;
-    transform: scaleY(1);
-  }
+.arrow[invisible] {
+  visibility: hidden;
 }
 
 /**
@@ -412,13 +588,13 @@
 
 #toggle-panes {
   background: none;
-  border: none;
   box-shadow: none;
+  border: none;
   list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
-#toggle-panes:not([stackframesAndBreakpointsHidden]):not([variablesHidden]) {
+#toggle-panes:not([panesHidden]) {
   list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
 }
 

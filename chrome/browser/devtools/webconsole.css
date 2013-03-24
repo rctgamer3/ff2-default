@@ -2,20 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-.hud-box {
-  border-bottom: 1px solid #aaa;
-  text-shadow: none;
-}
-
-.hud-box.animated {
-  -moz-transition: height 100ms;
-  transition: height 100ms;
-}
-
-.hud-splitter {
-  border-top: none;
-}
-
 .hud-outer-wrapper {
   width: 100%;
   height: 100%;
@@ -230,53 +216,7 @@
   -moz-image-region: rect(24px, 48px, 32px, 40px);
 }
 
-.webconsole-close-button {
-  border: none;
-  padding: 3px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-  -moz-appearance: none;
-}
-
-.webconsole-close-button:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-.webconsole-close-button:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
 /* JSTerm Styles */
-
-.jsterm-wrapper-node {
-  font-family: monospace;
-  font-size: 1em;
-  background-color: #000;
-  border: 1px solid #333;
-  padding: 0.1em;
-  width: 100%;
-  height: 400px;
-}
-
-.jsterm-output-node {
-  width: 100%;
-  height: 400px;
-  color: white;
-  background-color: black;
-  overflow: auto;
-  overflow-x: auto;
-  position: absolute;
-  -moz-box-direction: reverse;
-}
-
-.jsterm-scroll-to-node {
-  height: 1px;
-  width: 1px;
-  position: relative;
-  top: 92%;
-  display: block;
-}
-
 .jsterm-input-node,
 .jsterm-complete-node {
   border: none;
@@ -296,30 +236,6 @@
 .jsterm-complete-node > .textbox-input-box > .textbox-textarea {
   color: GrayText;
 }
-
-.jsterm-output-line {
-  font-size: 1em;
-}
-
-.hud-console-filter-toolbar {
-  padding: 1px 2px;
-  -moz-box-align: center;
-  -moz-appearance: none;
-  background-color: -moz-dialog;
-  border-top: none;
-}
-
-.web-console-panel {
-  -moz-appearance: none;
-  background-color: white;
-}
-
-.web-console-panel > .hud-box {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-}
-
 
 /* Filter */
 

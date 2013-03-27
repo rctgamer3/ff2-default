@@ -3134,6 +3134,11 @@ html|*#gcli-output-frame {
 
 /* Social toolbar item */
 
+#social-provider-button {
+  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
 #social-provider-button > .toolbarbutton-menu-dropmarker {
   display: none;
 }
@@ -3170,13 +3175,6 @@ padding-right: 5px !important;
   padding: 6px 0;
 }
 
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:first-child {
-  -moz-padding-start: 5px;
-}
-
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:last-child {
-  -moz-padding-end: 5px;
-}
 
 .social-notification-icon-hbox {
   pointer-events: none;
@@ -3184,16 +3182,27 @@ padding-right: 5px !important;
   -moz-margin-end: -12px;
 }
 
-.social-notification-icon-label {
-  text-align: end;
+.social-notification-container {
+  /* position:relative on .toolbarbutton-1 does not get position:absolute
+     to work as expected on .toolbarbutton-1 generated content. Placing a
+     simple container outside of .toolbarbutton-1 and setting position:relative
+     on the simple container however will work. */
+  position: relative;
+}
+
+.social-notification-container > .toolbarbutton-1[badge]:not([badge=""])::after {
+  /* The |content| property is set in the content stylesheet. */
   font-size: 9px;
   font-weight: bold;
   padding: 0 1px;
-  color: white;
+  color: #fff;
   background-color: rgb(240,61,37);
   border: 1px solid rgb(216,55,34);
   border-radius: 2px;
   box-shadow: 0 1px 0 rgba(0,39,121,0.77);
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 
 .social-notification-icon-label[value=""] {

@@ -60,10 +60,14 @@
 /* Command buttons */
 
 .command-button {
+  /* checked fix */
+  background-image: none !important;
+  -moz-padding-start: 0 !important;
+  -moz-padding-end: 0 !important;
   -moz-appearance: none;
-  border: none;
+  border: none !important;
   margin: 0;
-  padding: 0 8px;
+  padding: 0 8px !important;
   width: 16px;
 }
 

@@ -15,7 +15,7 @@
         <em:maxVersion>22.*</em:maxVersion>
       </Description>
     </em:targetApplication>
-    <em:description>The default Firefox 2 theme for Firefox 4 and up.</em:description>
+    <em:description>The default Firefox 2 theme for Firefox 20 and up.</em:description>
     <em:creator>borr</em:creator>
     <em:developer>fax8</em:developer>
     <em:developer>rctgamer3</em:developer>

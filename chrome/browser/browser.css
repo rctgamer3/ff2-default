@@ -3512,6 +3512,10 @@ chatbox[minimized="true"] {
   min-width: 0;
 }
 
+#main-window[privatebrowsingmode=temporary] #appmenu-button {
+  list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
+}
+
 /* Highlighter - toolbar resizers
  * Firefox 10 compatibility */
 .inspector-resizer {

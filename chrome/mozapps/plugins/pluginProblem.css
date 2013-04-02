@@ -168,11 +168,9 @@ html|a {
   right: 4px;
   border: none;
   background-color: transparent;
-  -moz-appearance: none;
   -moz-image-region: rect(0, 64px, 16px, 48px);
   background-image: url("chrome://global/skin/icons/close.png");
   background-repeat: no-repeat;
-  -moz-margin-end: 6px;
   padding: 0;
 }
 

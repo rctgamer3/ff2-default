@@ -229,3 +229,9 @@ html|a {
 :-moz-handler-clicktoplay .closeIcon {
   background-image: url("chrome://global/skin/icons/close.png");
 }
+
+/* FF20-compatible clicktoplay icon */
+:-moz-handler-clicktoplay .mainBox > .icon {
+background-image: url(chrome://mozapps/skin/plugins/contentPluginClickToPlay.png);
+background-position: center;
+}

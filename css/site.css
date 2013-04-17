@@ -62,8 +62,6 @@ a.download-beta:active {
 
 a.download-stable:hover {
   background-color:#76b347;
-  background-image:-moz-linear-gradient(top, #76b347, #5e9e2e);
-  background-image:-webkit-linear-gradient(top, #76b347, #5e9e2e);
   background-image:linear-gradient(to bottom, #76b347, #5e9e2e);
   box-shadow:inset 0 1px 0 0 #8dbf67;
   cursor:pointer
@@ -76,8 +74,6 @@ a.download-beta {
   border-bottom:1px solid #5b992b;
   border-radius:3px;
   background-color:#FFD203;
-  background-image:-webkit-repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5px, rgba(0, 0, 0, 0.1) 5px, rgba(0, 0, 0, 0.1) 10px);
-  background-image:-moz-repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5px, rgba(0, 0, 0, 0.1) 5px, rgba(0, 0, 0, 0.1) 10px);
   background-image:repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5px, rgba(0, 0, 0, 0.1) 5px, rgba(0, 0, 0, 0.1) 10px);
   box-shadow:inset 0 1px 0 0 #96ca6d;
   color:#000;
@@ -90,8 +86,6 @@ a.download-beta {
 
 a.download-beta:hover {
   background-color:#ffd203;
-  /* background-image:-moz-repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5px, rgba(0, 0, 0, 0.2) 5px, rgba(0, 0, 0, 0.2) 10px); */
-  /* background-image:-webkit-repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5px, rgba(0, 0, 0, 0.2) 5px, rgba(0, 0, 0, 0.2) 10px); */
   background-image:repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5px, rgba(0, 0, 0, 0.2) 5px, rgba(0, 0, 0, 0.2) 10px);
   /* (-45deg, #F1B802, #FFD203) */
   box-shadow:inset 0 1px 0 0 #8dbf67;

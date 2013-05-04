@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  text-align: justify;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
@@ -92,7 +91,7 @@ td {
   width: 30%;
 }
 
-body[dir="rtl"] > #reset-box {
+#reset-box:-moz-dir(rtl) {
   float: left;
 }
 

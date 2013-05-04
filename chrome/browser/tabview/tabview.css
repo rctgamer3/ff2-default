@@ -10,7 +10,7 @@ body {
 
 #bg:not(:-moz-system-metric(windows-compositor)) {
   background: url("chrome://browser/skin/tabview/grain.png") repeat scroll center top,
-              -moz-linear-gradient(center top , #ECECEC, #F0F0F0) repeat scroll 0 0 transparent;
+              linear-gradient(#ECECEC, #F0F0F0) repeat scroll 0 0;
 }
 
 /* Tabs
@@ -108,23 +108,23 @@ html[dir=rtl] .close {
   width: 16px;
   height: 16px;
   background: url(chrome://global/skin/icons/resizer.png) no-repeat;
-  -moz-transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -moz-transition-timing-function: ease-out;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
   opacity: 0.2;
 }
 
 html[dir=rtl] .expander {
   right: auto;
   left: 6px;
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .expander:hover,
 .appTabIcon:hover {
-  -moz-transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -moz-transition-timing-function: ease-out;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
   opacity: 1.0;
 }
 
@@ -139,8 +139,6 @@ html[dir=rtl] .expander {
   bottom: -20px;
   text-align: center;
   width: 94.5%;
-  white-space: nowrap;
-  overflow: hidden;
   text-shadow: 0 1px rgba(255, 255, 255, 0.6);
 }
 
@@ -342,29 +340,6 @@ html[dir=rtl] .undo .close {
   opacity: 1.0;
 }
 
-/* InfoItems
-----------------------------------*/
-
-.info-item {
-  cursor: move;
-  border: 1px solid rgba(230,230,230,1);
-  background-color: rgba(248,248,248,1);
-  border-radius: 0.4em;
-  box-shadow:
-    inset rgba(255, 255, 255, 0.6) 0 0 0 2px,
-    rgba(0,0,0, .2) 1px 1px 3px;
-}
-
-.info-item {
-  box-shadow:
-    inset rgba(255, 255, 255, 0.6) 0 0 0 2px,
-    rgba(0,0,0, .2) -1px 1px 3px;
-}
-
-.intro {
-  margin: 10px;
-}
-
 /* Trenches
 ----------------------------------*/
 
@@ -404,25 +379,6 @@ html[dir=rtl] .guideTrench {
 
 /* Other
 ----------------------------------*/
-
-.newTabButton {
-  width: 16px;
-  height: 15px;
-  bottom: 10px;
-  left: 10px;
-  cursor: pointer;
-  opacity: .3;
-  background-image: url(chrome://browser/skin/tabview/new-tab.png);
-}
-
-html[dir=rtl] .newTabButton {
-  left: auto;
-  right: 10px;
-}
-
-.newTabButton:hover {
-  opacity: 1;
-}
 
 .active {
   box-shadow: 5px 5px 3px rgba(0,0,0,.5);
@@ -476,25 +432,20 @@ input.name:focus {
 }
 
 input.name::-moz-placeholder {
+  opacity: 1.0;
   font-style: italic !important;
   color: transparent;
   background-image: url(chrome://browser/skin/tabview/edit-light.png);
   background-repeat: no-repeat;
-  -moz-padding-start: 20px;
-}
-input.name:-moz-placeholder {
-  font-style: italic !important;
-  color: transparent;
-  background-image: url(chrome://browser/skin/tabview/edit-light.png);
-  background-repeat: no-repeat;
-  -moz-padding-start: 20px;
 }
 
 .title-container:hover input.name::-moz-placeholder {
   color: #CCC;
+  background-image: none;
 }
-.title-container:hover input.name:-moz-placeholder {
-  color: #CCC;
+
+input.name:focus::-moz-placeholder {
+  background-image: none;
 }
 
 .title-shield {
@@ -545,7 +496,7 @@ html[dir=rtl] .title-shield {
 html[dir=rtl] .resizer {
   right: auto;
   left: 0;
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .iq-resizable-handle {
@@ -612,6 +563,8 @@ html[dir=rtl] .iq-resizable-se {
 
 #searchbox{
   width: 270px;
+  max-width: -moz-available;
+  -moz-margin-start: 20px;
   height: 30px;
   box-shadow: 0px 1px 0px rgba(255,255,255,.5), 0px -1px 0px rgba(0,0,0,1), 0px 0px 9px rgba(0,0,0,.8);
   color: white;

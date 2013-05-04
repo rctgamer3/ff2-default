@@ -37,7 +37,7 @@ h2 {
   background-origin: content-box;
 }
 
-body[dir="rtl"] #errorPageContainer {
+#errorPageContainer:-moz-dir(rtl) {
   background-position: right 0;
 }
 
@@ -49,35 +49,24 @@ body[dir="rtl"] #errorPageContainer {
   -moz-margin-start: 80px;
 }
 
-.expander > button,
-#technicalContent > h2,
-#expertContent > h2 {
-  background: url("chrome://browser/skin/aboutCertError_sectionExpanded.png") left center no-repeat;
-}
-
 .expander > button {
   -moz-padding-start: 20px;
   -moz-margin-start: -20px;
+  background: url("chrome://browser/skin/aboutCertError_sectionExpanded.png") left center no-repeat;
   border: none;
   font: inherit;
   color: inherit;
   cursor: pointer;
 }
 
-body[dir="rtl"] .expander > button,
-body[dir="rtl"] #technicalContent > h2,
-body[dir="rtl"] #expertContent > h2 {
+.expander > button:-moz-dir(rtl) {
   background-position: right center;
 }
 
-.expander[collapsed] > button,
-#technicalContent[collapsed] > h2,
-#expertContent[collapsed] > h2 {
+.expander[collapsed] > button {
   background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed.png");
 }
 
-body[dir="rtl"] .expander[collapsed] > button,
-body[dir="rtl"] #technicalContent[collapsed] > h2,
-body[dir="rtl"] #expertContent[collapsed] > h2 {
+.expander[collapsed] > button:-moz-dir(rtl) {
   background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed-rtl.png");
 }

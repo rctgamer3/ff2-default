@@ -1,9 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
-* License, v. 2.0. If a copy of the MPL was not distributed with this
-* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /*** Panel and outer controls ***/
-
 
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
   padding: 0;
@@ -36,13 +35,15 @@
 
 richlistitem[type="download"] {
   height: 7em;
+  -moz-padding-end: 0;
+  color: inherit;
+}
+richlistitem[type="download"] {
   margin: 0;
   border-top: 1px solid hsla(0,0%,100%,.3);
   border-bottom: 1px solid hsla(220,18%,51%,.25);
   background: transparent;
   padding: 8px;
-  -moz-padding-end: 0;
-  color: inherit;
 }
 
 richlistitem[type="download"]:first-child {
@@ -169,9 +170,10 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow {
 
 #downloads-indicator-notification {
   opacity: 0;
-  background: url("chrome://browser/skin/downloads/download-notification.png")
-              center no-repeat;
+  background: url("chrome://browser/skin/downloads/download-notification.png");
   background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @keyframes downloadsIndicatorNotificationRight {
@@ -222,7 +224,7 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow {
   -moz-appearance: none;
   min-width: 0;
   min-height: 0;
-  background-image: -moz-linear-gradient(#5ab9ff, #37a4ff);
+  background-image: linear-gradient(#5ab9ff, #37a4ff);
   border: 1px solid;
   border-color: rgba(0,43,86,.6) rgba(0,43,86,.4) rgba(0,43,86,.4);
   border-radius: 2px 0 0 2px;
@@ -232,7 +234,7 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow {
   -moz-appearance: none;
   min-width: 0;
   min-height: 0;
-  background-image: -moz-linear-gradient(#505050, #575757);
+  background-image: linear-gradient(#505050, #575757);
   border: 1px solid;
   border-color: hsla(0,0%,0%,.6) hsla(0,0%,0%,.4) hsla(0,0%,0%,.4);
   -moz-border-start: none;
@@ -240,11 +242,11 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow {
 }
 
 #downloads-indicator[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
-  background-image: -moz-linear-gradient(#dce651, #dae631);
+  background-image: linear-gradient(#dce651, #dae631);
 }
 
 #downloads-indicator[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-remainder {
-  background-image: -moz-linear-gradient(#4b5000, #515700);
+  background-image: linear-gradient(#4b5000, #515700);
 }
 
 @media (-moz-windows-default-theme) {

@@ -45,8 +45,10 @@
 }
 
 #addon-container {
+  overflow: visible;
   max-width: 600px;
   margin: 20px;
+  padding: 30px 90px;
 }
 
 #addon-info {
@@ -56,6 +58,8 @@
 
 #icon {
   -moz-margin-end: 10px;
+  max-width: 64px;
+  max-height: 64px;
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
 }
 

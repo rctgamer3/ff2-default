@@ -7,14 +7,6 @@
   margin: 0;
 }
 
-body {
-  color: hsl(0,0%,50%);
-}
-
-.text {
-  color: black;
-}
-
 .newattr {
   cursor: pointer;
 }
@@ -50,7 +42,8 @@ li.container {
   background-image: url("chrome://global/skin/tree/twisty-clsd.png");
 }
 
-.expander[expanded] {
+.expander[expanded],
+.expander[open] {
   background-image: url("chrome://global/skin/tree/twisty-open.png");
 }
 

@@ -64,7 +64,7 @@ richlistitem[type="download"] .dateTime {
 }
 
 .blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/Error.png");
+  list-style-image: url(chrome://global/skin/icons/Error.png);
 }
 
 /* prevent flickering when changing states */

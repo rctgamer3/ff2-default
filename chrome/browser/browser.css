@@ -1145,6 +1145,11 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   display: none; 
 }
 
+/* hide dropmarker while in [customizing] mode */
+#navigator-toolbox[customizing] .autocomplete-history-dropmarker.urlbar-history-dropmarker {
+  display: none
+}
+
 /* identity box */
 
 #identity-box {

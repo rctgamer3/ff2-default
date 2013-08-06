@@ -346,6 +346,12 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
 }
 
+@media (min-resolution: 1.25dppx) {
+  #appmenu_addons {
+    list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  }
+}
+
 #BMB_bookmarkThisPage,
 #appmenu_bookmarkThisPage {
   list-style-image: url("chrome://browser/skin/places/bookmark.png");
@@ -2506,8 +2512,9 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
-.popup-notification-icon[popupid="indexedDB-quota-prompt"] {
-  list-style-image: url(chrome://global/skin/icons/question-64.png);
+.popup-notification-icon[popupid="indexedDB-quota-prompt"],
+.popup-notification-icon[popupid*="offline-app-requested"] {
+  list-style-image: url(chrome://global/skin/icons/Question.png);
 }
 
 .popup-notification-icon[popupid="password-save"],
@@ -2594,6 +2601,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 #blocked-plugins-notification-icon {
   list-style-image: url(chrome://mozapps/skin/plugins/notifyPluginBlocked.png);
+}
+
+#plugin-install-notification-icon {
+  list-style-image: url(chrome://browser/skin/pluginInstall-16.png);
 }
 
 #notification-popup-box[hidden] {
@@ -2710,8 +2721,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   -moz-appearance: none;
   opacity: .5;
   background-image: repeating-linear-gradient(135deg,
-                                                   rgba(255,255,255,.3), rgba(255,255,255,.3) 5px,
-                                                   rgba(0,0,0,.3) 5px, rgba(0,0,0,.3) 10px);
+                                              rgba(255,255,255,.3), rgba(255,255,255,.3) 5px,
+                                              rgba(0,0,0,.3) 5px, rgba(0,0,0,.3) 10px);
 }
 
 statusbarpanel#statusbar-display {

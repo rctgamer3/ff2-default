@@ -522,7 +522,12 @@ menuitem.bookmark-item {
 
 .bookmark-item[container][livemark] {
   list-style-image: url("chrome://browser/skin/livemark-folder.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.bookmark-item[container][livemark]:-moz-locale-dir(rtl) { 
+  list-style-image: url("chrome://browser/skin/livemark-folder-rtl.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 .bookmark-item[container][livemark] .bookmark-item {

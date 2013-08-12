@@ -130,6 +130,14 @@ treechildren::-moz-tree-cell-text(date, session-continue) {
   color: -moz-Field;
 }
 
+treechildren::-moz-tree-image(cutting) {
+  opacity: 0.5;
+}
+
+treechildren::-moz-tree-cell-text(cutting) {
+  opacity: 0.7;
+}
+
 /* Browser Sidebars */
 
 /* Default button vert. margins are 1px/2px, and this can cause misalignment */

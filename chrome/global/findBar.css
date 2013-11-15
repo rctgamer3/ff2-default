@@ -41,6 +41,12 @@ findbar spacer {
 -moz-box-ordinal-group: 9
 }
 
+/* selected button state fix */
+.findbar-find-previous, .findbar-find-next,
+.findbar-highlight, .findbar-case-sensitive {
+  -moz-appearance: none !important
+}
+
 .findbar-closebutton {
   border: 1px solid transparent;
   padding: 3px 2px 4px 2px;

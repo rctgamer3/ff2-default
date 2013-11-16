@@ -1758,6 +1758,25 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   display: -moz-box;
 }
 
+
+/* social share panel */
+
+#social-share-panel > iframe {
+  background: linear-gradient(to bottom, #f0f4f7, #fafbfc);
+  width: 300px;
+  height: 150px;
+}
+
+#social-share-button {
+  list-style-image: url(chrome://browser/skin/social/share-button.png);
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.social-share-toolbar {
+  border-right: 1px solid #e2e5e8;
+  background: linear-gradient(to bottom, #ffffff, #f5f7fa);
+}
+
 /* social recommending panel */
 
 #share-button {

@@ -7,37 +7,9 @@
   margin: 0;
 }
 
-.newattr {
-  cursor: pointer;
-}
-
-.selected {
-  background-color: hsl(0,0%,90%);
-}
-
-/* Give some padding to focusable elements to match the editor input
- * that will replace them. */
-span[tabindex] {
-  display: inline-block;
-  padding: 1px 0;
-}
-
-li.container {
-  position: relative;
-  padding: 2px 0 0 2px;
-}
-
-.codebox {
-  padding-left: 14px;
-}
-
-.codebox > * {
-  vertical-align: middle;
-}
-
 .expander {
   position: absolute;
-  top: 4px;
+  top: 1px;
   width: 9px;
   height: 15px;
   margin: 0 2px;

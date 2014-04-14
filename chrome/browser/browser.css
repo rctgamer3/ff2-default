@@ -2507,6 +2507,31 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   -moz-image-region: rect(0px, 18px, 18px, 0px);
 }
 
+#identity-popup-help-icon {
+  -moz-appearance: none;
+  border: none;
+  margin: 0px;
+  background: none;
+  min-width: 0;
+  list-style-image: url("chrome://global/skin/icons/question-16.png");
+  cursor: pointer;
+}
+
+#identity-popup-help-icon > .button-box > .button-text {
+  display: none;
+}
+
+#identity-popup-help-icon > .button-box > .button-icon {
+  height: 16px;
+  width: 16px;
+}
+
+#identity-popup-more-info-button {
+  margin-top: 6px;
+  margin-bottom: 0;
+  -moz-margin-end: 0;
+}
+
 .popup-notification-icon {
   width: 64px;
   height: 64px;

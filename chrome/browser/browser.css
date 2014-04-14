@@ -1298,6 +1298,20 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
+.chromeUI > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url(chrome://branding/content/identity-icons-brand.png) !important;
+}
+.chromeUI > #page-proxy-favicon[pageproxystate="valid"]:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px)
+}
+.chromeUI > #page-proxy-favicon[pageproxystate="valid"]:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px)
+}
+
+#identity-popup.chromeUI > #identity-popup-container > #identity-popup-icon {
+  list-style-image: url("chrome://branding/content/icon64.png") !important;
+}
+
 /* ::::: 16px primary toolbar buttons ::::: */
 
 toolbar[iconsize="small"] .toolbarbutton-1 {

@@ -2121,6 +2121,10 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   padding-bottom: 3px;
 }
 
+/* Unselected pinned tab loading fix */
+.tabbrowser-tab[pinned]:not([selected]) .tab-throbber[busy="true"] {
+  margin-top: 0 !important;
+}
 .tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] .tab-icon-image {
   margin-bottom: -2px;
 }

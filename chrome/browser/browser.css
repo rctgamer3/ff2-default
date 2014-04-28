@@ -4462,3 +4462,10 @@ list-style-image: url("chrome://browser/skin/customizableui/MetroSwitch.png");
 .tab-throbber:not([busy]) + .tab-icon-image {
   display: block !important
 }
+
+/* TabsToolbar fix */
+#navigator-toolbox #TabsToolbar {
+  border: none;
+  border-bottom: 4px solid;
+  -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow;
+}

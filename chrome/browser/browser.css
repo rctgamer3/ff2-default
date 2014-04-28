@@ -4314,3 +4314,146 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 }
 
 /* end of Extension styles */
+
+
+/* Australis */
+
+/* implement / style new Australis buttons */
+#PanelUI-menu-button {
+list-style-image: url("chrome://browser/skin/customizableui/PanelUIButton.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+/* Character Encoding button */
+#characterencoding-button {
+list-style-image: url("chrome://browser/skin/customizableui/CharEnc.png");
+  -moz-image-region: rect(0, 14px, 14px, 0);
+}
+
+/* Add-ons button */
+/* set different icon based on iconsize? */
+#add-ons-button[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #add-ons-button {
+list-style-image: url("chrome://mozapps/skin/extensions/category-extensions.png");
+  -moz-image-region: rect(0px, 32px, 32px, 0px);
+}
+#add-ons-button[cui-areatype="toolbar"] {
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
+  -moz-image-region: rect(0, 16px, 16px, 0) ;
+}
+
+/* find button */
+#find-button {
+  list-style-image: url("chrome://mozapps/skin/extensions/searchIcons.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+#find-button:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+#find-button:hover:active {
+-moz-image-region: rect(0, 64px, 16px, 48px);
+}
+
+/* Open file button */
+#open-file-button {
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+#open-file-button:hover {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+/* Bookmarks Placeholder button */
+#bookmarks-toolbar-placeholder {
+  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png");
+  margin: 0;
+  padding: 2px 3px;
+}
+#bookmarks-toolbar-placeholder > .toolbarbutton-label {
+  display: block
+}
+
+/* about:customizing #go-button fix */
+#main-window[customizing] #urlbar {
+  margin-right: 26px !important;
+}
+#main-window[customizing] #go-button {
+  margin-left: 2px !important;
+  margin-right: -22px !important;
+}
+
+/* More Tools / buttons button */
+#nav-bar-overflow-button {
+list-style-image: url("chrome://browser/skin/customizableui/Overflow.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+/* New Private Window */
+/* using 16x16 version */
+#privatebrowsing-button {
+list-style-image: url("chrome://browser/skin/Privacy-16.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+/* History Panel menu */
+
+#history-panelmenu {
+  -moz-image-region: rect(0px 168px 24px 144px);
+}
+#history-panelmenu:not([disabled="true"]):not([checked="true"]):hover {
+  -moz-image-region: rect(24px 168px 48px 144px);
+}
+#history-panelmenu[disabled="true"] {
+  -moz-image-region: rect(48px 168px 72px 144px);
+}
+#history-panelmenu[checked="true"] {
+  -moz-image-region: rect(72px 168px 96px 144px);
+}
+#history-panelmenu:not([disabled="true"]):not([checked="true"]):hover:active {
+  -moz-image-region: rect(96px 168px 120px 144px);
+}
+
+/* Options/Preferences button */
+#preferences-button {
+  list-style-image: url("chrome://browser/skin/preferences/Options.png");
+  -moz-image-region: rect(0, 224px, 32px, 192px);
+  padding: 0
+}
+
+/* DeveloperTools button */
+#developer-button {
+  list-style-image: url("chrome://browser/skin/devtools/tools-icons-small.png");
+  -moz-image-region: rect(64px, 16px, 80px, 0px);
+}
+
+/* Save Page button */
+#save-page-button {
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+/* Switch to Metro button (Win8) */
+#switch-to-metro-button {
+list-style-image: url("chrome://browser/skin/customizableui/MetroSwitch.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+/* Sidebar button */
+#sidebar-button {
+  list-style-image: url("chrome://browser/skin/customizableui/SidebarButton.png");
+  -moz-image-region: rect(0, 18px, 18px, 0);
+}
+
+/* Email Link button */
+#email-link-button {
+  list-style-image: url("chrome://browser/skin/customizableui/email-link.png");
+  -moz-image-region: rect(0 24px 21px 0);
+}
+
+#email-link-button:hover {
+  -moz-image-region: rect(24px 24px 45px 0);
+}
+
+#email-link-button[disabled] {
+  -moz-image-region: rect(48px 144px 72px 120px);
+}

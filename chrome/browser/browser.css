@@ -4891,3 +4891,30 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
   height: auto !important;
   max-height: 6em;
 }
+
+/* bookmark / star button fix */
+#bookmarks-menu-button[cui-areatype="toolbar"] {
+  list-style-image: url("chrome://browser/skin/places/starPage.png") !important;
+  -moz-image-region: rect(0 16px 16px 0) !important;
+}
+#bookmarks-menu-button[cui-areatype="toolbar"][starred] {
+  list-style-image: url("chrome://browser/skin/places/pageStarred.png") !important;
+  -moz-image-region: rect(0 16px 16px 0) !important;
+}
+
+#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  list-style-image: url("chrome://browser/skin/Toolbar-small.png")!important;
+  -moz-image-region: rect(0px 128px 16px 112px) !important;
+  min-height: 16px !important;
+}
+
+#bookmarks-menu-button[cui-areatype="toolbar"]:not([buttonover="true"]):hover .toolbarbutton-menubutton-dropmarker > .dropmarker-icon  {
+  list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+  -moz-image-region: rect(16px 128px 32px 112px) !important;
+}
+
+#bookmarks-menu-button[cui-areatype="toolbar"]:not([buttonover="true"]):hover:active .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+#bookmarks-menu-button[cui-areatype="toolbar"][open] .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+  -moz-image-region: rect(64px 128px 80px 112px) !important;
+}

@@ -3929,14 +3929,10 @@ chatbar {
 }
 
 chatbox {
-  height: 285px;
-  width: 260px;
   -moz-margin-start: 4px;
   background-color: white;
   border: 1px solid #ccc;
   border-bottom: none;
-  border-top-left-radius: 2.5px;
-  border-top-right-radius: 2.5px;
 }
 
 chatbox[minimized="true"] {

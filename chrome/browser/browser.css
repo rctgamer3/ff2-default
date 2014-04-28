@@ -4742,6 +4742,123 @@ toolbarpaletteitem[place="toolbar"] {
 
 /* End customization mode */
 
+
+/* UI Tour */
+
+#UITourHighlightContainer {
+  -moz-appearance: none;
+  border: none;
+  background-color: transparent;
+  /* This is a buffer to compensate for the movement in the "wobble" effect */
+  padding: 1px;
+}
+
+#UITourHighlight {
+  background-image: radial-gradient(50% 100%, rgba(0,149,220,0.4) 50%, rgba(0,149,220,0.6) 100%);
+  border-radius: 40px;
+  border: 1px solid white;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.5);
+  min-height: 32px;
+  min-width: 32px;
+}
+
+#UITourTooltipIcon {
+  width: 48px;
+  height: 48px;
+  -moz-margin-start: 8px;
+  -moz-margin-end: 18px;
+}
+
+#UITourTooltipTitle,
+#UITourTooltipDescription {
+  max-width: 20rem;
+}
+
+#UITourTooltipTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
+  margin: 10px 0 19px 0;
+}
+
+#UITourTooltipDescription {
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
+  font-size: 1.15rem;
+  line-height: 1.8rem;
+}
+
+#UITourTooltipClose {
+  visibility: hidden; /* XXX Temporarily disabled by bug 966913 */
+  -moz-appearance: none;
+  border: none;
+  background-color: transparent;
+  min-width: 0;
+  -moz-margin-start: 4px;
+  -moz-margin-end: -10px;
+  margin-top: -8px;
+}
+
+#UITourTooltipButtons {
+  margin: 1.5em 0 .9em 0;
+}
+
+#UITourTooltipButtons > button {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#UITourTooltipButtons > button:first-child {
+  -moz-margin-start: 0;
+}
+
+#UITourTooltipButtons > button:last-child {
+  -moz-margin-end: 24px;
+}
+
+#UITourTooltipButtons > button[image] > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  -moz-margin-end: 5px;
+}
+
+#UITourTooltipButtons > button .button-text {
+  font-size: 1.15rem;
+}
+
+#UITourTooltipButtons > button:not(.button-link) {
+  -moz-appearance: none;
+  padding: 2px 10px;
+  background-color: hsla(210,4%,10%,.08);
+  border-radius: 2px;
+  border: 1px solid;
+  border-color: hsla(210,4%,10%,.1);
+  transition-property: background-color, border-color;
+  transition-duration: 150ms;
+}
+
+#UITourTooltipButtons > button:not(.button-link):not(:active):hover {
+  background-color: hsla(210,4%,10%,.15);
+  border-color: hsla(210,4%,10%,.15);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset;
+}
+
+#UITourTooltipButtons > button.button-link {
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: rgba(0,0,0,0.35);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#UITourTooltipButtons > button.button-link:hover {
+  color: black;
+}
+
+
 /* PanelUI size fix */
 toolbarpaletteitem[place="palette"] {
 width: auto !important;

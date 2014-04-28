@@ -4503,3 +4503,13 @@ min-height:17px
 .tabbrowser-tab[pinned]:not([selected]) {
 min-height: 22px
 }
+
+/* titlechanged pinned tabs */
+.tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) {
+  background: linear-gradient(#dea86d, #fbdc7e 70%) border-box
+}
+
+.tabbrowser-tab[pinned][titlechanged]:not([selected="true"]):hover {
+  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png"),
+  linear-gradient(#dea86d, #fbdc7e 70%) border-box !important
+}

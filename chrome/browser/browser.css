@@ -791,7 +791,8 @@ toolbar[mode="full"] .toolbarbutton-menubutton-button {
 #urlbar-reload-button,
 #urlbar-stop-button,
 #urlbar-go-button {
-  display: none !important;
+  /* Disabled in Australis 
+  display: none !important */
 }
 
 #urlbar-container[combined] + #reload-button,
@@ -1783,6 +1784,90 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 .autocomplete-treebody::-moz-tree-cell(suggesthint) {
   border-top: 1px solid GrayText;
+}
+
+#urlbar-reload-button, #urlbar-stop-button, #urlbar-stop-button {
+  background-color: -moz-Dialog !important;
+}
+
+#urlbar-reload-button, #urlbar-stop-button {
+list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+padding: 0 !important;
+margin-right: 0 !important;
+-moz-margin-end: 0 !important;
+border: 0 !important;
+}
+
+#urlbar-reload-button .toolbarbutton-icon,
+#urlbar-stop-button .toolbarbutton-icon,
+#urlbar-go-button {
+  margin-right: 0 !important;
+}
+#urlbar-reload-button {
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+#urlbar-reload-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(16px 64px 32px 48px);
+}
+#urlbar-reload-button #reload-button[disabled="true"] {
+  -moz-image-region: rect(32px 64px 48px 48px);
+}
+#urlbar-reload-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 64px 80px 48px);
+}
+
+#urlbar-stop-button {
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+#urlbar-stop-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+#urlbar-stop-button[disabled="true"] {
+  -moz-image-region: rect(32px 48px 48px 32px);
+}
+#urlbar-stop-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 48px 80px 32px);
+}
+
+#urlbar-go-button {
+border: 0 !important;
+  list-style-image: url("chrome://browser/skin/Go-arrow.png");
+  -moz-image-region: rect(0px 11px 13px 0px);
+  visibility: visible !important;
+  padding: 2px 4px !important;
+  outline: 1px solid ButtonShadow !important;
+  margin-left: 22px !important;
+  margin-right: -40px !important;
+  -moz-outline-radius-topright: 3px !important;
+  -moz-outline-radius-bottomright: 3px !important;
+}
+
+#urlbar-go-button:hover {
+  -moz-image-region: rect(0px 22px 13px 11px);
+}
+
+#urlbar-go-button:hover:active {
+  -moz-image-region: rect(0px 44px 13px 33px);
+}
+
+#urlbar-go-button[disabled="true"] {
+  -moz-image-region: rect(0px 33px 13px 22px);
+}
+
+#urlbar-go-button > .toolbarbutton-icon {
+margin-right: 0 !important
+}
+
+#urlbar-reload-button .toolbarbutton-icon,
+urlbar-stop-button .toolbarbutton-icon,
+#urlbar-stop-button .toolbarbutton-icon {
+padding: 2px !important;
+}
+
+/* this SHOULD fix the urlbar reload button bug not appearing */
+/* still buggy while connecting, though. */
+#urlbar[focused="true"] #urlbar-reload-button:not([disabled]) {
+    visibility: visible !important
 }
 
 /* ::::: go button ::::: */

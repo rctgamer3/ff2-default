@@ -4469,3 +4469,37 @@ list-style-image: url("chrome://browser/skin/customizableui/MetroSwitch.png");
   border-bottom: 4px solid;
   -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow;
 }
+
+/* pinned tab fixes */
+/* pinned tab doesn't display correctly when in overflow mode */
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] {
+  padding-bottom: 3px
+}
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]:not([selected]){
+  padding-bottom: 1px
+}
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]:not([selected]):hover {
+  padding-bottom: 2px
+}
+.tabbrowser-tabs:not([overflow]) .tabbrowser-tab[pinned] .tab-icon-image {
+  -moz-margin-start: 6px;
+  -moz-margin-end: 4px
+}
+.tabbrowser-tab[pinned] .tab-throbber {
+  margin-top: 3px
+}
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] .tab-icon-image {
+  margin-top: 1px;
+margin-bottom: 0
+}
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] .tab-icon-image {
+  margin-top: 3px;
+  margin-bottom: 0
+}
+.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]:not([selected]) > stack {
+margin-top: 1px;
+min-height:17px
+}
+.tabbrowser-tab[pinned]:not([selected]) {
+min-height: 22px
+}

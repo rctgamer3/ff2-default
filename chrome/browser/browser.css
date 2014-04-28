@@ -4513,3 +4513,36 @@ min-height: 22px
   background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png"),
   linear-gradient(#dea86d, #fbdc7e 70%) border-box !important
 }
+
+/* PanelUI size fix */
+toolbarpaletteitem[place="palette"] {
+width: auto !important;
+height: auto !important;
+}
+
+.panel-customization-placeholder-child > .toolbarbutton-icon,
+#bookmarks-menu-button[cui-areatype="menu-panel"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbarbutton[cui-areatype="menu-panel"] > .toolbarbutton-icon,
+toolbaritem[cui-areatype="menu-panel"] > toolbarbutton > .toolbarbutton-icon,
+toolbarpaletteitem[place="palette"] > #bookmarks-menu-button > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbarpaletteitem[place="palette"] > toolbarbutton > .toolbarbutton-icon,
+toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton > .toolbarbutton-icon {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: auto;
+}
+
+toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"]:not(.panel-wide-item),
+#PanelUI-contents toolbarbutton,
+toolbarpaletteitem[place="panel"] > toolbarbutton,
+toolbarpaletteitem[place="palette"] > toolbarbutton,
+toolbarpaletteitem[place="panel"] > toolbaritem > toolbarbutton,
+toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
+.panel-customization-placeholder {
+  -moz-appearance: none;
+  -moz-box-orient: vertical;
+  width: auto !important;
+  max-width: 7em;
+  height: auto !important;
+  max-height: 6em;
+}

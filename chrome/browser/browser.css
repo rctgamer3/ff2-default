@@ -4322,6 +4322,7 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
   border-top: 0;
 }
 
+/* back/forward/reload/stop buttons */
 #nav-bar :-moz-any(#ctr_back-button,#ctr_forward-button,#ctr_stop-button,#ctr_reload-button) {padding: 5px !important}
 #nav-bar :-moz-any(#ctr_back-button,#ctr_forward-button,#ctr_stop-button,#ctr_reload-button) > .toolbarbutton-icon {list-style-image: url("chrome://browser/skin/Toolbar.png") !important;opacity:1!important;padding:0!important;/*-moz-margin-end: 5px !important*/}
 #ctr_reload-button{-moz-image-region: rect(0px 96px 24px 72px) !important}
@@ -4329,11 +4330,18 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 #ctr_reload-button:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 96px 120px 72px) !important}
 #ctr_reload-button:not([disabled="true"]):hover .toolbarbutton-icon {-moz-image-region: rect(24px 96px 48px 72px) !important}
 #ctr_reload-button[disabled="true"] .toolbarbutton-icon {-moz-image-region: rect(48px 96px 72px 72px) !important}
-
 #ctr_stop-button {-moz-image-region: rect(0px 72px 24px 48px)}
 #ctr_stop-button:not([disabled="true"]):hover {-moz-image-region: rect(24px 72px 48px 48px)}
 #ctr_stop-button[disabled="true"] {  -moz-image-region: rect(48px 72px 72px 48px)}
 #ctr_stop-button:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 72px 120px 48px)}
+#ctr_back-button {-moz-image-region: rect(0px 24px 24px 0px)}
+#ctr_back-button:not([disabled="true"]):hover, #ctr_back-button[buttonover="true"] {-moz-image-region: rect(24px 24px 48px 0px)}
+#ctr_back-button[disabled="true"] {-moz-image-region: rect(48px 24px 72px 0px)}
+#ctr_back-button:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 24px 120px 0px)}
+#ctr_forward-button {-moz-image-region: rect(0px 48px 24px 24px)}
+#ctr_forward-button:not([disabled="true"]):hover, #ctr_forward-button[buttonover="true"] {-moz-image-region: rect(24px 48px 48px 24px)}
+#ctr_forward-button[disabled="true"] {-moz-image-region: rect(48px 48px 72px 24px)}
+#ctr_forward-button:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 48px 120px 24px)}
 
 /* kill the back/forward dropbarker button, since it uses alltabs styles */
 #ctr_back-forward-dropmarker,#wrapper-ctr_back-forward-dropmarker {display:none!important}

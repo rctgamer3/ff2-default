@@ -4997,3 +4997,8 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
 #forward-button:not([disabled="true"]):hover:active {
   -moz-image-region: rect(96px 48px 120px 24px) !important
 }
+
+/* force tabs on bottom */
+#TabsToolbar {
+  -moz-box-ordinal-group: 100 !important
+}

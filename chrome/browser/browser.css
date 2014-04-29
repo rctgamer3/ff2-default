@@ -4951,3 +4951,49 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
   list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
   -moz-image-region: rect(64px 128px 80px 112px) !important;
 }
+
+/* forcing large navbar buttons until an option to switch between sizes has been implemented */
+#home-button, #back-button, #forward-button {
+  list-style-image: url("chrome://browser/skin/Toolbar.png");
+}
+
+#home-button {
+  -moz-image-region: rect(0px 120px 24px 96px) !important
+}
+#home-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(24px 120px 48px 96px) !important
+}
+#home-button[disabled="true"] {
+  -moz-image-region: rect(48px 120px 72px 96px) !important
+}
+#home-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 120px 120px 96px) !important
+}
+
+#back-button {
+  -moz-image-region: rect(0px 24px 24px 0px) !important
+}
+#back-button:not([disabled="true"]):hover,
+#back-button[buttonover="true"] {
+  -moz-image-region: rect(24px 24px 48px 0px) !important
+}
+#back-button[disabled="true"] {
+  -moz-image-region: rect(48px 24px 72px 0px) !important
+}
+#back-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 24px 120px 0px) !important
+}
+
+#forward-button {
+  -moz-image-region: rect(0px 48px 24px 24px) !important
+}
+#forward-button:not([disabled="true"]):hover,
+#forward-button[buttonover="true"] {
+  -moz-image-region: rect(24px 48px 48px 24px) !important
+}
+#forward-button[disabled="true"] {
+  -moz-image-region: rect(48px 48px 72px 24px) !important
+}
+#forward-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 48px 120px 24px) !important
+}

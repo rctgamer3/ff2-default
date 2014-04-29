@@ -2934,9 +2934,11 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 /* Add-on bar */
 
 #addon-bar {
+/*
   min-height: 20px;
   border-top: 2px solid;
   -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
+*/
 }
 
 #FindToolbar:not([hidden="true"]) ~ #addon-bar {
@@ -4307,6 +4309,13 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 .__noscriptPlaceholder__1 > .closeButton:hover:active {
   background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,75%,100%,50%) !important;
   outline: none !important
+}
+
+/* CTR compatibility */
+#ctr_addon-bar {
+  min-height: 20px;
+  border-top: 2px solid;
+  -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
 }
 
 /* end of Extension styles */

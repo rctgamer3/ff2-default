@@ -450,7 +450,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #customization-palette .toolbarbutton-text {
   display: none;
 }
-
+/*
 panelview .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
@@ -465,7 +465,7 @@ panelview .toolbarbutton-1,
   border-color: hsla(210,4%,10%,0);
   transition-property: background-color, border-color;
   transition-duration: 150ms;
-}
+}*/
 
 .subviewbutton.panel-subview-footer {
   border-radius: 0;
@@ -477,23 +477,22 @@ panelview .toolbarbutton-1,
   -moz-padding-start: 0;
   text-align: center;
 }
-
+/*
 .subviewbutton:not(.panel-subview-footer) {
   margin: 2px 0;
 }
 
-/*
 .subviewbutton:not(.panel-subview-footer) > .toolbarbutton-text,
 /* Bookmark items need a more specific selector. * /
 .PanelUI-subView .subviewbutton:not(.panel-subview-footer) > .menu-text,
 .PanelUI-subView .subviewbutton:not(.panel-subview-footer) > .menu-iconic-text {
   font-size: 1.1em;
-}*/
+}
 
 .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
   margin-left: 4px;
   margin-right: 4px;
-}
+}*/
 
 .PanelUI-subView menuseparator,
 .PanelUI-subView toolbarseparator {
@@ -542,6 +541,7 @@ panelview .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hov
   color: hsl(0,0%,25%)
 }
 
+/*
 .subviewbutton.panel-subview-footer:not(:-moz-any([disabled],[open],[checked="true"],:active)):-moz-any(:hover,[_moz-menuactive]) {
   background-color: hsla(210,4%,10%,.1);
   border-top: 1px solid hsla(210,4%,10%,.12);
@@ -556,7 +556,7 @@ panelview .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hov
 #BMB_bookmarksPopup > .subviewbutton {
   font: inherit;
   font-weight: normal;
-}
+}*/
 
 #BMB_bookmarksPopup > .subviewbutton:not([disabled="true"]) {
   color: inherit;

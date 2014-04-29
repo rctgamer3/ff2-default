@@ -5024,3 +5024,6 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
 /* FR  */ #main-window[title^="Personnaliser Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Requis pour le thème de Firefox 2 pour fonctionner correctement. S'il vous plaît activer. ';}
 /* ES  */ #main-window[title^="Personalizar Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Se requiere para el tema de Firefox 2 para que funcione correctamente. Por favor, activa. ';}
 /* RU  */ #main-window[title^="????????? Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' ????????? ??? Firefox 2 ???? ??? ?????????? ??????. ??????????, ????????. ';}
+
+/* kill off window titlebar section on tabstrip */
+#titlebar-placeholder-on-TabsToolbar-for-captions-buttons {display:none}

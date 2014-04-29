@@ -5002,3 +5002,15 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
 #TabsToolbar {
   -moz-box-ordinal-group: 100 !important
 }
+
+/* string l10n */
+#customization-titlebar-visibility-button[checkState="0"] > hbox:after{-moz-margin-start:4px;-moz-margin-end:4px;color:#fff;background:#ff003f;display: block!important;white-space:pre-wrap!important}
+/* EN  */ #main-window[title^="Customize Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after,
+/* ENGB*/ #main-window[title^="Customise Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Required for the Firefox 2 theme to work properly. Please enable. '}
+/* NL  */ #main-window[title^="Firefox aanpassen"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Vereist voor het goed functioneren van het Firefox 2 thema. Graag aanzetten. ';}
+/* FRL */ #main-window[title^="Firefox oanpasse"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Fereasket foar it goed functioneren fan it Firefox 2 tema. Graach oansette. ';}
+/* JA  */ #main-window[title^="Firefox ???????"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' ?????????? Firefox 2 ????????????????????? '}
+/* DE  */ #main-window[title^="Firefox anpassen"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Für das reibungslose Funktionieren des Firefox 2 theme erforderlich. Bitte aktivieren. ';}
+/* FR  */ #main-window[title^="Personnaliser Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Requis pour le thème de Firefox 2 pour fonctionner correctement. S'il vous plaît activer. ';}
+/* ES  */ #main-window[title^="Personalizar Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' Se requiere para el tema de Firefox 2 para que funcione correctamente. Por favor, activa. ';}
+/* RU  */ #main-window[title^="????????? Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:' ????????? ??? Firefox 2 ???? ??? ?????????? ??????. ??????????, ????????. ';}

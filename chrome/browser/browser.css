@@ -4350,6 +4350,16 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 
 
 /* Australis */
+/* Give this menupopup an arrow panel styling */
+#BMB_bookmarksPopup {
+  -moz-appearance: menupopup !important;
+  -moz-binding: url("chrome://browser/content/places/menu.xml#places-popup-base") !important;
+  background: inherit !important;
+  border: inherit !important;
+  transition: none !important;
+  /* The popup inherits -moz-image-region from the button, must reset it */
+  -moz-image-region: auto;
+}
 
 /* implement / style new Australis buttons */
 #PanelUI-menu-button {

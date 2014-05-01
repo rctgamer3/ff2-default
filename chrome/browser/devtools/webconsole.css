@@ -2,14 +2,18 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 /* General output styles */
+
 a {
   -moz-user-focus: normal;
   -moz-user-input: enabled;
   cursor: pointer;
   text-decoration: underline;
 }
-
 
 /* Workaround for Bug 575675 - FindChildWithRules aRelevantLinkVisited
  * assertion when loading HTML page with links in XUL iframe */
@@ -46,7 +50,8 @@ a {
 }
 
 /* The red bubble that shows the number of times a message is repeated */
-.message > .repeats {
+.message > .repeats,
+.message-repeats {
   -moz-user-select: none;
   flex: 0 0 auto;
   margin: 2px 6px;
@@ -60,38 +65,47 @@ a {
   font-weight: 600;
 }
 
-.message > .repeats[value="1"] {
+.message > .repeats[value="1"],
+.message-repeats[value="1"] {
   display: none;
 }
 
-.message > .location {
+.message > .location,
+.message-location {
   -moz-margin-start: 6px;
+  display: flex;
   flex: 0 0 auto;
   align-self: flex-start;
+  justify-content: flex-end;
   width: 10em;
   margin-top: 4px;
-  text-align: end;
   color: -moz-nativehyperlinktext;
-  text-overflow: ellipsis;
   text-decoration: none;
-  overflow: hidden;
   white-space: nowrap;
 }
 
-.message > .location:hover,
-.message > .location:focus {
+.message-location:hover,
+.message-location:focus {
   text-decoration: underline;
 }
 
+.message-location > .filename {
+  text-overflow: ellipsis;
+  text-align: end;
+  overflow: hidden;
+}
+
+.message-location > .line-number {
+  flex: 0 0 auto;
+}
+
 .jsterm-input-container {
-  background: white;
+  border-top-width: 1px;
+  border-top-style: solid;
 }
 
 #output-wrapper {
-  background: #fff;
-  color: #000;
   direction: ltr;
-  border-bottom: 1px solid ThreeDShadow;
   overflow: auto;
 }
 
@@ -103,92 +117,10 @@ a {
   align-items: flex-start;
 }
 
-.webconsole-timestamp {
-  color: GrayText;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: Consolas, Lucida Console, monospace;
-}
-
-.hud-msg-node,
-.message > .icon {
-  list-style-image: url(chrome://browser/skin/devtools/webconsole.png);
-  -moz-image-region: rect(0, 1px, 0, 0);
-}
-
-.webconsole-msg-icon {
-  margin: 3px 4px;
-  width: 8px;
-  height: 8px;
-}
-
-.hud-clickable {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.webconsole-msg-body {
-  margin-top: 0;
-  margin-bottom: 3px;
-  -moz-margin-start: 3px;
-  -moz-margin-end: 6px;
-  white-space: pre-wrap;
-  font-family: Consolas, Lucida Console, monospace;
-}
-
-.webconsole-msg-body-piece {
-  margin: 0;
-}
-
-.webconsole-msg-url {
-  margin: 0 6px;
-}
-
-/* Repeated messages */
-.webconsole-msg-repeat {
-  margin: 2px 0;
-  padding-left: 4px;
-  padding-right: 4px;
-  color: white;
-  background-color: red;
-  border-radius: 40px;
-  font: message-box;
-  font-size: 0.9em;
-  font-weight: 600;
-}
-
-/* TODO move this and other functional rules to content - bug 635359 */
-.webconsole-msg-repeat[value="1"] {
+#output-container.hideTimestamps > .message > .timestamp {
   display: none;
 }
 
-.webconsole-location {
-  margin-top: 0;
-  margin-bottom: 0;
-  -moz-margin-start: 0;
-  -moz-margin-end: 6px;
-  width: 10em;
-  text-align: end;
-}
-
-.hud-msg-node[selected="true"] > .webconsole-timestamp,
-.hud-msg-node[selected="true"] > .webconsole-location {
-  color: inherit;
-}
-
-.jsterm-input-node,
-.jsterm-complete-node {
-  font-family: Consolas, Lucida Console, monospace;
-}
-
-.hud-output-node {
-  -moz-appearance: none;
-  border-bottom: 1px solid ThreeDShadow;
-  margin: 0;
-}
-
-.hud-filtered-by-type,
-.hud-filtered-by-string,
 .filtered-by-type,
 .filtered-by-string {
   display: none;
@@ -202,6 +134,7 @@ a {
 }
 
 /* WebConsole colored drops */
+
 .webconsole-filter-button {
   -moz-user-focus: normal;
 }
@@ -226,6 +159,7 @@ a {
   background-image: linear-gradient(#444444, #000000);
   border-color: #777;
 }
+
 .message[category=network] > .icon {
   -moz-border-start: solid #000 6px;
 }
@@ -266,39 +200,22 @@ a {
   margin: 0 6px;
 }
 
-.webconsole-msg-network > .webconsole-msg-icon-container,
-.message[category=network] > .icon {
-  -moz-border-start: solid #000 6px;
-}
-
-.webconsole-msg-network.webconsole-msg-error {
-  -moz-image-region: rect(0, 16px, 8px, 8px);
-}
-
 /* CSS styles */
 .webconsole-filter-button[category="css"] > .toolbarbutton-menubutton-button:before {
   background-image: linear-gradient(#2DC3F3, #00B6F0);
   border-color: #1BA2CC;
 }
 
-.webconsole-msg-cssparser > .webconsole-msg-icon-container,
 .message[category=cssparser] > .icon {
   -moz-border-start: solid #00b6f0 6px;
 }
+
 .message[category=cssparser][severity=error] > .icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 8, 16, 16, 8);
 }
 
 .message[category=cssparser][severity=warn] > .icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 8, 24, 16, 16);
-}
-
-.webconsole-msg-cssparser.webconsole-msg-error {
-  -moz-image-region: rect(8px, 16px, 16px, 8px);
-}
-
-.webconsole-msg-cssparser.webconsole-msg-warn {
-  -moz-image-region: rect(8px, 24px, 16px, 16px);
 }
 
 /* JS styles */
@@ -319,25 +236,12 @@ a {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 16, 24, 24, 16);
 }
 
-.webconsole-msg-exception > .webconsole-msg-icon-container {
-  -moz-border-start: solid #fb9500 6px;
-}
-
-.webconsole-msg-exception.webconsole-msg-error {
-  -moz-image-region: rect(16px, 16px, 24px, 8px);
-}
-
-.webconsole-msg-exception.webconsole-msg-warn {
-  -moz-image-region: rect(16px, 24px, 24px, 16px);
-}
-
 /* Web Developer styles */
 .webconsole-filter-button[category="logging"] > .toolbarbutton-menubutton-button:before {
   background-image: linear-gradient(#B9B9B9, #AAAAAA);
   border-color: #929292;
 }
 
-.webconsole-msg-console > .webconsole-msg-icon-container,
 .message[category=console] > .icon {
   -moz-border-start: solid #cbcbcb 6px;
 }
@@ -355,38 +259,10 @@ a {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 32, 32, 24);
 }
 
-.webconsole-msg-console.webconsole-msg-error,
-.webconsole-msg-output.webconsole-msg-error {
-  -moz-image-region: rect(24px, 16px, 32px, 8px);
-}
-
-.webconsole-msg-console.webconsole-msg-warn {
-  -moz-image-region: rect(24px, 24px, 32px, 16px);
-}
-
-.webconsole-msg-console.webconsole-msg-info {
-  -moz-image-region: rect(24px, 32px, 32px, 24px);
-}
-
-.webconsole-mixed-content {
-  color: #FF0000;
-}
-
-.webconsole-mixed-content-link {
-  color: #0000EE;
-  margin: 0;
-}
-
 /* Input and output styles */
-.webconsole-msg-input > .webconsole-msg-icon-container,
-.webconsole-msg-output > .webconsole-msg-icon-container,
 .message[category=input] > .icon,
 .message[category=output] > .icon {
   -moz-border-start: solid #808080 6px;
-}
-
-.webconsole-msg-input {
-  -moz-image-region: rect(24px, 40px, 32px, 32px);
 }
 
 .message[category=input] > .icon {
@@ -397,21 +273,17 @@ a {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 48, 32, 40);
 }
 
-.webconsole-msg-output {
-  -moz-image-region: rect(24px, 48px, 32px, 40px);
-}
-
 /* JSTerm Styles */
 .jsterm-input-node,
 .jsterm-complete-node {
   border: none;
   padding: 0 0 0 16px;
   -moz-appearance: none;
+  background-color: transparent;
 }
 
 .jsterm-input-node {
   background: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16) no-repeat;
-  background-position: 0%;
 }
 
 :-moz-any(.jsterm-input-node,
@@ -419,25 +291,18 @@ a {
   overflow-x: hidden;
 }
 
-.jsterm-complete-node > .textbox-input-box > .textbox-textarea {
-  color: GrayText;
-}
-
 .inlined-variables-view .body {
   display: flex;
-
   flex-direction: column;
 }
-
-.webconsole-msg-inspector iframe,
 .inlined-variables-view iframe {
   display: block;
   flex: 1;
+  margin-top: 5px;
   margin-bottom: 15px;
   -moz-margin-end: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 12px #dfdfdf;
+  border: 1px solid rgba(128, 128, 128, .5);
+  border-radius: 3px;
 }
 
 #webconsole-sidebar > tabs {
@@ -445,7 +310,12 @@ a {
   border: none;
 }
 
+.devtools-side-splitter ~ #webconsole-sidebar[hidden] {
+  display: none;
+}
+
 /* Security styles */
+
 .message[category=security] > .icon {
   -moz-border-start: solid red 6px;
 }
@@ -454,29 +324,155 @@ a {
   background-image: linear-gradient(#FF3030, #FF7D7D);
   border-color: #D12C2C;
 }
+
 .message[category=security][severity=error] > .icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 32, 16, 40, 8);
 }
+
 .message[category=security][severity=warn] > .icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 32, 24, 40, 16);
 }
+
 .navigation-marker {
   color: #aaa;
-  background: linear-gradient(#fff, #bbb, #fff) no-repeat left 50%;
+  background: linear-gradient(#aaa, #aaa) no-repeat left 50%;
   background-size: 100% 2px;
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 0.9em;
 }
+
 .navigation-marker .url {
-  background: #fff;
   -moz-padding-end: 9px;
   text-decoration: none;
 }
+
+.consoleTrace .body > div {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.consoleTrace .title {
+  display: block;
+  flex: 1 1 auto;
+}
+
+.stacktrace {
+  list-style: none;
+  padding: 0 1em 0 1.5em;
+  margin: 0;
+  max-height: 10em;
+  overflow-y: auto;
+
+  border: 1px solid rgba(128, 128, 128, .5);
+  border-radius: 3px;
+}
+
+.stacktrace li {
+  display: flex;
+  margin: 0;
+}
+
+.stacktrace .function {
+  display: block;
+  flex: 1 1 auto;
+}
+
+/* Replace these values with CSS variables as available */
+.theme-dark .jsterm-input-container {
+  background-color: #252c33; /* tabToolbarBackgroundColor */
+  border-color: #131c26; /* mainBackgroundColor */
+}
+
+.theme-dark .jsterm-input-node {
+  color: #8fa1b2; /* textColor */
+}
+
+.theme-dark .jsterm-complete-node {
+  color: #5c6773; /* commentColor */
+}
+
+.theme-dark .navigation-marker .url {
+  background: #131c26; /* mainBackgroundColor */
+}
+
+.theme-dark .inlined-variables-view iframe {
+  border-color: #333;
+}
+
+.theme-dark .stacktrace {
+  border-color: #333;
+}
+
+.theme-light .jsterm-input-container {
+  background-color: #fff; /* mainBackgroundColor */
+  border-color: ThreeDShadow;
+}
+
+.theme-light .jsterm-input-node {
+  color: black; /* textColor */
+}
+
+.theme-light .jsterm-complete-node {
+  color: hsl(90,2%,46%); /* commentColor */
+}
+
+.theme-light .navigation-marker .url {
+  background: #fff; /* mainBackgroundColor */
+}
+
+.theme-light .inlined-variables-view iframe {
+  border-color: #ccc;
+}
+
+.theme-light .stacktrace {
+  border-color: #ccc;
+}
+
+@media (max-width: 500px) {
+  .message > .timestamp {
+    display: none;
+  }
+  .toolbarbutton-text {
+    display: none;
+  }
+  .hud-console-filter-toolbar .webconsole-filter-button {
+    min-width: 40px;
+  }
+  .hud-console-filter-toolbar .webconsole-clear-console-button {
+    min-width: 25px;
+  }
+  .webconsole-filter-button > .toolbarbutton-menubutton-button:before {
+    width: 16px;
+    height: 16px;
+    margin-left: 1px;
+  }
+  .toolbarbutton-menubutton-dropmarker {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 300px) {
+  .hud-console-filter-toolbar {
+    -moz-box-orient: vertical;
+  }
+  .toolbarbutton-text {
+    display: -moz-box;
+  }
+  .devtools-toolbarbutton {
+    margin-top: 3px;
+  }
+  .hud-console-filter-toolbar .hud-filter-box,
+  .hud-console-filter-toolbar .devtools-toolbarbutton {
+    margin-top: 5px;
+  }
+}
+
 /*
  * This hardcoded width likely due to a toolkit Windows specific bug.
  * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
  */
+
 .hud-filter-box {
   width: 200px;
 }

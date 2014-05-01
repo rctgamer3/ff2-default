@@ -2,42 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#root {
-  display: -moz-box;
-}
-
-.ruleview {
-  overflow: auto;
-  -moz-user-select: text;
-}
-
-.ruleview-code {
-  direction: ltr;
-}
-
-.ruleview-property:not(:hover) > .ruleview-enableproperty {
-  pointer-events: none;
-}
-
-.ruleview-namecontainer {
-  cursor: text;
-}
-
-.ruleview-propertycontainer {
-  cursor: text;
-  padding-right: 15px;
-}
-
-.ruleview-computedlist:not(.styleinspector-open),
-.ruleview-warning[hidden] {
-  display: none;
-}
-
-/* FF23-compatible code */
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 .ruleview {
   height: 100%;
 }
@@ -50,7 +14,6 @@
   -moz-user-select: none;
 }
 
-.ruleview-rule-inheritance,
 .ruleview-header {
   border-top-width: 1px;
   border-bottom-width: 1px;
@@ -59,6 +22,7 @@
   padding: 1px 4px;
   margin-top: 4px;
   -moz-user-select: none;
+  word-wrap: break-word;
 }
 
 .ruleview-rule-source:hover {
@@ -133,6 +97,14 @@
   -moz-margin-start: 35px;
 }
 
+.ruleview-colorswatch {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-top;
+  -moz-margin-end: 5px;
+}
+
 .ruleview-overridden {
   text-decoration: line-through;
 }
@@ -144,6 +116,7 @@
 
 .ruleview-property {
   border-left: 2px solid transparent;
+  clear: right;
 }
 
 .ruleview-property  > * {
@@ -162,6 +135,10 @@
 .ruleview-namecontainer:hover > .ruleview-propertyname,
 .ruleview-propertycontainer:hover > .ruleview-propertyvalue {
   border-bottom-color: hsl(0,0%,50%);
+}
+
+.ruleview-selector {
+  word-wrap: break-word;
 }
 
 .ruleview-selector-separator, .ruleview-selector-unmatched {

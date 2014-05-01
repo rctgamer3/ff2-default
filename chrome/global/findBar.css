@@ -14,6 +14,13 @@ findbar {
   position: initial
 }
 
+.findbar-close-button {
+  -moz-box-ordinal-group: 1
+}
+.findbar-container {
+  -moz-box-ordinal-group: 2
+}
+
 findbar .find-closebutton {
   -moz-box-ordinal-group: 1
 }

@@ -96,6 +96,10 @@
 
 /* Resizers */
 
+.splitview-landscape-splitter {
+  -moz-border-start-color: transparent;
+}
+
 .splitview-landscape-resizer {
   -moz-appearance: none;
   width: 7px;

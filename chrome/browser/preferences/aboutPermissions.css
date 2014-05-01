@@ -113,6 +113,16 @@ colorpicker[type="button"] {
 .pref-icon[type="image"] {
   list-style-image: url(chrome://global/skin/icons/Question.png);
 }
+.pref-icon[type="plugins"] {
+  list-style-image: url(chrome://mozapps/skin/plugins/pluginGeneric.png);
+}
+.pref-icon[type="fullscreen"] {
+  list-style-image: url(chrome://browser/skin/Toolbar-fullscreen.png);
+  -moz-image-region: rect(0px, 24px, 24px, 0px);
+  width:24px;
+  height:24px;
+  -moz-margin-end: 18px;
+}
 
 .pref-title {
   font-size: 125%;

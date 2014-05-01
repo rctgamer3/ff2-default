@@ -31,6 +31,10 @@ li.container {
   padding-left: 14px;
 }
 
+.codebox > * {
+  vertical-align: middle;
+}
+
 .expander {
   position: absolute;
   top: 4px;
@@ -40,6 +44,8 @@ li.container {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("chrome://global/skin/tree/twisty-clsd.png");
+  display: inline-block;
+  margin-left: -14px;
 }
 
 .expander[expanded],

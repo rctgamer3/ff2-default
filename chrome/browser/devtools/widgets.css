@@ -156,7 +156,7 @@
   width: 25px;
   height: 25px;
   transform: translateX(-18px) rotate(45deg);
-  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .breadcrumbs-widget-item {

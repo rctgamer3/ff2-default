@@ -22,35 +22,52 @@ a {
 .message {
   display: flex;
   flex: 0 0 auto;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 8px;
-  width: calc(100% - 6px - 8px);
+  padding: 0 7px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .message > .timestamp {
   flex: 0 0 auto;
   color: GrayText;
-  margin: 4px 0;
+  margin: 4px 6px 0 0;
+}
+
+.message > .indent {
+  flex: 0 0 auto;
 }
 
 .message > .icon {
-  background: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 0, 1, 0, 0) no-repeat;
-  background-position: center 0.5em;
   flex: 0 0 auto;
-  margin: 0 6px;
+  margin: 3px 6px 0 0;
   padding: 0 4px;
-  width: 8px;
+  height: 1em;
+  align-self: flex-start;
 }
 
-.message > .body {
+.message > .icon::before {
+  content: "";
+  background-image: url(chrome://browser/skin/devtools/webconsole.png);
+  background-position: 8px 8px;
+  background-repeat: no-repeat;
+  background-size: 48px 40px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+}
+
+@media (min-resolution: 2dppx) {
+  .message > .icon::before {
+    background-image: url(chrome://browser/skin/devtools/webconsole@2x.png);
+  }
+}
+
+.message > .message-body-wrapper {
   flex: 1 1 100%;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  margin-top: 4px;
+  margin: 3px;
 }
 
 /* The red bubble that shows the number of times a message is repeated */
-.message > .repeats,
 .message-repeats {
   -moz-user-select: none;
   flex: 0 0 auto;
@@ -65,20 +82,17 @@ a {
   font-weight: 600;
 }
 
-.message > .repeats[value="1"],
 .message-repeats[value="1"] {
   display: none;
 }
 
-.message > .location,
 .message-location {
-  -moz-margin-start: 6px;
   display: flex;
   flex: 0 0 auto;
   align-self: flex-start;
   justify-content: flex-end;
   width: 10em;
-  margin-top: 4px;
+  margin-top: 3px;
   color: -moz-nativehyperlinktext;
   text-decoration: none;
   white-space: nowrap;
@@ -99,6 +113,25 @@ a {
   flex: 0 0 auto;
 }
 
+.message-flex-body {
+  display: flex;
+}
+
+.message-body {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.message-flex-body > .message-body {
+  display: block;
+  flex: 1 1 auto;
+  vertical-align: middle;
+}
+
+.message-flex-body > .message-location {
+  margin-top: 0;
+}
+
 .jsterm-input-container {
   border-top-width: 1px;
   border-top-style: solid;
@@ -117,8 +150,22 @@ a {
   align-items: flex-start;
 }
 
+#output-container.hideTimestamps > .message {
+  -moz-padding-start: 0;
+  -moz-margin-start: 7px;
+  width: calc(100% - 7px);
+}
+
 #output-container.hideTimestamps > .message > .timestamp {
   display: none;
+}
+
+.theme-dark #output-container.hideTimestamps > .message > .indent {
+  background-color: #14171a; /* .theme-body */
+}
+
+.theme-light #output-container.hideTimestamps > .message > .indent {
+  background-color: #fcfcfc; /* .theme-body */
 }
 
 .filtered-by-type,
@@ -139,10 +186,6 @@ a {
   -moz-user-focus: normal;
 }
 
-.webconsole-filter-button[checked] {
-  color: white !important;
-}
-
 .webconsole-filter-button > .toolbarbutton-menubutton-button:before {
   content: "";
   display: inline-block;
@@ -160,15 +203,39 @@ a {
   border-color: #777;
 }
 
-.message[category=network] > .icon {
-  -moz-border-start: solid #000 6px;
+.theme-light .message:hover {
+  background-color: rgba(76, 158, 217, 0.23) !important;
 }
 
-.message[category=network][severity=error] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 0, 16, 8, 8);
+.theme-dark .message:hover {
+  background-color: rgba(29, 79, 115, 0.5) !important;
 }
 
-.message[category=network] > .body {
+.theme-light .message[severity=error] {
+  background-color: rgba(255, 150, 150, 0.3);
+}
+
+.theme-dark .message[severity=error] {
+  background-color: rgba(235, 83, 104, 0.17);
+}
+
+.theme-dark .console-string {
+  color: #d99b28;
+}
+
+.theme-light .console-string {
+  color: hsl(24,85%,39%);
+}
+
+.message[category=network] > .indent {
+  -moz-border-end: solid #000 6px;
+}
+
+.message[category=network][severity=error] > .icon::before {
+  background-position: -8px 0;
+}
+
+.message[category=network] > .message-body {
   display: flex;
 }
 
@@ -196,7 +263,7 @@ a {
 }
 
 .message .learn-more-link {
-  color: #0000EE;
+  color: -moz-nativehyperlinktext;
   margin: 0 6px;
 }
 
@@ -206,16 +273,16 @@ a {
   border-color: #1BA2CC;
 }
 
-.message[category=cssparser] > .icon {
-  -moz-border-start: solid #00b6f0 6px;
+.message[category=cssparser] > .indent {
+  -moz-border-end: solid #00b6f0 6px;
 }
 
-.message[category=cssparser][severity=error] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 8, 16, 16, 8);
+.message[category=cssparser][severity=error] > .icon::before {
+  background-position: -8px -8px;
 }
 
-.message[category=cssparser][severity=warn] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 8, 24, 16, 16);
+.message[category=cssparser][severity=warn] > .icon::before {
+  background-position: -16px -8px;
 }
 
 /* JS styles */
@@ -224,16 +291,16 @@ a {
   border-color: #E98A00;
 }
 
-.message[category=exception] > .icon {
-  -moz-border-start: solid #fb9500 6px;
+.message[category=exception] > .indent {
+  -moz-border-end: solid #fb9500 6px;
 }
 
-.message[category=exception][severity=error] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 16, 16, 24, 8);
+.message[category=exception][severity=error] > .icon::before {
+  background-position: -8px -16px;
 }
 
-.message[category=exception][severity=warn] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 16, 24, 24, 16);
+.message[category=exception][severity=warn] > .icon::before {
+  background-position: -16px -16px;
 }
 
 /* Web Developer styles */
@@ -242,35 +309,35 @@ a {
   border-color: #929292;
 }
 
-.message[category=console] > .icon {
-  -moz-border-start: solid #cbcbcb 6px;
+.message[category=console] > .indent {
+  -moz-border-end: solid #cbcbcb 6px;
 }
 
-.message[category=console][severity=error] > .icon,
-.message[category=output][severity=error] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 16, 32, 8);
+.message[category=console][severity=error] > .icon::before,
+.message[category=output][severity=error] > .icon::before {
+  background-position: -8px -24px;
 }
 
-.message[category=console][severity=warn] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 24, 32, 16);
+.message[category=console][severity=warn] > .icon::before {
+  background-position: -16px -24px;
 }
 
-.message[category=console][severity=info] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 32, 32, 24);
+.message[category=console][severity=info] > .icon::before {
+  background-position: -24px -24px;
 }
 
 /* Input and output styles */
-.message[category=input] > .icon,
-.message[category=output] > .icon {
-  -moz-border-start: solid #808080 6px;
+.message[category=input] > .indent,
+.message[category=output] > .indent {
+  -moz-border-end: solid #808080 6px;
 }
 
-.message[category=input] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 40, 32, 32);
+.message[category=input] > .icon::before {
+  background-position: -32px -24px;
 }
 
-.message[category=output] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 24, 48, 32, 40);
+.message[category=output] > .icon::before {
+  background-position: -40px -24px;
 }
 
 /* JSTerm Styles */
@@ -283,7 +350,15 @@ a {
 }
 
 .jsterm-input-node {
-  background: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16) no-repeat;
+  background-image: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+
+@media (min-resolution: 2dppx) {
+  .jsterm-input-node {
+    background-image: -moz-image-rect(url('chrome://browser/skin/devtools/commandline-icon@2x.png'), 0, 64, 32, 32);
+  }
 }
 
 :-moz-any(.jsterm-input-node,
@@ -291,7 +366,7 @@ a {
   overflow-x: hidden;
 }
 
-.inlined-variables-view .body {
+.inlined-variables-view .message-body {
   display: flex;
   flex-direction: column;
 }
@@ -316,8 +391,8 @@ a {
 
 /* Security styles */
 
-.message[category=security] > .icon {
-  -moz-border-start: solid red 6px;
+.message[category=security] > .indent {
+  -moz-border-end: solid red 6px;
 }
 
 .webconsole-filter-button[category="security"] > .toolbarbutton-menubutton-button:before {
@@ -325,12 +400,12 @@ a {
   border-color: #D12C2C;
 }
 
-.message[category=security][severity=error] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 32, 16, 40, 8);
+.message[category=security][severity=error] > .icon::before {
+  background-position: -8px -32px;
 }
 
-.message[category=security][severity=warn] > .icon {
-  background-image: -moz-image-rect(url(chrome://browser/skin/devtools/webconsole.png), 32, 24, 40, 16);
+.message[category=security][severity=warn] > .icon::before {
+  background-position: -16px -32px;
 }
 
 .navigation-marker {
@@ -347,25 +422,33 @@ a {
   text-decoration: none;
 }
 
-.consoleTrace .body > div {
-  display: flex;
-  margin-bottom: 5px;
-}
-
-.consoleTrace .title {
-  display: block;
-  flex: 1 1 auto;
-}
-
 .stacktrace {
+  display: none;
   list-style: none;
   padding: 0 1em 0 1.5em;
-  margin: 0;
+  margin: 5px 0 0 0;
   max-height: 10em;
   overflow-y: auto;
-
-  border: 1px solid rgba(128, 128, 128, .5);
+  border: 1px solid rgb(200,200,200);
   border-radius: 3px;
+}
+
+.theme-light .message[severity=error] .stacktrace {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.theme-dark .message[severity=error] .stacktrace {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.message[open] .stacktrace {
+  display: block;
+}
+
+.message .theme-twisty {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px 0 0;
 }
 
 .stacktrace li {
@@ -378,14 +461,41 @@ a {
   flex: 1 1 auto;
 }
 
+.cm-s-mozilla a[class] {
+  font-style: italic;
+  text-decoration: none;
+}
+
+.cm-s-mozilla a[class]:hover,
+.cm-s-mozilla a[class]:focus {
+  text-decoration: underline;
+}
+
+/* Open DOMNode in inspector button */
+.open-inspector {
+  background: url("chrome://browser/skin/devtools/vview-open-inspector.png") no-repeat 0 0;
+  padding-left: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.elementNode:hover .open-inspector,
+.open-inspector:hover {
+  background-position: -32px 0;
+}
+
+.open-inspector:active {
+  background-position: -16px 0;
+}
+
 /* Replace these values with CSS variables as available */
 .theme-dark .jsterm-input-container {
   background-color: #252c33; /* tabToolbarBackgroundColor */
-  border-color: #131c26; /* mainBackgroundColor */
+  border-color: #14171a; /* mainBackgroundColor */
 }
 
 .theme-dark .jsterm-input-node {
-  color: #8fa1b2; /* textColor */
+  color: #a9bacb; /* textColor */
 }
 
 .theme-dark .jsterm-complete-node {
@@ -393,7 +503,7 @@ a {
 }
 
 .theme-dark .navigation-marker .url {
-  background: #131c26; /* mainBackgroundColor */
+  background: #14171a; /* mainBackgroundColor */
 }
 
 .theme-dark .inlined-variables-view iframe {
@@ -433,7 +543,7 @@ a {
   .message > .timestamp {
     display: none;
   }
-  .toolbarbutton-text {
+  .hud-console-filter-toolbar .webconsole-filter-button .toolbarbutton-text {
     display: none;
   }
   .hud-console-filter-toolbar .webconsole-filter-button {
@@ -443,8 +553,8 @@ a {
     min-width: 25px;
   }
   .webconsole-filter-button > .toolbarbutton-menubutton-button:before {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     margin-left: 1px;
   }
   .toolbarbutton-menubutton-dropmarker {

@@ -1222,7 +1222,7 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 
 #wrapper-urlbar-container #urlbar {
   -moz-user-input: disabled;
-  cursor: -moz-grab;
+  cursor: grab;
 }
 
 #wrapper-urlbar-container #urlbar > .autocomplete-history-dropmarker {
@@ -4691,7 +4691,7 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 toolbarpaletteitem[mousedown] {
-  cursor: -moz-grabbing;
+  cursor: grabbing;
 }
 
 .panel-customization-placeholder,

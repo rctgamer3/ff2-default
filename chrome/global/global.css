@@ -363,3 +363,21 @@ label {
 .autoscroller[scrolldir="EW"] {
   background-position: right bottom;
 }
+
+/* :::::: Close button icons ::::: */
+
+.close-icon {
+  -moz-appearance: none;
+  border: 0;
+  padding: 0;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.close-icon:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.close-icon:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}

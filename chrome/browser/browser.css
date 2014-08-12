@@ -24,6 +24,11 @@
   border-top: none;
 }
 
+/* Firefox 31+ wrapper fix */
+#urlbar-wrapper {
+  -moz-box-align: center
+}
+
 /* #go-button position fixes */
 #navigator-toolbox[customizing] #urlbar {
 margin-right: 26px !important;

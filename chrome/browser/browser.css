@@ -5440,6 +5440,122 @@ toolbarpaletteitem[place="toolbar"] {
   margin: 24px -4px -4px;
 }
 
+#context-navigation > .menuitem-iconic {
+  -moz-box-flex: 1;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+}
+
+#context-navigation > .menuitem-iconic {
+  -moz-box-flex: 1;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+}
+
+#context-navigation > .menuitem-iconic > .menu-iconic-left {
+  -moz-appearance: none;
+}
+
+#context-back {
+  -moz-image-region: rect(0px 24px 24px 0px)
+}
+
+#context-back:not([disabled="true"]):hover,
+#context-back[buttonover="true"] {
+  -moz-image-region: rect(24px 24px 48px 0px)
+}
+#context-back:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 24px 120px 0px)
+}
+
+#context-back[disabled=true] { 
+  -moz-image-region: rect(48px 24px 72px 0px)
+}
+
+#context-forward {
+  -moz-image-region: rect(0px 48px 24px 24px)
+}
+
+#context-forward:not([disabled="true"]):hover,
+#context-forward[buttonover="true"] {
+  -moz-image-region: rect(24px 48px 48px 24px)
+}
+#context-forward:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 48px 120px 24px)
+}
+
+#context-forward[disabled=true] {
+  -moz-image-region: rect(48px 48px 72px 24px)
+}
+
+#context-reload {
+  -moz-image-region: rect(0px 96px 24px 72px)
+}
+
+#context-reload:not([disabled="true"]):hover {
+  -moz-image-region: rect(24px 96px 48px 72px)
+}
+
+#context-reload[disabled=true] {
+  -moz-image-region: rect(48px 96px 72px 72px)
+}
+#context-reload:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 96px 120px 72px)
+}
+
+#context-stop {
+  -moz-image-region: rect(0px 72px 24px 48px)
+}
+
+#context-stop:not([disabled="true"]):hover {
+  -moz-image-region: rect(24px 72px 48px 48px)
+}
+
+#context-stop[disabled=true] {
+  -moz-image-region: rect(48px 72px 72px 48px)
+}
+#context-stop:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(96px 72px 120px 48px)
+}
+
+#context-bookmarkpage {
+  list-style-image: url("chrome://browser/skin/places/starPage.png");
+  width: 16px !important;
+  height: 16px !important;
+}
+
+#context-bookmarkpage:hover {
+  list-style-image: url("chrome://browser/skin/places/bookmark.png");
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+#context-back:-moz-locale-dir(rtl),
+#context-forward:-moz-locale-dir(rtl),
+#context-reload:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+#context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  height: 24px;
+  width: 24px;
+  margin: 5px;
+}
+#context-bookmarkpage > .menu-iconic-left > .menu-iconic-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+#context-navigation {
+  background-color: menu;
+}
+
+#context-back,
+#context-forward,
+#context-reload,
+#context-stop {
+  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  display: -moz-box !important;
+}
+
 /* PanelUI size fix */
 toolbarpaletteitem[place="palette"] {
 width: auto !important;

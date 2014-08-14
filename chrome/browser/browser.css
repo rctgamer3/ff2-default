@@ -5145,3 +5145,9 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
 
 /* kill off window titlebar section on tabstrip */
 #titlebar-placeholder-on-TabsToolbar-for-captions-buttons {display:none}
+
+/* DevTools checked state fix */
+.command-button[checked=true] {
+  background-image: none !important;
+  padding: 0 8px !important
+}

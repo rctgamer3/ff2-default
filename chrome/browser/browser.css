@@ -4526,31 +4526,6 @@ notification.pluginVulnerable .messageImage {
   list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
 }
 
-/* Highlighter - toolbar resizers
- * Firefox 10 compatibility */
-.inspector-resizer {
-  -moz-appearance: none;
-  cursor: n-resize;
-}
-
-#inspector-top-resizer {
-  background: none;
-  height: 4px;
-}
-
-#inspector-end-resizer {
-  width: 12px;
-  height: 8px;
-  background-image: -moz-linear-gradient(top, black 1px, rgba(255,255,255,0.2) 1px);
-  background-size: 10px 2px;
-  background-clip: padding-box;
-  background-repeat: repeat-y;
-  border-width: 1px 1px 0;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.05);
-  margin: 7px 7px 8px;
-}
-
 
 /* Persona fixes, still in development.
    not important for now */

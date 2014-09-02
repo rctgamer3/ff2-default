@@ -5672,25 +5672,29 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
 }
 
 /* Force cut/copy/paste buttons to use Toolbar.png */
-#cut-button[cui-areatype="menu-panel"], #copy-button[cui-areatype="menu-panel"], #paste-button[cui-areatype="menu-panel"] {
-  list-style-image: url("chrome://browser/skin/Toolbar.png") !important;
+#edit-controls[cui-areatype="menu-panel"] :-moz-any(#cut-button,#copy-button,#paste-button) {
+  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  opacity: 1;
+  -moz-box-orient: horizontal;
 }
 
-#cut-button[cui-areatype="menu-panel"] {-moz-image-region: rect(0px 288px 24px 264px) !important}
-#cut-button[cui-areatype="menu-panel"]:not([disabled="true"]):hover {-moz-image-region: rect(24px 288px 48px 264px) !important}
-#cut-button[cui-areatype="menu-panel"][disabled="true"] {-moz-image-region: rect(48px 288px 72px 264px) !important}
-#cut-button[cui-areatype="menu-panel"]:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 288px 120px 264px) !important}
+#edit-controls[cui-areatype="menu-panel"] #cut-button {-moz-image-region: rect(0px 192px 16px 176px)}
+#edit-controls[cui-areatype="menu-panel"] #cut-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 192px 32px 176px)}
+#edit-controls[cui-areatype="menu-panel"] #cut-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 192px 32px 176px)}
+#edit-controls[cui-areatype="menu-panel"] #cut-button:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 192px 80px 176px)}
+#edit-controls[cui-areatype="menu-panel"] #copy-button {-moz-image-region: rect(0px 208px 16px 192px)}
+#edit-controls[cui-areatype="menu-panel"] #copy-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 208px 32px 192px)}
+#edit-controls[cui-areatype="menu-panel"] #copy-button[disabled="true"] {-moz-image-region: rect(32px 208px 48px 192px)}
+#edit-controls[cui-areatype="menu-panel"] #copy-button:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 208px 80px 192px)}
+#edit-controls[cui-areatype="menu-panel"] #paste-button {-moz-image-region: rect(0px 224px 16px 208px)}
+#edit-controls[cui-areatype="menu-panel"] #paste-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 224px 32px 208px)}
+#edit-controls[cui-areatype="menu-panel"] #paste-button[disabled="true"] {-moz-image-region: rect(32px 224px 48px 208px)}
+#edit-controls[cui-areatype="menu-panel"] #paste-button:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 224px 80px 208px)}
 
-#copy-button[cui-areatype="menu-panel"] {-moz-image-region: rect(0px 312px 24px 288px)}
-#copy-button[cui-areatype="menu-panel"]:not([disabled="true"]):hover {-moz-image-region: rect(24px 312px 48px 288px) !important}
-#copy-button[cui-areatype="menu-panel"][disabled="true"] {-moz-image-region: rect(48px 312px 72px 288px) !important}
-#copy-button[cui-areatype="menu-panel"]:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 312px 120px 288px) !important}
-
-#paste-button[cui-areatype="menu-panel"] {-moz-image-region: rect(0px 336px 24px 312px) !important}
-#paste-button[cui-areatype="menu-panel"]:not([disabled="true"]):hover {-moz-image-region: rect(24px 336px 48px 312px) !important}
-#paste-button[cui-areatype="menu-panel"][disabled="true"] {-moz-image-region: rect(48px 336px 72px 312px) !important}
-#paste-button[cui-areatype="menu-panel"]:not([disabled="true"]):hover:active {-moz-image-region: rect(96px 336px 120px 312px) !important}
-
+#wrapper-edit-controls .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+}
 /* string l10n */
 #customization-titlebar-visibility-button[checkState="0"] > hbox:after{-moz-margin-start:4px;-moz-margin-end:4px;color:#fff;background:#ff003f;display: block!important;white-space:pre-wrap!important}
 /* EN  */ #main-window[title^="Customize Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after,

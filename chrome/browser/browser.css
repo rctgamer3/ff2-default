@@ -1925,6 +1925,10 @@ padding: 2px !important;
   display: -moz-box;
 }
 
+/* Loop */
+#loop-call-button {
+  list-style-image: url("chrome://global/skin/loop/loop-call.png");
+}
 
 /* social share panel */
 

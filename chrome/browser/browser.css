@@ -2773,6 +2773,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/mixed-content-blocked-64.png);
 }
 
+.popup-notification-icon[popupid="bad-content"] {
+  list-style-image: url(chrome://browser/skin/bad-content-blocked-64.png);
+}
+
 .popup-notification-icon[popupid="webRTC-sharingDevices"],
 .popup-notification-icon[popupid="webRTC-shareDevices"] {
   list-style-image: url(chrome://browser/skin/webRTC-shareDevice-64.png);
@@ -3872,6 +3876,22 @@ notification.pluginVulnerable {
 
 notification.pluginVulnerable .messageImage {
   list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
+}
+.popup-notification-item-title[popupid="bad-content"] {
+  font-weight: bold;
+}
+
+.popup-notification-item-message[popupid="bad-content"] {
+  width: 17em;
+}
+
+.popup-notification-item-message-critical[popupid="bad-content"] {
+  color: #d74345;
+  font-style: italic;
+}
+
+.popup-notification-footer[popupid="bad-content"] {
+  padding-top: 1em;
 }
 
 /* This Source Code Form is subject to the terms of the Mozilla Public

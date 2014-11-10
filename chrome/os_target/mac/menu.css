@@ -18,6 +18,7 @@ menuitem {
   font: -moz-pull-down-menu;
   list-style-image: none;
   -moz-image-region: auto;
+  padding: 0 18px 2px;
 }
 
 menu[disabled="true"], menuitem[disabled="true"],
@@ -29,13 +30,15 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 /* ..... internal content .... */
 
 .menu-text,
-.menu-iconic-text {
-  margin: 0px 4px 0px 0px !important;
+.menu-iconic-text,
+.menu-accel,
+.menu-iconic-accel {
+  margin: 0 !important;
   color: inherit;
 }
 
-.menu-text {
-  margin-left: 18px !important;
+.menu-text,
+.menu-iconic-text {
   font-weight: inherit;
 }
 
@@ -52,12 +55,19 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
   color: inherit;
 }
 
-.menu-iconic-left {
-  margin: 2px 4px 1px 18px !important;
+/* menuitems with icons */
+.menuitem-iconic,
+.menu-iconic,
+menuitem[image],
+menuitem[src] {
   color: inherit;
 }
 
-.menu-iconic-icon {
+.menuitem-iconic > .menu-iconic-left > .menu-iconic-icon,
+.menu-iconic > .menu-iconic-left > .menu-iconic-icon,
+menuitem[image] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[src] > .menu-iconic-left > .menu-iconic-icon {
+  -moz-margin-start: 0;
   width: 16px;
   height: 16px;
   list-style-image: inherit;
@@ -73,31 +83,31 @@ menuitem[type="radio"] > .menu-iconic-left {
 .menu-right {
   margin: 0px 8px 0px 6px;
   width: 8px;
-  list-style-image: url("chrome://global/skin/menu/menu-arrow.gif");
+  list-style-image: url("chrome://global/skin/menu/osx/menu-arrow.gif");
   -moz-image-region: auto;
 }
 
 .menu-right[_moz-menuactive="true"] {
-  list-style-image: url("chrome://global/skin/menu/menu-arrow-hov.gif");
+  list-style-image: url("chrome://global/skin/menu/osx/menu-arrow-hov.gif");
   -moz-image-region: auto;
 }
 
 .menu-right[disabled="true"] {
-  list-style-image: url("chrome://global/skin/menu/menu-arrow-dis.gif") !important;
+  list-style-image: url("chrome://global/skin/menu/osx/menu-arrow-dis.gif") !important;
   -moz-image-region: auto;
 }
 
 /* ::::: menu/menuitems in menubar ::::: */
 
 menubar > menu {
-  -moz-appearance: none !important;
+  -moz-appearance: none;
   padding: 2px 5px 2px 7px;
-  margin: 1px 0px 1px 0px;
+  margin: 1px 0;
 }
 
 menubar > menu[_moz-menuactive="true"][open="true"] {
-  -moz-appearance: menuitem !important;
-  color: -moz-mac-menutextselect !important
+  -moz-appearance: menuitem ;
+  color: -moz-mac-menutextselect
 }
 
 /* ..... internal content .... */
@@ -115,18 +125,13 @@ menubar > menu[_moz-menuactive="true"][open="true"] {
 /* ::::: menu/menuitems in popups ::::: */
 
 menupopup > menu,
-popup > menu,
-menupopup > menuitem,
-popup > menuitem {
-  padding: 0px 3px 2px 3px !important;
+menupopup > menuitem {
   max-width: 42em;
   min-height: 19px;
 }
 
-menupopup > menu[_moz-menuactive="true"],
-menupopup > menuitem[_moz-menuactive="true"],
-popup > menu[_moz-menuactive="true"],
-popup > menuitem[_moz-menuactive="true"] {
+menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"] {
   color: -moz-mac-menutextselect;
   background-color: Highlight;
 }
@@ -139,7 +144,7 @@ menulist > menupopup > menuitem,
 menulist > menupopup > menu {
   padding-right: 25px !important;
   max-width: none;
-  font: inherit;
+  font: -moz-pull-down-menu;
   color: -moz-FieldText;
 }
 
@@ -162,23 +167,17 @@ menulist[editable="true"] > menupopup > menuitem > .menu-iconic-left {
 
 /* ::::: checked menuitems ::::: */
 
-menuitem[checked="true"], 
-menulist > menupopup > menuitem[selected="true"],
-.menulist-menupopup > menuitem[selected="true"] {
-  list-style-image: url("chrome://global/skin/menu/menu-check.png");
-  -moz-image-region: auto;
+:not(menulist) > menupopup > menuitem[checked="true"],
+:not(menulist) > menupopup > menuitem[selected="true"] {
+  -moz-appearance: checkmenuitem;
 }
 
-menuitem[checked="true"][disabled="true"] {
-  list-style-image: url("chrome://global/skin/menu/menu-check-dis.png");
-  -moz-image-region: auto;
-}
-
-menuitem[checked="true"][_moz-menuactive="true"]:not([disabled="true"]), 
-menulist > menupopup > menuitem[_moz-menuactive="true"][selected="true"]:not([disabled="true"]),
-.menulist-menupopup > menuitem[_moz-menuactive="true"][selected="true"]:not([disabled="true"]) {
-  list-style-image: url("chrome://global/skin/menu/menu-check-hov.png") !important;
-  -moz-image-region: auto;
+menulist:not([editable="true"]) > menupopup > menuitem[checked="true"]::before,
+menulist:not([editable="true"]) > menupopup > menuitem[selected="true"]::before {
+  content: '\2713'; /* a checkmark */
+  display: block;
+  width: 15px;
+  -moz-margin-start: -15px;
 }
 
 /* ::::: menuseparator ::::: */

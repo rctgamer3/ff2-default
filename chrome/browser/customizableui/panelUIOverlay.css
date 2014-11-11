@@ -723,9 +723,8 @@ panelview .toolbarbutton-1,
 .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
   margin-left: 4px;
   margin-right: 4px;
-*/
 }
-
+*/
 panelview .toolbarbutton-1,
 .widget-overflow-list .toolbarbutton-1 {
   margin-top: 6px;

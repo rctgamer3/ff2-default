@@ -12,6 +12,15 @@
 
 
 
+:root {
+  --panel-ui-button-background-image: linear-gradient(to bottom, transparent, hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, transparent),
+                    linear-gradient(to bottom, transparent, hsla(210,54%,20%,.3) 30%, hsla(210,54%,20%,.3) 70%, transparent),
+                    linear-gradient(to bottom, transparent, hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, transparent);
+  --panel-ui-button-background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px  calc(100% - 1px) !important;
+  --panel-ui-button-background-position: 0px 0px, 1px 0px, 2px 0px;
+  --panel-ui-button-background-repeat: no-repeat;
+}
+
 #PanelUI-popup #PanelUI-contents:empty {
   height: 128px;
 }
@@ -79,12 +88,10 @@
 }
 
 #PanelUI-button {
-  background-image: linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, hsla(0,0%,100%,0)),
-                    linear-gradient(to bottom, hsla(210,54%,20%,0), hsla(210,54%,20%,.3) 30%, hsla(210,54%,20%,.3) 70%, hsla(210,54%,20%,0)),
-                    linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, hsla(0,0%,100%,0));
-  background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px  calc(100% - 1px) !important;
-  background-position: 0px 0px, 1px 0px, 2px 0px;
-  background-repeat: no-repeat;
+  background-image: var(--panel-ui-button-background-image);
+  background-size: var(--panel-ui-button-background-size);
+  background-position: var(--panel-ui-button-background-position);
+  background-repeat: var(--panel-ui-button-background-repeat);
 }
 
 #PanelUI-button:-moz-locale-dir(rtl) {
@@ -97,7 +104,6 @@
 
 .panel-subviews {
   padding: 4px;
-  background-color: hsla(0,0%,100%,.97);
   background-clip: padding-box;
   border-left: 1px solid hsla(210,4%,10%,.3);
   box-shadow: 0 3px 5px hsla(210,4%,10%,.1),
@@ -135,14 +141,16 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 
 .panel-subview-header,
 .subviewbutton.panel-subview-footer {
-  padding: 12px;
+  box-sizing: border-box;
+  min-height: 41px;
+  padding: 11px 12px;
 }
 
 .panel-subview-header {
   margin: -4px -4px 4px;
-  background-color: hsla(210,4%,10%,.05);
   box-shadow: 0 -1px 0 hsla(210,4%,10%,.05) inset;
-  color: hsl(0,0%,50%);
+  color: GrayText;
+  font-variant: small-caps;
 }
 
 .cui-widget-panelview .panel-subview-header {
@@ -372,6 +380,7 @@ toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"] > iframe {
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-contents-scroller > #PanelUI-contents > .panel-wide-item,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-contents-scroller > #PanelUI-contents > .toolbarbutton-1:not([panel-multiview-anchor="true"]),
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-status,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-update-status,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > toolbarseparator,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > #PanelUI-customize,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > #PanelUI-help:not([panel-multiview-anchor="true"]) {
@@ -399,6 +408,7 @@ toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"]:not(.panel-wide-it
 .panelUI-grid .toolbarbutton-1 > .toolbarbutton-badge-container,
 .customization-palette .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 .customization-palette .toolbarbutton-1 > .toolbarbutton-icon,
+.customization-palette .toolbarbutton-1 > .toolbarbutton-badge-container,
 .panelUI-grid #bookmarks-toolbar-placeholder > .toolbarbutton-icon,
 .customization-palette #bookmarks-toolbar-placeholder > .toolbarbutton-icon,
 .panel-customization-placeholder-child > .toolbarbutton-icon {
@@ -499,12 +509,14 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   -moz-box-orient: horizontal;
 }
 
+#PanelUI-update-status,
 #PanelUI-fxa-status {
   border-top: 1px solid hsla(210,4%,10%,.14);
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
 }
 
+#PanelUI-update-status > .toolbarbutton-text,
 #PanelUI-fxa-status > .toolbarbutton-text {
   width: 0; /* Fancy cropping solution for flexbox. */
 }
@@ -514,6 +526,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   min-width: 46px;
 }
 
+#PanelUI-update-status > .toolbarbutton-text,
 #PanelUI-fxa-status > .toolbarbutton-text,
 #PanelUI-customize > .toolbarbutton-text {
   margin: 0;
@@ -526,6 +539,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   display: none;
 }
 
+#PanelUI-update-status > .toolbarbutton-icon,
 #PanelUI-fxa-status > .toolbarbutton-icon,
 #PanelUI-customize > .toolbarbutton-icon,
 #PanelUI-help > .toolbarbutton-icon,
@@ -538,6 +552,16 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   flex: 1;
   -moz-padding-start: 15px;
   -moz-border-start-style: none;
+}
+
+#PanelUI-update-status {
+  width: calc(22.35em + 30px);
+  -moz-padding-start: 15px;
+  -moz-border-start-style: none;
+}
+
+#PanelUI-update-status {
+  list-style-image: url(chrome://branding/content/icon16.png);
 }
 
 #PanelUI-fxa-status {
@@ -615,6 +639,32 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   outline: none;
 }
 
+#PanelUI-update-status[update-status="succeeded"] {
+  background-color: hsla(96, 65%, 75%, 0.1);
+}
+
+#PanelUI-update-status[update-status="succeeded"]:not([disabled]):hover {
+  background-color: hsla(96, 65%, 75%, 0.4);
+}
+
+#PanelUI-update-status[update-status="succeeded"]:not([disabled]):hover:active {
+  background-color: hsla(96, 65%, 75%, 0.6);
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
+}
+
+#PanelUI-update-status[update-status="failed"] {
+  background-color: hsla(359, 69%, 84%, 0.1);
+}
+
+#PanelUI-update-status[update-status="failed"]:not([disabled]):hover {
+  background-color: hsla(359, 69%, 84%, 0.4);
+}
+
+#PanelUI-update-status[update-status="failed"]:not([disabled]):hover:active {
+  background-color: hsla(359, 69%, 84%, 0.6);
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
+}
+
 #PanelUI-quit:not([disabled]):hover {
   background-color: #d94141;
   outline-color: #c23a3a;
@@ -645,6 +695,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #customization-palette .toolbarbutton-text {
   display: none;
 }
+
 /*
 panelview .toolbarbutton-1,
 .subviewbutton,
@@ -664,7 +715,8 @@ panelview .toolbarbutton-1,
 .widget-overflow-list .toolbarbutton-1,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton {
   border-width: 1px;
-}*/
+}
+*/
 
 .subviewbutton.panel-subview-footer {
   border-radius: 0;
@@ -693,21 +745,25 @@ panelview .toolbarbutton-1,
   -moz-padding-start: 6px;
 }
 
-/*.subviewbutton:not(.panel-subview-footer) {
+/*
+.subviewbutton:not(.panel-subview-footer) {
   margin: 0;
-}*/
+}
+*/
 
-/*.subviewbutton:not(.panel-subview-footer) > .toolbarbutton-text,
+/*
+.subviewbutton:not(.panel-subview-footer) > .toolbarbutton-text,
 /* Bookmark items need a more specific selector. * /
 .PanelUI-subView .subviewbutton:not(.panel-subview-footer) > .menu-text,
 .PanelUI-subView .subviewbutton:not(.panel-subview-footer) > .menu-iconic-text {
   font: menu;
-}*/
+}
+*/
 
 .PanelUI-subView .subviewbutton[shortcut]::after {
   content: attr(shortcut);
   float: right;
-  color: hsl(0,0%,50%);
+  color: GrayText;
 }
 
 .PanelUI-subView.cui-widget-panelview .subviewbutton[shortcut]::after {
@@ -719,12 +775,14 @@ panelview .toolbarbutton-1,
   font: menu;
   color: inherit;
 }
+
 /*
 .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
   margin-left: 4px;
   margin-right: 4px;
 }
 */
+
 panelview .toolbarbutton-1,
 .widget-overflow-list .toolbarbutton-1 {
   margin-top: 6px;
@@ -776,10 +834,12 @@ menuitem.panel-subview-footer:not([disabled])[_moz-menuactive]:active,
   box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
 }
 
-/*#BMB_bookmarksPopup .subviewbutton {
+/*
+#BMB_bookmarksPopup .subviewbutton {
   font: menu;
   font-weight: normal;
-}*/
+}
+*/
 
 #BMB_bookmarksPopup .subviewbutton:not([disabled="true"]) {
   color: inherit;
@@ -843,12 +903,14 @@ menuitem.panel-subview-footer:not([disabled])[_moz-menuactive]:active,
   margin-right: 10px;
 }
 
-/*.subviewbutton > .menu-accel-container {
+/*
+.subviewbutton > .menu-accel-container {
   -moz-box-pack: start;
   -moz-margin-start: 10px;
   -moz-margin-end: auto;
-  color: hsl(0,0%,50%);
-}*/
+  color: GrayText;
+}
+*/
 
 #PanelUI-historyItems > toolbarbutton {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
@@ -886,7 +948,13 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
                     linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0));
   background-repeat: no-repeat;
   background-color: Highlight;
-  background-position: left 10px center, 0; /* this doesn't need to be changed for RTL */
+  background-position: left 10px center, 0;
+}
+
+#PanelUI-help[panel-multiview-anchor="true"]:-moz-locale-dir(rtl)::after {
+  background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png),
+                    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0));
+  background-position: right 10px center, 0;
 }
 
 toolbarbutton[panel-multiview-anchor="true"] {
@@ -1084,14 +1152,16 @@ toolbaritem[overflowedItem=true],
   background-position: center right 7px;
 }
 
-/*.subviewbutton > .menu-iconic-left {
+/*
+.subviewbutton > .menu-iconic-left {
   -moz-appearance: none;
   -moz-margin-end: 3px;
 }
 
 menuitem[checked="true"].subviewbutton > .menu-iconic-left {
   visibility: hidden;
-}*/
+}
+*/
 
 .panel-mainview[panelid=customizationui-widget-panel],
 #customizationui-widget-multiview > .panel-viewcontainer,
@@ -1313,5 +1383,9 @@ menu.subviewbutton > .menu-right {
 
 menu[disabled="true"].subviewbutton > .menu-right {
   -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+menu.subviewbutton > .menu-right:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
 }
 

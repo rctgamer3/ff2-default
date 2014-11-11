@@ -2090,6 +2090,11 @@ padding: 2px !important;
   -moz-margin-end: 3px;
 }
 
+#navigator-throbber,
+.tab-throbber {
+  -moz-image-region: rect(0 16px 16px 0)
+}
+
 toolbar[iconsize="small"] #navigator-throbber,
 toolbar[mode="text"] #navigator-throbber {
   list-style-image: url("chrome://global/skin/icons/notloading_16.png");

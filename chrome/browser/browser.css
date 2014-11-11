@@ -2944,8 +2944,15 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .mixed-content-blocked-notification-icon,
+#mixed-content-blocked-notification-icon,
+.bad-content-blocked-notification-icon,
 #mixed-content-blocked-notification-icon {
   list-style-image: url(chrome://browser/skin/mixed-content-blocked-16.png);
+}
+
+.bad-content-unblocked-notification-icon,
+#bad-content-unblocked-notification-icon {
+  list-style-image: url(chrome://browser/skin/bad-content-unblocked-16.png);
 }
 
 .webRTC-shareDevices-notification-icon,

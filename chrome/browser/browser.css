@@ -1136,17 +1136,22 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   -moz-image-region: auto;
 }
 
-#panic-button[cui-areatype="toolbar"] {
+#panic-button {
   list-style-image: url("chrome://browser/skin/customizableui/panic.png");
   -moz-image-region: rect(0, 18px, 18px, 0px);
 }
 
-#panic-button[cui-areatype="toolbar"][open] {
+#panic-button[open] {
   -moz-image-region: rect(18px, 18px, 36px, 0);
 }
 
 #panic-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
   transform: scaleX(-1);
+}
+
+#web-apps-button {
+  list-style-image: url(chrome://browser/skin/customizableui/webapps16.png);
+  -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
 #loop-button-throttled > .toolbarbutton-badge-container {
@@ -1183,6 +1188,10 @@ toolbar[brighttext] #loop-button-throttled > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 126px, 18px, 108px);
 }
 
+#webide-button {
+  list-style-image: url(chrome://browser/skin/customizableui/WebIDE.png);
+  -moz-image-region: rect(0 18px 18px 0);
+}
 /* ::::: fullscreen window controls ::::: */
 
 #window-controls {

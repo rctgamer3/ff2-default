@@ -2915,7 +2915,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://mozapps/skin/plugins/pluginGeneric-16.png);
 }
 
-#blocked-plugins-notification-icon {
+#blocked-plugins-notification-icon,
+#plugins-notification-icon.plugin-blocked {
   list-style-image: url(chrome://mozapps/skin/plugins/notifyPluginBlocked.png);
 }
 

@@ -4089,7 +4089,7 @@ notification.pluginVulnerable .messageImage {
 }
 
 
-#downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
+#downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
   background-image: url("chrome://browser/skin/downloads/download-glow.png");
 }
 

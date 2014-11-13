@@ -2965,6 +2965,26 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/webRTC-sharingDevice-16.png);
 }
 
+.webRTC-shareMicrophone-notification-icon,
+#webRTC-shareMicrophone-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-16.png);
+}
+
+.webRTC-sharingMicrophone-notification-icon,
+#webRTC-sharingMicrophone-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-sharingMicrophone-16.png);
+}
+
+.webRTC-shareScreen-notification-icon,
+#webRTC-shareScreen-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16.png);
+}
+
+.webRTC-sharingScreen-notification-icon,
+#webRTC-sharingScreen-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-sharingScreen-16.png);
+}
+
 .web-notifications-notification-icon,
 #web-notifications-notification-icon {
   list-style-image: url(chrome://browser/skin/notification-16.png);

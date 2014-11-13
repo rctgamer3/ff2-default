@@ -4113,6 +4113,8 @@ notification.pluginVulnerable .messageImage {
   background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
 }
 
 @keyframes downloadsIndicatorNotificationStartRight {

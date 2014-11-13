@@ -5247,7 +5247,7 @@ min-height: 22px
   margin: 0 2em 2em;
 }
 
-#main-window:-moz-any([customize-entering],[customize-entered]) #navigator-toolbox > toolbar {
+#main-window:-moz-any([customize-entering],[customize-entered]) #navigator-toolbox {
   margin-left: 2em;
   margin-right: 2em;
 }
@@ -5275,7 +5275,7 @@ min-height: 22px
   outline-offset: -5px;
 }
 
-#main-window[customize-entered] .customization-target {
+#main-window[customizing] .customization-target:not(#PanelUI-contents) {
   min-width: 100px;
   padding-left: 10px;
   padding-right: 10px;
@@ -5291,11 +5291,13 @@ min-height: 22px
 }
 
 #customization-header {
-  font-size: 1.5em;
-  line-height: 1.5em;
-  color: rgb(64,100,128);
-  font-weight: lighter;
-  margin-bottom: 1em;
+  font-size: 1.75em;
+  line-height: 1.75em;
+  color: #666;
+  font-weight: 200;
+  margin: 25px 25px 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 #customization-panel-container {
@@ -5306,13 +5308,13 @@ min-height: 22px
 #customization-footer {
   background-color: rgb(236,236,236);
   border-top: 1px solid rgb(221,221,221);
-  padding: 15px;
+  padding: 10px;
 }
 
 .customizationmode-button {
   border: 1px solid rgb(192,192,192);
   border-radius: 3px;
-  margin: 0;
+  margin: 5px;
   padding: 2px 12px;
   background-color: rgb(251,251,251);
   color: rgb(71,71,71);
@@ -5321,20 +5323,8 @@ min-height: 22px
   -moz-appearance: none;
 }
 
-#customization-titlebar-visibility-button {
-  list-style-image: url("chrome://browser/skin/customizableui/customize-titleBar-toggle.png");
-  -moz-image-region: rect(0, 24px, 24px, 0);
-  padding: 2px 7px;
-  -moz-margin-end: 10px;
-}
-
-#customization-titlebar-visibility-button > .button-box > .button-text {
-  /* Sadly, button.css thinks its margins are perfect for everyone. */
-  -moz-margin-start: 6px !important;
-}
-
-#customization-titlebar-visibility-button[checked] {
-  -moz-image-region: rect(0, 48px, 24px, 24px);
+#customization-titlebar-visibility-button[checked],
+#customization-devedition-theme-button[checked] {
   background-color: rgb(218, 218, 218);
   border-color: rgb(168, 168, 168);
   text-shadow: 0 1px rgb(236, 236, 236);
@@ -5342,8 +5332,32 @@ min-height: 22px
               inset 0 1px rgb(196, 196, 196);
 }
 
-#customization-undo-reset {
-  -moz-margin-end: 10px;
+.customizationmode-button[disabled="true"] {
+  opacity: .5;
+}
+
+.customizationmode-button > .box-inherit > .box-inherit > .button-icon,
+.customizationmode-button > .button-box > .button-icon {
+  height: 24px;
+}
+
+#customization-titlebar-visibility-button {
+  list-style-image: url("chrome://browser/skin/customizableui/customize-titleBar-toggle.png");
+  -moz-image-region: rect(0, 24px, 24px, 0);
+  padding: 2px 7px;
+}
+
+#customization-titlebar-visibility-button > .button-box > .button-text {
+  /* Sadly, button.css thinks its margins are perfect for everyone. */
+  -moz-margin-start: 6px !important;
+}
+
+#customization-titlebar-visibility-button > .button-box > .button-icon {
+  vertical-align: middle;
+}
+
+#customization-titlebar-visibility-button[checked] {
+  -moz-image-region: rect(0, 48px, 24px, 24px);
 }
 
 #main-window[customize-entered] #customization-panel-container {
@@ -5573,11 +5587,11 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #UITourTooltipTitle {
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   font-weight: bold;
   -moz-margin-start: 0;
   -moz-margin-end: 0;
-  margin: 10px 0 19px 0;
+  margin: 0 0 9px 0;
 }
 
 #UITourTooltipDescription {
@@ -5585,34 +5599,36 @@ toolbarpaletteitem[place="toolbar"] {
   -moz-margin-end: 0;
   font-size: 1.15rem;
   line-height: 1.8rem;
+  margin-bottom: 0; /* Override global.css */
 }
 
 #UITourTooltipClose {
-  visibility: hidden; /* XXX Temporarily disabled by bug 966913 */
   -moz-appearance: none;
   border: none;
   background-color: transparent;
   min-width: 0;
   -moz-margin-start: 4px;
-  -moz-margin-end: -10px;
-  margin-top: -8px;
+  margin-top: -2px;
+}
+
+#UITourTooltipClose > .toolbarbutton-text {
+  display: none;
 }
 
 #UITourTooltipButtons {
-  margin: 1.5em 0 .9em 0;
+  -moz-box-pack: end;
+  background-color: hsla(210,4%,10%,.07);
+  border-top: 1px solid hsla(210,4%,10%,.14);
+  margin: 24px -16px -16px;
+  padding: 2em 15px;
 }
 
 #UITourTooltipButtons > button {
-  margin-left: 6px;
-  margin-right: 6px;
+  margin: 0 15px;
 }
 
 #UITourTooltipButtons > button:first-child {
   -moz-margin-start: 0;
-}
-
-#UITourTooltipButtons > button:last-child {
-  -moz-margin-end: 24px;
 }
 
 #UITourTooltipButtons > button[image] > .button-box > .button-icon {
@@ -5627,11 +5643,12 @@ toolbarpaletteitem[place="toolbar"] {
 
 #UITourTooltipButtons > button:not(.button-link) {
   -moz-appearance: none;
-  padding: 2px 10px;
-  background-color: hsla(210,4%,10%,.08);
-  border-radius: 2px;
+  background-color: rgb(251,251,251);
+  border-radius: 3px;
   border: 1px solid;
-  border-color: hsla(210,4%,10%,.1);
+  border-color: rgb(192,192,192);
+  color: rgb(71,71,71);
+  padding: 4px 30px;
   transition-property: background-color, border-color;
   transition-duration: 150ms;
 }

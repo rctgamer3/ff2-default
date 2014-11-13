@@ -5986,3 +5986,11 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
   background-image: none !important;
   padding: 0 8px !important
 }
+
+/* Doorhanger animation killer */
+/* panel[type="arrow"][animate="open"] / panel[animate="cancel"] not included */
+#BMB_bookmarksPopup,
+panel[type="arrow"]:not([animate="false"]) {
+  transform: none;
+  opacity: 1
+}

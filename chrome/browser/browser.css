@@ -676,6 +676,12 @@ toolbar[mode="full"] .toolbarbutton-menubutton-button {
   padding: 5px !important;
 }
 
+/* Impose restrictions on SDK-based toolbarbutton icon size (-> Bookmarks Flypaper) */
+toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
+  max-width: 24px;
+  max-height: 24px;
+}
+
 /* back button */
 
 #back-button {

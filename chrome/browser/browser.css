@@ -5973,7 +5973,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
   height: 16px;
 }
 /* string l10n */
-#customization-titlebar-visibility-button[checkState="0"] > hbox:after{-moz-margin-start:4px;-moz-margin-end:4px;color:#fff;background:#ff003f;display: block!important;white-space:pre-wrap!important}
+#customization-titlebar-visibility-button:not([checkState="1"]) > hbox:after{-moz-margin-start:4px;-moz-margin-end:4px;color:#fff;background:#ff003f;display: block!important;white-space:pre-wrap!important}
 /* EN  */ #main-window[title^="Customize Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after,
 /* ENGB*/ #main-window[title^="Customise Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:" Required for the Firefox 2 theme to work properly. Please enable. "}
 /* NL  */ #main-window[title^="Firefox aanpassen"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:" Vereist voor het goed functioneren van het Firefox 2 thema. Graag aanzetten. "}

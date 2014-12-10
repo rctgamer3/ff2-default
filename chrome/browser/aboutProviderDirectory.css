@@ -1,0 +1,116 @@
+html {
+  background: #F0F0F0;
+  padding: 0px 1em;
+}
+body {
+  color: #000;
+  position: relative;
+  min-width: 330px;
+  max-width: 50em;
+  margin: 4em auto;
+  font: message-box;
+  border: 1px solid #A0A0A0;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  background: #FFF;
+}
+
+#button-box {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media all and (min-width: 300px) {
+  #error-box {
+    max-width: 50%;
+    margin: 0 auto;
+    min-height: 36px;
+    -moz-padding-start: 38px;
+  }
+
+  button {
+    width: auto !important;
+    min-width: 150px;
+  }
+}
+
+@media all and (min-width: 780px) {
+  #error-box {
+    max-width: 30%;
+  }
+}
+
+button {
+  font: message-box;
+  -moz-appearance: none;
+  -moz-user-select: none;
+  width: 100%;
+  margin: 2px 0;
+  padding: 2px 6px;
+  line-height: 1.2;
+  background-color: hsla(210,30%,95%,.1);
+  background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+  background-clip: padding-box;
+  border: 1px solid hsla(210,15%,25%,.4);
+  border-color: hsla(210,15%,25%,.3) hsla(210,15%,25%,.35) hsla(210,15%,25%,.4);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
+              0 0 0 1px hsla(0,0%,100%,.3) inset,
+              0 1px 0 hsla(0,0%,100%,.1);
+
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+
+}
+
+button:hover {
+  background-color: hsla(210,30%,95%,.8);
+  border-color: hsla(210,15%,25%,.45) hsla(210,15%,25%,.5) hsla(210,15%,25%,.55);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
+              0 0 0 1px hsla(0,0%,100%,.3) inset,
+              0 1px 0 hsla(0,0%,100%,.1),
+              0 0 3px hsla(210,15%,25%,.1);
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+button:hover:active {
+  background-color: hsla(210,15%,25%,.2);
+  box-shadow: 0 1px 1px hsla(210,15%,25%,.2) inset,
+              0 0 2px hsla(210,15%,25%,.4) inset;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 10ms;
+  transition-timing-function: linear;
+}
+
+body {
+  width: 310px;
+  margin: 1em auto;
+}
+
+#message-box {
+  margin-top: 2em;
+  -moz-padding-start: 30px;
+}
+
+#activation-frame {
+  border: none;
+  margin: 0;
+  width: 310px;
+  height: 200px;
+}
+#activation > p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  line-height: 2em;
+}
+.link {
+  text-decoration: none;
+  color: -moz-nativehyperlinktext;
+  cursor: pointer;
+}

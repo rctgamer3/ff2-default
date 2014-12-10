@@ -47,7 +47,7 @@ menulist[editable="true"] {
 
 menulist[editable="true"] > .menulist-dropmarker {
   -moz-border-left-colors: #000000 #CCCCCC #FFFFFF;
-  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 
 menulist[editable="true"][open="true"] > .menulist-dropmarker {

@@ -65,6 +65,12 @@
   list-style-image: url(debugger-blackbox.png);
 }
 
+@media (min-resolution: 2dppx) {
+  #black-box {
+    list-style-image: url(debugger-blackbox@2x.png);
+  }
+}
+
 #pretty-print {
   font-weight: bold;
 }
@@ -73,12 +79,28 @@
   list-style-image: url(debugger-toggleBreakpoints.png);
 }
 
+@media (min-resolution: 2dppx) {
+  #toggle-breakpoints {
+    list-style-image: url(debugger-toggleBreakpoints@2x.png);
+  }
+}
+
 #sources-toolbar .devtools-toolbarbutton:not([label]) {
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
 #sources-toolbar .devtools-toolbarbutton:not([label])[checked] {
   -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #sources-toolbar .devtools-toolbarbutton:not([label]) {
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #sources-toolbar .devtools-toolbarbutton:not([label])[checked] {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
 }
 
 #sources .black-boxed {
@@ -93,11 +115,28 @@
   display: none;
 }
 
+/* Debugger unblackbox button */
+
+#black-boxed-message-button > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url(debugger-blackbox.png);
+  background-position: 0 0;
+  background-size: 32px 16px;
+  background-repeat: no-repeat;
+  -moz-margin-end: 5px;
+}
+
+@media (min-resolution: 2dppx) {
+  #black-boxed-message-button > .button-box > .button-icon {
+    background-image: url(debugger-blackbox@2x.png);
+  }
+}
+
 /* Black box message and source progress meter */
 
 #black-boxed-message,
 #source-progress-container {
-  background: url(background-noise-toolbar.png);
   /* Prevent the container deck from aquiring the size from this message. */
   min-width: 1px;
   min-height: 1px;
@@ -149,7 +188,7 @@
 }
 
 .theme-dark .dbg-classic-stackframe-details-url {
-  color: #b8c8d9; /* Light content text */
+  color: #a9bacb; /* Light content text */
 }
 
 .theme-light .dbg-classic-stackframe-details-url {
@@ -188,6 +227,17 @@
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
+@media (min-resolution: 2dppx) {
+  #trace {
+    list-style-image: url(tracer-icon@2x.png);
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #trace[checked] {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+}
+
 #clear-tracer {
   /* Make this button as narrow as the text inside it. */
   min-width: 1px;
@@ -201,6 +251,10 @@
 
 .theme-dark .trace-item {
   color: #f5f7fa; /* Light foreground text */
+}
+
+.theme-dark .trace-item.black-boxed {
+  color: rgba(128,128,128,0.4);
 }
 
 .theme-dark .trace-item.selected-matching {
@@ -225,7 +279,7 @@
 }
 
 .theme-dark .trace-param {
-  color: #b8c8d9; /* Content text light */
+  color: #a9bacb; /* Content text light */
 }
 
 .theme-dark .trace-syntax {
@@ -236,6 +290,10 @@
 
 .theme-light .trace-item {
   color: #292e33; /* Dark foreground text */
+}
+
+.theme-light .trace-item.black-boxed {
+  color: rgba(128,128,128,0.4);
 }
 
 .theme-light .trace-item.selected-matching {
@@ -284,10 +342,19 @@
 }
 
 .dbg-expression-arrow {
+  background-image: url(commandline-icon.png);
+  background-position: -16px 0;
+  background-repeat: no-repeat;
+  background-size: 32px 16px;
   width: 16px;
-  height: auto;
+  height: 16px;
   margin: 2px;
-  background: -moz-image-rect(url(commandline-icon.png), 0, 32, 16, 16);
+}
+
+@media (min-resolution: 2dppx) {
+  .dbg-expression-arrow {
+    background-image: url(commandline-icon@2x.png);
+  }
 }
 
 .dbg-expression-input {
@@ -298,8 +365,8 @@
   -moz-appearance: none;
   border: none;
   background: none;
-  cursor: pointer;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .theme-dark .dbg-expression-button {
@@ -317,7 +384,7 @@
 }
 
 .theme-dark .dbg-event-listener-location {
-  color: #b8c8d9; /* Light content text */
+  color: #a9bacb; /* Light content text */
 }
 
 .theme-light .dbg-event-listener-location {
@@ -492,7 +559,7 @@
 
 .theme-dark .dbg-results-header {
   background-color: #252c33; /* Tab toolbar */
-  color: #b8c8d9; /* Light content text */
+  color: #a9bacb; /* Light content text */
 }
 
 .theme-light .dbg-results-header {
@@ -544,21 +611,31 @@
 
 /* Toolbar controls */
 
-.devtools-sidebar-tabs > tabs > tab {
-  min-height: 1em !important;
-  padding: 0 !important;
+#debugger-toolbar .devtools-toolbarbutton:not([label]) > .toolbarbutton-icon,
+#sources-toolbar .devtools-toolbarbutton:not([label]) > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
 }
 
 #resume {
   list-style-image: url(debugger-pause.png);
   -moz-image-region: rect(0px,16px,16px,0px);
-  transition: background 0.15s ease-in-out;
 }
 
 #resume[checked] {
-  background: none;
   list-style-image: url(debugger-play.png);
-  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #resume {
+    list-style-image: url(debugger-pause@2x.png);
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #resume[checked] {
+    list-style-image: url(debugger-play@2x.png);
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
 }
 
 #resume ~ toolbarbutton {
@@ -581,6 +658,20 @@
   list-style-image: url(debugger-step-out.png);
 }
 
+@media (min-resolution: 2dppx) {
+  #step-over {
+    list-style-image: url(debugger-step-over@2x.png);
+  }
+
+  #step-in {
+    list-style-image: url(debugger-step-in@2x.png);
+  }
+
+  #step-out {
+    list-style-image: url(debugger-step-out@2x.png);
+  }
+}
+
 #instruments-pane-toggle {
   background: none;
   box-shadow: none;
@@ -593,8 +684,23 @@
   list-style-image: url(debugger-expand.png);
 }
 
-#instruments-pane-toggle:active {
+#instruments-pane-toggle:hover {
   -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #instruments-pane-toggle {
+    list-style-image: url(debugger-collapse@2x.png);
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #instruments-pane-toggle[pane-collapsed] {
+    list-style-image: url(debugger-expand@2x.png);
+  }
+
+  #instruments-pane-toggle:hover {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
 }
 
 /* Horizontal vs. vertical layout */
@@ -625,16 +731,4 @@
 #body[layout=vertical] .side-menu-widget-group,
 #body[layout=vertical] .side-menu-widget-item {
   -moz-margin-end: 0;
-}
-
-.devtools-sidebar-tabs > tabs > tab {
-  min-height: 22px !important;
-}
-
-#instruments-pane-toggle:hover {
-  -moz-image-region: rect(0px,32px,16px,16px);
-}
-
-#instruments-pane-toggle:hover:active {
-  -moz-image-region: rect(0px,48px,16px,32px);
 }

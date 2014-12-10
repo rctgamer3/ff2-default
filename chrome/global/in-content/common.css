@@ -1,0 +1,425 @@
+/* - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace html "http://www.w3.org/1999/xhtml";
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+html|body,
+xul|page {
+  font: message-box;
+  background-color: #f1f1f1;
+  color: #424e5a;
+}
+
+html|body {
+  margin: 0;
+}
+
+html|h1 {
+  font-weight: lighter;
+  line-height: 1.2;
+  margin: 0;
+  margin-bottom: .5em;
+}
+
+
+*|*.main-content {
+  overflow: auto;
+}
+
+xul|prefpane > xul|*.content-box {
+  overflow: visible;
+}
+
+/* groupboxes */
+
+
+/* tabpanels and tabs */
+xul|*.tabs-left,
+xul|*.tabs-right {
+  border-bottom: none;
+}
+
+
+/* html buttons */
+
+html|button {
+  padding: 3px;
+  /* override forms.css */
+  font: inherit;
+}
+
+/* xul buttons and menulists */
+
+*|button,
+xul|colorpicker[type="button"],
+xul|menulist {
+  -moz-appearance: none;
+  height: 30px;
+  color: #333;
+  line-height: 20px;
+  text-shadow: 0 1px 1px #fefffe;
+  border: 1px solid #c1c1c1;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: none !important;
+  border-radius: 2px;
+  background-color: #fbfbfb;
+}
+
+html|button:enabled:hover,
+xul|button:not([disabled="true"]):hover,
+xul|colorpicker[type="button"]:not([disabled="true"]):hover,
+xul|menulist:not([disabled="true"]):hover {
+  background-color: #ebebeb;
+}
+
+html|button:enabled:hover:active,
+xul|button:not([disabled="true"]):hover:active,
+xul|colorpicker[type="button"]:not([disabled="true"]):hover:active,
+xul|menulist[open="true"]:not([disabled="true"]) {
+  background-color: #dadada;
+}
+
+html|button:disabled,
+xul|button[disabled="true"],
+xul|colorpicker[type="button"][disabled="true"],
+xul|menulist[disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+xul|colorpicker[type="button"] {
+  padding: 6px;
+  width: 50px;
+}
+
+xul|button > xul|*.button-box,
+xul|menulist > xul|*.menulist-label-box {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+xul|button[type="menu"] > xul|*.button-box > xul|*.button-menu-dropmarker {
+  -moz-appearance: none;
+  margin: 1px 0;
+  -moz-margin-start: 10px;
+  padding: 0;
+  width: 10px;
+  height: 16px;
+  border: none;
+  background-color: transparent;
+  list-style-image: url("chrome://global/skin/in-content/dropdown.png");
+}
+
+xul|*.help-button {
+  min-width: 30px;
+  border-radius: 2px;
+  border: 1px solid #c1c1c1;
+  background-color: #ffcb00;
+  background-image: none;
+  box-shadow: none;
+}
+
+xul|*.help-button:not([disabled="true"]):hover {
+  background-color: #f4c200;
+  background-image: none;
+}
+
+xul|*.help-button:not([disabled="true"]):hover:active {
+  background-color: #eaba00;
+  background-image: none;
+}
+
+xul|*.close-icon > xul|*.button-box,
+xul|*.help-button > xul|*.button-box {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+xul|*.help-button > xul|*.button-box > xul|*.button-icon {
+  width: 26px;
+  height: 26px;
+  background-image: url("chrome://global/skin/in-content/help-glyph.png");
+  background-position: center;
+}
+
+@media (min-resolution: 2dppx) {
+  xul|*.help-button > xul|*.button-box > xul|*.button-icon {
+    background-size: 26px 26px;
+    background-image: url("chrome://global/skin/in-content/help-glyph@2x.png");
+  }
+}
+
+xul|*.help-button > xul|*.button-box > xul|*.button-text {
+  display: none;
+}
+
+xul|*.spinbuttons-button {
+  -moz-margin-start: 10px !important;
+  -moz-margin-end: 2px !important;
+}
+
+xul|*.spinbuttons-up {
+  margin-top: 2px !important;
+  border-radius: 1px 1px 0 0;
+}
+
+xul|*.spinbuttons-down  {
+  margin-bottom: 2px !important;
+  border-radius: 0 0 1px 1px;
+}
+
+xul|*.spinbuttons-button > xul|*.button-box {
+  padding: 1px 5px 2px !important;
+}
+
+xul|*.spinbuttons-up > xul|*.button-box > xul|*.button-icon {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
+}
+
+xul|*.spinbuttons-up[disabled="true"] > xul|*.button-box > xul|*.button-icon {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-dis.gif");
+}
+
+xul|*.spinbuttons-down > xul|*.button-box > xul|*.button-icon {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+}
+
+xul|*.spinbuttons-down[disabled="true"] > xul|*.button-box > xul|*.button-icon {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+
+xul|menulist > xul|menupopup,
+xul|button[type="menu"] > xul|menupopup {
+  -moz-appearance: none;
+  border: 1px solid rgba(23,50,77,0.4);
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+xul|menulist > xul|menupopup xul|menu,
+xul|menulist > xul|menupopup xul|menuitem,
+xul|button[type="menu"] > xul|menupopup xul|menu,
+xul|button[type="menu"] > xul|menupopup xul|menuitem {
+  -moz-appearance: none;
+  color: #333;
+  -moz-padding-start: 10px;
+  -moz-padding-end: 30px;
+}
+
+xul|menulist > xul|menupopup > xul|menu[_moz-menuactive="true"],
+xul|menulist > xul|menupopup > xul|menuitem[_moz-menuactive="true"],
+xul|button[type="menu"] > xul|menupopup > xul|menu[_moz-menuactive="true"],
+xul|button[type="menu"] > xul|menupopup > xul|menuitem[_moz-menuactive="true"] {
+  color: #333;
+  background-color: transparent;
+  background-image: linear-gradient(rgba(76,177,255,0.25), rgba(23,146,229,0.25));
+}
+
+xul|menulist > xul|menupopup > xul|menu[selected="true"],
+xul|menulist > xul|menupopup > xul|menuitem[selected="true"],
+xul|button[type="menu"] > xul|menupopup > xul|menu[selected="true"],
+xul|button[type="menu"] > xul|menupopup > xul|menuitem[selected="true"] {
+  color: #fff;
+  background-image: linear-gradient(#4cb1ff, #1792e5);
+}
+
+xul|menulist > xul|menupopup xul|menuseparator,
+xul|button[type="menu"] > xul|menupopup xul|menuseparator {
+  -moz-appearance: none;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0;
+  border-top: 1px solid rgba(23,50,77,0.4);
+  border-bottom: none;
+}
+
+/* textboxes */
+
+*|textbox {
+  -moz-appearance: none;
+  height: 30px;
+  color: #333;
+  line-height: 20px;
+  text-shadow: 0 1px 1px #fefffe;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 1px solid #c1c1c1;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: none !important;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+html|textbox:focus,
+xul|textbox[focused] {
+  border-color: #0095dd;
+}
+
+html|textbox:disabled,
+xul|textbox[disabled="true"] {
+  opacity: 0.5;
+}
+
+/* Links */
+
+html|a,
+xul|*.text-link,
+xul|*.inline-link {
+  font-size: 1.25rem;
+  line-height: 22px;
+  color: #0095dd;
+  text-decoration: none;
+}
+
+html|a:hover,
+xul|*.text-link:hover,
+xul|*.inline-link:hover {
+  color: #4cb1ff;
+  text-decoration: none;
+}
+
+html|a:hover:active,
+xul|*.text-link:hover:active,
+xul|*.inline-link:hover:active {
+  color: #ff9500;
+  text-decoration: none;
+}
+
+
+
+
+/* Category List */
+
+xul|*#categories {
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  margin: 0;
+}
+
+xul|*.category {
+  -moz-appearance: none;
+  color: #c1c1c1;
+  -moz-border-end-width: 0;
+  -moz-padding-start: 15px;
+  -moz-padding-end: 21px;
+  min-height: 40px;
+  transition: background-color 150ms;
+}
+
+xul|*.category:hover {
+  background-color: #E0E8F6;
+}
+
+xul|*.category[selected] {
+  background-color: #C1D2EE;
+  color: #000;
+  -moz-appearance: none
+}
+
+xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[current] {
+  border-top: 1px #ffffff dotted;
+  border-bottom: 1px #ffffff dotted;
+}
+
+*|*.category-name {
+  color: #000;
+  line-height: 22px;
+  font-size: 1.25rem;
+  padding-bottom: 2px;
+  -moz-padding-start: 9px;
+  margin: 0;
+}
+
+*|*.category-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* header */
+
+*|*.header {
+  border-bottom: 1px solid #c8c8c8;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+*|*.header-name {
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 40px;
+  margin: 0;
+}
+
+/* File fields */
+
+xul|filefield {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+xul|*.fileFieldContentBox {
+  background-color: transparent;
+}
+
+xul|*.fileFieldIcon {
+  -moz-margin-start: 10px;
+  -moz-margin-end: 0;
+}
+
+xul|*.fileFieldLabel {
+  -moz-margin-start: -26px;
+  -moz-padding-start: 36px;
+}
+
+xul|textbox:-moz-locale-dir(rtl),
+xul|*.fileFieldLabel:-moz-locale-dir(rtl),
+xul|textbox + xul|button:-moz-locale-dir(ltr),
+xul|filefield + xul|button:-moz-locale-dir(ltr) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+xul|textbox:-moz-locale-dir(ltr),
+xul|*.fileFieldLabel:-moz-locale-dir(ltr),
+xul|textbox + xul|button:-moz-locale-dir(rtl),
+xul|filefield + xul|button:-moz-locale-dir(rtl) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+xul|textbox + xul|button,
+xul|filefield + xul|button {
+  -moz-border-start: none;
+}
+
+xul|caption {
+  background-color: transparent;
+}
+
+xul|button,
+xul|colorpicker[type="button"],
+xul|menulist {
+  margin: 2px 4px;
+}
+
+xul|menulist:not([editable="true"]) > xul|*.menulist-dropmarker {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+
+html|a:-moz-focusring,
+xul|*.text-link:-moz-focusring,
+xul|*.inline-link:-moz-focusring {
+  border: 1px dotted -moz-DialogText;
+}

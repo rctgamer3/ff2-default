@@ -61,8 +61,8 @@
   border: 0;
 }
 
-/* blue hallo */
-.searchbar-engine-button[addengines="true"] > .button-box {
+/* blue halo */
+searchbar[addengines="true"] .searchbar-engine-button > .button-box {
   background: transparent url("chrome://browser/skin/Search-addengines.png") no-repeat right center;
 }
 

@@ -40,6 +40,11 @@ treecol {
   -moz-image-region: rect(32px, 32px, 64px, 0);
 }
 
+#category-search > .category-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/category-search.png");
+  -moz-image-region: auto;
+}
+
 #category-content > .category-icon {
   -moz-image-region: rect(0, 96px, 32px, 64px);
 }
@@ -113,6 +118,15 @@ treecol {
 }
 
 /* General Pane */
+
+#useFirefoxSync  {
+  font-size: 90%;
+  -moz-margin-end: 8px !important;
+}
+
+#getStarted {
+  font-size: 90%;
+}
 
 #isNotDefaultLabel {
   font-weight: bold;
@@ -199,6 +213,17 @@ description > html|a {
   -moz-margin-start: 33px;
 }
 
+#trackingProtectionImage {
+  width: 16px;
+  height: 16px;
+  list-style-image: url(chrome://browser/skin/bad-content-blocked-16.png);
+}
+
+@media (min-resolution: 2dppx) {
+  #trackingProtectionImage {
+    list-style-image: url(chrome://browser/skin/bad-content-blocked-16@2x.png);
+  }
+}
 /**
  * Sub-dialog
  */

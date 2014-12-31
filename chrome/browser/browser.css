@@ -5018,6 +5018,18 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
   outline: none !important
 }
 
+/* Stylish dropmarker fix */
+#stylish-toolbar-button[cui-areatype="toolbar"] {
+  -moz-box-orient: horizontal;
+}
+
+#nav-bar[iconsize="small"] #stylish-toolbar-button > .toolbarbutton-icon {
+  -moz-padding-end: 0 !important;
+}
+#stylish-toolbar-button .toolbarbutton-menu-dropmarker {
+  display: initial !important;
+}
+
 /* CTR compatibility */
 #ctr_addon-bar {
   min-height: 20px;

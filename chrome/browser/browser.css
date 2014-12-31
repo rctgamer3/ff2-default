@@ -1936,6 +1936,14 @@ padding: 2px !important;
     visibility: visible !important
 }
 
+#urlbar[focused="true"] #urlbar-reload-button[disabled] {
+  display:none
+}
+
+#urlbar[focused="true"] #urlbar-reload-button[disabled] + #urlbar-stop-button {
+    visibility: visible !important
+}
+
 /* ::::: go button ::::: */
 
 #go-button {

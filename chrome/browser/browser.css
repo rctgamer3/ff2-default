@@ -4884,7 +4884,7 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 }
 
 /* Stylish dropmarker fix */
-#stylish-toolbar-button[cui-areatype="toolbar"] {
+#stylish-toolbar-button {
   -moz-box-orient: horizontal;
 }
 
@@ -4929,6 +4929,14 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 
 /* kill the back/forward dropbarker button, since it uses alltabs styles */
 #ctr_back-forward-dropmarker,#wrapper-ctr_back-forward-dropmarker {display:none!important}
+
+/* Pale Moon fixes */
+#main-window[title_normal="Pale Moon"] :-moz-any(#urlbar-reload-button,#urlbar-stop-button,#urlbar-go-button){display:none}
+#ub-feed-button,#ub-feed-button>.button-box,#ub-feed-button:hover:active>.button-box{padding:0;margin:0;border:0;background-color:transparent}
+#ub-feed-button>hbox>.button-menu-dropmarker,#ub-feed-button>hbox>.button-text{display:none}
+#ub-feed-button{-moz-appearance:none;min-width:0;padding:0 2px!important;list-style-image:url("chrome://browser/skin/livemark-item.png");-moz-image-region: rect(0px 36px 18px 18px)}
+#ub-feed-button:hover{-moz-image-region:rect(18px 36px 36px 18px)}
+#ub-feed-button[open="true"],#ub-feed-button:hover:active {-moz-image-region: rect(54px 36px 72px 18px)}
 
 /* end of Extension styles */
 

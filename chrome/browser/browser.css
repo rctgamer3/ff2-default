@@ -685,7 +685,7 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 /* back button */
 
 #back-button {
-  -moz-image-region: rect(0px 24px 24px 0px); 
+  -moz-image-region: rect(0px 24px 24px 0px);
 }
 #back-button:not([disabled="true"]):hover,
 #back-button[buttonover="true"] {
@@ -729,7 +729,7 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 }
 
 #forward-button:-moz-locale-dir(rtl) {
-  -moz-image-region: rect(0px 24px 24px 0px); 
+  -moz-image-region: rect(0px 24px 24px 0px);
 }
 #forward-button:-moz-locale-dir(rtl):not([disabled="true"]):hover,
 #forward-button:-moz-locale-dir(rtl)[buttonover="true"] {
@@ -1107,7 +1107,7 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 #feed-button:hover:active > .button-box {
   padding: 0px;
   margin: 0px;
-  border: 0px; 
+  border: 0px;
   background-color: transparent;
 }
 
@@ -1118,8 +1118,8 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 
 #feed-button {
 /*  -moz-binding: url("chrome://global/content/bindings/button.xml#menu");*/
-  -moz-appearance: none; 
-  min-width: 0px; 
+  -moz-appearance: none;
+  min-width: 0px;
   padding: 0 2px !important;
 }
 
@@ -1220,7 +1220,7 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
 /* ::::: Location Bar ::::: */
 
 #urlbar[fission="fusion"] > #statusbar-icon > .progress-bar {
-  margin-left: -19px !important; 
+  margin-left: -19px !important;
 }
 
 #urlbar {
@@ -1287,7 +1287,7 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
 }
 
 #wrapper-urlbar-container #urlbar > .autocomplete-history-dropmarker {
-  display: none; 
+  display: none;
 }
 
 /* hide dropmarker while in [customizing] mode */
@@ -1803,14 +1803,14 @@ toolbar[iconsize="small"] #fullscreen-button:hover {
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/editBookmark.png");
   -moz-image-region: rect(0px 16px 16px 0px);
-  width: 16px; 
+  width: 16px;
   height: 16px;
 }
 
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/tag.png");
-  width: 16px; 
+  width: 16px;
   height: 16px;
 }
 
@@ -2396,7 +2396,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 /* newtab on tab button - Plus button */
 
 .tabs-newtab-button {
-  width: 27px; 
+  width: 27px;
   margin: 0;
   padding: 0 0 0 3px;
   -moz-appearance: none;
@@ -2548,7 +2548,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 /* newtab on tabstrip  - plus button*/
 #TabsToolbar #new-tab-button {
-  width: 27px; 
+  width: 27px;
   margin: 0;
   padding: 5px 5px 0 0;
   -moz-appearance: none;

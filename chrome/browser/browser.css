@@ -5019,6 +5019,31 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 #ub-feed-button:hover{-moz-image-region:rect(18px 36px 36px 18px)}
 #ub-feed-button[open="true"],#ub-feed-button:hover:active {-moz-image-region: rect(54px 36px 72px 18px)}
 
+/* Feed Sidebar fixes */
+#feedbar-open-all, #feedbar-period-button, #feedbar-stop-button, #feedbar-frequency-button, #search-toggle {list-style-image:url("chrome://browser/skin/Toolbar-small.png")}
+:-moz-any(#feedbar-open-all, #feedbar-period-button, #feedbar-frequency-button, #feedbar-stop-button, #search-toggle)[disabled],
+:-moz-any(#feedbar-open-all, #feedbar-period-button, #feedbar-frequency-button, #feedbar-stop-button, #search-toggle)[disabled] .toolbarbutton-icon {opacity: 1}
+#feedbar-open-all {-moz-image-region: rect(0 160px 16px 144px)}
+#feedbar-open-all:not([disabled="true"]):hover {-moz-image-region: rect(16px 160px 32px 144px)}
+#feedbar-open-all:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 160px 80px 144px)}
+#feedbar-open-all[disabled="true"] {-moz-image-region: rect(32px 160px 48px 144px)}
+#feedbar-frequency-button {-moz-image-region: rect(0 64px 16px 48px)}
+#feedbar-frequency-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 64px 32px 48px)}
+#feedbar-frequency-button:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 64px 80px 48px)}
+#feedbar-frequency-button[disabled="true"] {-moz-image-region: rect(32px 64px 48px 48px)}
+#feedbar-period-button {-moz-image-region: rect(0 112px 16px 96px)}
+#feedbar-period-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 112px 32px 96px)}
+#feedbar-period-button:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 112px 80px 96px)}
+#feedbar-period-button[disabled="true"] {-moz-image-region: rect(32px 112px 48px 96px)}
+#feedbar-stop-button {-moz-image-region: rect(0 48px 16px 32px)}
+#feedbar-stop-button:not([disabled="true"]):hover {-moz-image-region: rect(16px 48px 32px 32px)}
+#feedbar-stop-button:not([disabled="true"]):hover:active {-moz-image-region: rect(64px 48px 80px 32px)}
+#feedbar-stop-button[disabled="true"] {-moz-image-region: rect(32px 48px 48px 32px)}
+#feedbar-sort-button + spacer + #search-toggle {list-style-image: url("chrome://browser/skin/Search-glass.png");-moz-image-region: rect(3px 20px 19px 4px)}
+#feedbar-sort-button + spacer + #search-toggle:not([disabled="true"]):hover {-moz-image-region: rect(3px 45px 19px 29px)}
+#feedbar-sort-button + spacer + #search-toggle[disabled="true"] {-moz-image-region: rect(3px 70px 19px 54px)}
+#feedbar-sort-button + spacer + #search-toggle:not([disabled="true"]):hover:active {-moz-image-region: rect(3px 95px 19px 79px)}
+
 /* end of Extension styles */
 
 

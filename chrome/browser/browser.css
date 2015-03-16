@@ -2022,10 +2022,35 @@ padding: 2px !important;
 
 /* social share panel */
 
-#social-share-panel > iframe {
-  background: linear-gradient(to bottom, #f0f4f7, #fafbfc);
-  width: 300px;
+.social-share-frame {
+  min-width: 756px;
   height: 150px;
+}
+#share-container {
+  min-width: 756px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#share-container[loading] {
+  background-image: url(chrome://browser/skin/tabbrowser/pendingpaint.png);
+}
+#share-container > browser {
+  transition: opacity 150ms ease-in-out;
+  opacity: 1;
+}
+#share-container[loading] > browser {
+  opacity: 0;
+}
+
+.social-share-toolbar {
+  border-bottom: 1px solid #e2e5e8;
+  padding: 2px;
+}
+
+#social-share-provider-buttons {
+  padding: 0;
+  margin: 0;
 }
 
 #social-share-button {
@@ -2033,55 +2058,78 @@ padding: 2px !important;
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
-.social-share-toolbar {
-  border-right: 1px solid #e2e5e8;
-  background: linear-gradient(to bottom, #ffffff, #f5f7fa);
+#share-button {
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+.share-provider-button > .toolbarbutton-text {
+  display: none;
+}
+#add-share-provider > .toolbarbutton-icon {
+  width: 12px;
+  height:12px;
+  min-height: unset;
+  max-height: unset;
+  margin: 5px;
+}
+#add-share-provider {
+  -moz-image-region: rect(0,26px,12px,14px);
+  margin: 0;
+  padding: 0 !important;
+}
+.share-provider-button {
+  padding: 5px;
+  margin: 2px;
+}
+
+.share-provider-button > .toolbarbutton-text {
+  display: none;
+}
+.share-provider-button > .toolbarbutton-icon {
+  width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+}
+
+
+toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
+  width: auto;
+  height: auto;
+  max-width: 32px;
+  max-height: 24px;
+}
+
+/* fixup corners for share panel */
+.social-panel > .social-panel-frame {
+  border-radius: inherit;
+}
+
+#social-share-panel {
+  min-height: 100px;
+  min-width: 766px;
+}
+
+#share-container,
+.social-share-frame {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: inherit;
+}
+
+#social-share-panel > .social-share-toolbar {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+#social-share-provider-buttons {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 /* social recommending panel */
 
-#share-button {
+#social-mark-button {
   -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-#socialUserPortrait {
-  width: 48px;
-  height: 48px;
-  list-style-image:url("chrome://global/skin/icons/information-32.png");  
-}
-
-#socialUserDisplayName,
-#socialUserPortrait {
-  cursor: pointer;
-}
-
-#socialUserDisplayName {
-  -moz-appearance: none;
-  border: none;
-  background-color: transparent;
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 130%;
-  font-weight: bold;
-}
-
-#socialUserDisplayName > .button-box {
-  -moz-padding-start: 0;
-  padding-top: 0;
-  border-top-width: 0;
-}
-
-#socialUserDisplayName:hover {
-  color: -moz-nativehyperlinktext;
-  text-decoration: underline;
-}
-
-#unsharePopupText {
-  height: 48px;
-}
-
-#unsharePopupBottomButtons {
-  margin-top: 1em;
 }
 
 /* star button */
@@ -4199,6 +4247,13 @@ padding-right: 5px !important;
   border: 1px solid transparent;
 }
 
+.popup-notification-icon[popupid="servicesInstall"] {
+  list-style-image: url(chrome://browser/skin/social/services-64.png);
+}
+#servicesInstall-notification-icon {
+  list-style-image: url(chrome://browser/skin/social/services-16.png);
+}
+
 .social-notification-icon-stack.toolbarbutton-icon:hover {
   border-color:  ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;
 }
@@ -5127,6 +5182,17 @@ list-style-image: url("chrome://browser/skin/customizableui/MetroSwitch.png");
 
 #panic-button[open] {
   -moz-image-region: rect(18px, 18px, 36px, 0);
+}
+
+#add-share-provider {
+  list-style-image: url(chrome://browser/skin/Toolbar-new.png);
+  -moz-image-region: rect(0, 26px, 12px, 14px);
+}
+#add-share-provider:hover {
+  -moz-image-region: rect(13px, 26px, 25px, 14px);
+}
+#add-share-provider:hover:active {
+  -moz-image-region: rect(39px, 26px, 51px, 14px);
 }
 
 /* tab throbber fixes */

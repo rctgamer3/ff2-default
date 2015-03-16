@@ -5189,8 +5189,11 @@ toolbar[iconsize="small"] #history-panelmenu:not([disabled="true"]):not([checked
 
 /* DeveloperTools button */
 #developer-button {
-  list-style-image: url("chrome://browser/skin/devtools/tools-icons-small.png");
-  -moz-image-region: rect(64px, 16px, 80px, 0px);
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png");
+  -moz-image-region: rect(0 24px 24px 0);
+}
+#developer-button:hover {
+  -moz-image-region: rect(24px 24px 48px 0);
 }
 
 /* Save Page button */

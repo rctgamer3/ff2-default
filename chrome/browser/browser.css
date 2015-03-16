@@ -5173,6 +5173,13 @@ list-style-image: url("chrome://browser/skin/Privacy-16.png");
   -moz-image-region: rect(96px 168px 120px 144px);
 }
 
+toolbar[iconsize="small"] #history-panelmenu .toolbarbutton-icon {padding-left:1px}
+toolbar[iconsize="small"] #history-panelmenu {-moz-image-region: rect(0px 112px 16px 96px)}
+toolbar[iconsize="small"] #history-panelmenu:not([disabled="true"]):not([checked="true"]):hover {-moz-image-region: rect(16px 112px 32px 96px)}
+toolbar[iconsize="small"] #history-panelmenu[disabled="true"] {-moz-image-region: rect(32px 112px 48px 96px)}
+toolbar[iconsize="small"] #history-panelmenu[checked="true"] {-moz-image-region: rect(48px 112px 64px 96px)}
+toolbar[iconsize="small"] #history-panelmenu:not([disabled="true"]):not([checked="true"]):hover:active {-moz-image-region: rect(64px 112px 80px 96px)}
+
 /* Options/Preferences button */
 #preferences-button {
   list-style-image: url("chrome://browser/skin/preferences/Options.png");

@@ -1,0 +1,137 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+html {
+  background: -moz-Dialog;
+}
+
+/* Body and container */
+body {
+  margin: 0;
+  padding: 0 1em;
+  color: -moz-FieldText;
+  font: message-box;
+}
+
+h1 {
+  margin: 0 0 .6em 0;
+  border-bottom: 1px solid ThreeDLightShadow;
+  font-size: 160%;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+.container {
+  position: relative;
+  min-width: 13em;
+  max-width: 52em;
+  margin: 4em auto;
+  border: 1px solid ThreeDShadow;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  background: url("chrome://global/skin/icons/warning-large.png") left 0 no-repeat -moz-Field;
+  background-origin: content-box;
+}
+
+.container:-moz-dir(rtl) {
+  background-position: right 0;
+}
+
+.title {
+  -moz-margin-start: 80px;
+}
+
+.description {
+  -moz-margin-start: 80px;
+}
+
+
+
+#tabList {
+  width: 100%;
+  height: 12em;
+}
+
+treechildren::-moz-tree-image(icon),
+treechildren::-moz-tree-image(noicon) {
+  padding-right: 2px;
+  margin: 0px 2px;
+  width: 16px;
+  height: 16px;
+}
+
+treechildren::-moz-tree-image(noicon) {
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+}
+treechildren::-moz-tree-image(container, noicon) {
+  list-style-image: url("chrome://browser/skin/aboutSessionRestore-window-icon.png");
+}
+treechildren::-moz-tree-image(checked) {
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
+treechildren::-moz-tree-image(partial) {
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");
+}
+
+
+.description > p {
+  overflow: auto;
+  border-bottom: 1px solid ThreeDLightShadow;
+  padding-bottom: 1em;
+  font-size: 130%;
+  white-space: pre-wrap;
+  display: block;
+  margin: 1em 0px;
+}
+
+#errorLongDesc {
+  -moz-padding-end: 3em;
+  font-size: 110%;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  -moz-margin-start: 1.5em;
+}
+
+ul > li, ol > li {
+  margin-bottom: .5em;
+}
+
+ul {
+  list-style: square;
+}
+
+/* Buttons */
+.button-container {
+  width: 100%;
+}
+
+.button-container > button {
+  margin-top: 2em;
+}
+
+#errorTryAgain {
+  margin-top: 2em;
+  -moz-margin-start: 80px;
+}
+
+#brand {
+  position: absolute;
+  right: 0;
+  bottom: -1.5em;
+  -moz-margin-end: 10px;
+  opacity: .4;
+}
+
+#brand:-moz-dir(rtl) {
+  right: auto;
+  left: 0;
+}
+

@@ -1944,6 +1944,10 @@ padding: 2px !important;
     visibility: visible !important
 }
 
+#urlbar[focused="true"] #urlbar-reload-button[displaystop="true"] {
+  display: none !important
+}
+
 /* ::::: go button ::::: */
 
 #go-button {

@@ -4878,6 +4878,9 @@ notification.pluginVulnerable .messageImage {
 #abp-sidebar-close:hover:active {
   -moz-image-region: rect(0px 48px 16px 32px) !important;
 }
+/* Adblock Plus full toolbar fix */
+toolbar:-moz-any([cthmode="full"],[mode="full"]) #abp-toolbarbutton {-moz-box-orient: vertical !important}
+toolbar:-moz-any([cthmode="full"],[mode="full"]) #abp-toolbarbutton .toolbarbutton-menu-dropmarker {display: none}
 
 /* Status4Evar downloads button */
 

@@ -5089,13 +5089,25 @@ list-style-image: url("chrome://mozapps/skin/extensions/category-extensions.png"
   display: block
 }
 
-/* about:customizing #go-button fix */
+#main-window[customizing] #bookmarks-toolbar-placeholder .toolbarbutton-text {display: -moz-box}
+#main-window[customizing] #bookmarks-toolbar-placeholder {-moz-box-orient: horizontal}
+#main-window[customizing] #bookmarks-toolbar-placeholder .toolbarbutton-icon {-moz-margin-end: 5px}
+
+/* about:customizing fixes */
 #main-window[customizing] #urlbar {
   margin-right: 26px !important;
 }
+#main-window[customizing] #cthelper-go-button,
 #main-window[customizing] #go-button {
   margin-left: 2px !important;
   margin-right: -22px !important;
+}
+#main-window[customizing] #urlbar-go-button {margin-left: 0 !important;margin-right:-20px !important}
+
+#main-window[customizing] :-moz-any(#urlbar-reload-button, #urlbar-stop-button) {display: none}
+/* fix for borderless searchbar */
+#main-window[customizing] :-moz-any(#urlbar, .searchbar-textbox) > .autocomplete-textbox-container > .textbox-input-box {
+  visibility: visible !important;
 }
 
 /* More Tools / buttons button */
@@ -5577,7 +5589,7 @@ toolbarpaletteitem[place="toolbar"] {
   border: none;
   background-color: transparent;
   /* This is a buffer to compensate for the movement in the "wobble" effect */
-  padding: 1px;
+  padding: 4px;
 }
 
 #UITourHighlight {
@@ -5591,11 +5603,23 @@ toolbarpaletteitem[place="toolbar"] {
   min-width: 32px;
 }
 
+#UITourTooltipBody {
+  -moz-margin-end: 14px;
+}
+
+#UITourTooltipBody > vbox {
+  padding-top: 4px;
+}
+
+#UITourTooltipIconContainer {
+  -moz-margin-start: -16px;
+}
+
 #UITourTooltipIcon {
   width: 48px;
   height: 48px;
-  -moz-margin-start: 8px;
-  -moz-margin-end: 18px;
+  -moz-margin-start: 28px;
+  -moz-margin-end: 28px;
 }
 
 #UITourTooltipTitle,
@@ -5838,7 +5862,7 @@ notification.heartbeat {
   -moz-image-region: rect(96px 24px 120px 0px)
 }
 
-#context-back[disabled=true] { 
+#context-back[disabled=true] {
   -moz-image-region: rect(48px 24px 72px 0px)
 }
 

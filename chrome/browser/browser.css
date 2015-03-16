@@ -641,6 +641,9 @@ menuitem.bookmark-item {
 .toolbarbutton-1 {
   -moz-box-orient: vertical;
   min-width: 0;
+}
+
+:-moz-any(#back-button, #forward-button, #stop-button, #reload-button, #home-button, #downloads-button, #history-button, #history-panelmenu, #bookmarks-menu-button, #bookmarks-button, #print-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button).toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
@@ -1442,6 +1445,9 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
 toolbar[iconsize="small"] .toolbarbutton-1 {
   -moz-box-orient: vertical;
   min-width: 0;
+}
+
+toolbar[iconsize="small"] :-moz-any(#back-button, #forward-button, #stop-button, #reload-button, #home-button, #downloads-button, #history-button, #history-panelmenu, #bookmarks-menu-button, #bookmarks-button, #print-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button).toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/Toolbar-small.png");
 }
 

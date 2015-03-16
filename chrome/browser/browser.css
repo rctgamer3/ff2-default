@@ -1994,6 +1994,32 @@ padding: 2px !important;
   display: -moz-box;
 }
 
+/* Reader mode button */
+
+#reader-mode-button {
+  -moz-appearance: none;
+  padding: 0;
+  list-style-image: url("chrome://browser/skin/reader-mode-16.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#reader-mode-button > .toolbarbutton-icon {
+  width: 16px;
+}
+
+#reader-mode-button:focus {
+  outline: 1px dotted;
+}
+
+#reader-mode-button:hover:active,
+#reader-mode-button[readeractive] {
+   -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+#reader-mode-button .toolbarbutton-icon {
+  padding: 0;
+  margin: 0
+}
+
 /* social share panel */
 
 #social-share-panel > iframe {

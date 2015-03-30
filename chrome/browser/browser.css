@@ -1268,6 +1268,11 @@ toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
   margin-right: -22px !important;
 }
 
+#main-window[chromehidden^="menubar toolbar directories extrachrome"] :-moz-any(#go-button, #urlbar-go-button, #cthelper-go-button) {
+  margin-left: 0 !important;
+  margin-right: -20px !important
+}
+
 #urlbar-search-splitter {
   min-width: 8px;
   -moz-margin-start: -4px;

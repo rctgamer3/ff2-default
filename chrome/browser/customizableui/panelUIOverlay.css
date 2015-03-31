@@ -641,30 +641,31 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   outline: none;
 }
 
+#PanelUI-update-status {
+  color: black;
+}
 #PanelUI-update-status[update-status="succeeded"] {
-  background-color: hsla(96, 65%, 75%, 0.1);
+  background-color: hsla(96, 65%, 75%, 0.5);
 }
 
 #PanelUI-update-status[update-status="succeeded"]:not([disabled]):hover {
-  background-color: hsla(96, 65%, 75%, 0.4);
+  background-color: hsla(96, 65%, 75%, 0.8);
 }
 
 #PanelUI-update-status[update-status="succeeded"]:not([disabled]):hover:active {
-  background-color: hsla(96, 65%, 75%, 0.6);
-  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
+  background-color: hsl(96, 65%, 75%);
 }
 
 #PanelUI-update-status[update-status="failed"] {
-  background-color: hsla(359, 69%, 84%, 0.1);
+  background-color: hsla(359, 69%, 84%, 0.5);
 }
 
 #PanelUI-update-status[update-status="failed"]:not([disabled]):hover {
-  background-color: hsla(359, 69%, 84%, 0.4);
+  background-color: hsla(359, 69%, 84%, 0.8);
 }
 
 #PanelUI-update-status[update-status="failed"]:not([disabled]):hover:active {
-  background-color: hsla(359, 69%, 84%, 0.6);
-  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
+  background-color: hsl(359, 69%, 84%);
 }
 
 #PanelUI-quit:not([disabled]):hover {
@@ -703,6 +704,7 @@ panelview .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
 .panelUI-grid .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+.share-provider-button,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton {
   -moz-appearance: none;
   padding: 0 6px;
@@ -715,6 +717,7 @@ panelview .toolbarbutton-1,
 panelview .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
+.share-provider-button,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton {
   border-width: 1px;
 }
@@ -808,6 +811,7 @@ panelview .toolbarbutton-1:-moz-any(:not([disabled]):-moz-any([open],:hover:acti
 toolbarbutton.subviewbutton:not([disabled]):-moz-any([open],:hover:active),
 menu.subviewbutton:not([disabled])[_moz-menuactive]:active,
 menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
+.share-provider-button:-moz-any(:not([disabled]):-moz-any([open],:hover:active),[checked=true]),
 .widget-overflow-list .toolbarbutton-1:not([disabled]):-moz-any([open],:hover:active),
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton:not([disabled]):-moz-any([open],:hover:active) {
   background-color: hsla(210,4%,10%,.12);

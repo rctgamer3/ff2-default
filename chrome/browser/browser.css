@@ -1160,37 +1160,37 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-#loop-button-throttled > .toolbarbutton-badge-container {
+#loop-button > .toolbarbutton-badge-container {
   list-style-image: url(chrome://browser/skin/loop/toolbar-override.png);
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-toolbar[brighttext] #loop-button-throttled > .toolbarbutton-badge-container {
+toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
   list-style-image: url(chrome://browser/skin/loop/toolbar-inverted.png);
 }
 
-#loop-button-throttled[state="disabled"] > .toolbarbutton-badge-container,
-#loop-button-throttled[disabled="true"] > .toolbarbutton-badge-container {
+#loop-button[state="disabled"] > .toolbarbutton-badge-container,
+#loop-button[disabled="true"] > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 36px, 18px, 18px);
 }
 
-#loop-button-throttled:not([disabled="true"])[state="error"] > .toolbarbutton-badge-container {
+#loop-button:not([disabled="true"])[state="error"] > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 54px, 18px, 36px);
 }
 
-#loop-button-throttled:not([disabled="true"])[state="action"] > .toolbarbutton-badge-container {
+#loop-button:not([disabled="true"])[state="action"] > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
-#loop-button-throttled:not([disabled="true"])[state="action"]:-moz-any(:hover,:hover:active,[open]) > .toolbarbutton-badge-container {
+#loop-button:not([disabled="true"])[state="action"]:-moz-any(:hover,:hover:active,[open]) > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 90px, 18px, 72px);
 }
 
-#loop-button-throttled:not([disabled="true"])[state="active"] > .toolbarbutton-badge-container {
+#loop-button:not([disabled="true"])[state="active"] > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 
-#loop-button-throttled:not([disabled="true"])[state="active"]:-moz-any(:hover,:hover:active,[open]) > .toolbarbutton-badge-container {
+#loop-button:not([disabled="true"])[state="active"]:-moz-any(:hover,:hover:active,[open]) > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 126px, 18px, 108px);
 }
 
@@ -1936,6 +1936,14 @@ padding: 2px !important;
     visibility: visible !important
 }
 
+#urlbar[focused="true"] #urlbar-reload-button[disabled] {
+  display:none
+}
+
+#urlbar[focused="true"] #urlbar-reload-button[disabled] + #urlbar-stop-button {
+    visibility: visible !important
+}
+
 /* ::::: go button ::::: */
 
 #go-button {
@@ -2318,7 +2326,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   margin: 0;
   padding: 0 0 0 3px;
   -moz-appearance: none;
-  list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
+  list-style-image: url(chrome://browser/skin/tabbrowser/newtab-override.png);
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
@@ -2470,7 +2478,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   margin: 0;
   padding: 5px 5px 0 0;
   -moz-appearance: none;
-  list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
+  list-style-image: url(chrome://browser/skin/tabbrowser/newtab-override.png);
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
@@ -2544,8 +2552,7 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box-animate {
 .tabbrowser-tabs > .tabs-closebutton {
   margin: 3px 0px 3px;
   padding: 4px 2px 2px;
-  background: -moz-dialog url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png");
-  background-repeat: repeat-x;
+  background: -moz-dialog url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") repeat-x;
   border-left: 1px solid threedshadow;
   border-top: 1px solid threedshadow;
   border-top-left-radius: 2px;
@@ -3687,131 +3694,6 @@ statusbarpanel#statusbar-display {
     background-image: url("chrome://browser/skin/devtools/responsive-se-resizer@2x.png");
   }
 }
-/* Box model highlighter */
-
-svg|g.box-model-container {
-  opacity: 0.4;
-}
-
-svg|polygon.box-model-content {
-  fill: #80d4ff;
-}
-
-svg|polygon.box-model-padding {
-  fill: #66cc52;
-}
-
-svg|polygon.box-model-border {
-  fill: #ffe431;
-}
-
-svg|polygon.box-model-margin {
-  fill: #d89b28;
-}
-
-svg|polygon.box-model-content,
-svg|polygon.box-model-padding,
-svg|polygon.box-model-border,
-svg|polygon.box-model-margin {
-  stroke: none;
-}
-
-svg|line.box-model-guide-top,
-svg|line.box-model-guide-right,
-svg|line.box-model-guide-bottom,
-svg|line.box-model-guide-left {
-  stroke: #08C;
-  stroke-dasharray: 5 3;
-  shape-rendering: crispEdges;
-}
-
-/* Highlighter - Node Infobar */
-
-.highlighter-nodeinfobar {
-  color: hsl(216,33%,97%);
-  border-radius: 3px;
-  background: hsl(214,13%,24%) no-repeat padding-box;
-  padding: 5px;
-  /* Avoid cases where the infobar is smaller than the arrow, when the text is
-  short */
-  min-width: 75px;
-}
-
-/* Highlighter - Node Infobar - text */
-
-.highlighter-nodeinfobar-text {
-  text-align: center;
-  /* 100% - size of the buttons and margins */
-  max-width: calc(100% - 2 * (26px + 6px));
-  padding-bottom: 1px;
-}
-
-html|*.highlighter-nodeinfobar-tagname {
-  color: hsl(285,100%,75%);
-}
-
-html|*.highlighter-nodeinfobar-id {
-  color: hsl(103,46%,54%);
-}
-
-html|*.highlighter-nodeinfobar-classes,
-html|*.highlighter-nodeinfobar-pseudo-classes {
-  color: hsl(200,74%,57%);
-}
-
-html|*.highlighter-nodeinfobar-dimensions {
-  color: hsl(210,30%,85%);
-  -moz-border-start: 1px solid #5a6169;
-  -moz-margin-start: 6px;
-  -moz-padding-start: 6px;
-}
-
-/* Highlighter - Node Infobar - box & arrow */
-
-.highlighter-nodeinfobar-arrow {
-  width: 14px;
-  height: 14px;
-  -moz-margin-start: calc(50% - 7px);
-  transform: rotate(-45deg);
-  background-clip: padding-box;
-  background-repeat: no-repeat;
-}
-
-.highlighter-nodeinfobar-arrow-top {
-  margin-bottom: -8px;
-  margin-top: 8px;
-  background-image: linear-gradient(to top right, transparent 50%, hsl(210,2%,22%) 50%);
-}
-
-.highlighter-nodeinfobar-arrow-bottom {
-  margin-top: -8px;
-  margin-bottom: 8px;
-  background-image: linear-gradient(to bottom left, transparent 50%, hsl(210,2%,22%) 50%);
-}
-
-.highlighter-nodeinfobar-container[hide-arrow] > .highlighter-nodeinfobar {
-  margin: 7px 0;
-}
-
-/* Css transform highlighter */
-
-svg|polygon.css-transform-transformed {
-  fill: #80d4ff;
-  opacity: 0.8;
-}
-
-svg|polygon.css-transform-untransformed {
-  fill: #66cc52;
-  opacity: 0.8;
-}
-
-svg|polygon.css-transform-transformed,
-svg|polygon.css-transform-untransformed,
-svg|line.css-transform-line {
-  stroke: #08C;
-  stroke-dasharray: 5 3;
-  stroke-width: 2;
-}
 
 /* Developer toolbar */
 
@@ -4276,15 +4158,6 @@ toolbar[mode="full"] > #downloads-button[indicator] > .toolbarbutton-text {
 
 /* Social toolbar item */
 
-#social-provider-button {
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-#social-provider-button > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
-
 #social-toolbar-item > .toolbarbutton-1 {
   padding: 5px;
 }
@@ -4601,7 +4474,7 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover:active {
 }
 
 .chat-titlebar[activity] {
-  background-image: radial-gradient(ellipse closest-side at center, rgb(255,255,255), rgba(255,255,255,0));
+  background-image: radial-gradient(ellipse closest-side at center, rgb(255,255,255), transparent);
   background-repeat: no-repeat;
   background-size: 100% 20px;
   background-position: 0 -10px;
@@ -4679,7 +4552,7 @@ window > chatbox {
 
 .chat-titlebar {
   background-color: #c4cfde;
-  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: linear-gradient(rgba(255,255,255,.5), transparent);
 }
 
 .chat-titlebar[selected] {
@@ -4689,7 +4562,7 @@ window > chatbox {
 .chatbar-button {
   -moz-appearance: none;
   background-color: #c4cfde;
-  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: linear-gradient(rgba(255,255,255,.5), transparent);
 }
 
 .chatbar-button > .toolbarbutton-icon {
@@ -5010,6 +4883,18 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
   outline: none !important
 }
 
+/* Stylish dropmarker fix */
+#stylish-toolbar-button {
+  -moz-box-orient: horizontal;
+}
+
+#nav-bar[iconsize="small"] #stylish-toolbar-button > .toolbarbutton-icon {
+  -moz-padding-end: 0 !important;
+}
+#stylish-toolbar-button .toolbarbutton-menu-dropmarker {
+  display: initial !important;
+}
+
 /* CTR compatibility */
 #ctr_addon-bar {
   min-height: 20px;
@@ -5044,6 +4929,14 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 
 /* kill the back/forward dropbarker button, since it uses alltabs styles */
 #ctr_back-forward-dropmarker,#wrapper-ctr_back-forward-dropmarker {display:none!important}
+
+/* Pale Moon fixes */
+#main-window[title_normal="Pale Moon"] :-moz-any(#urlbar-reload-button,#urlbar-stop-button,#urlbar-go-button){display:none}
+#ub-feed-button,#ub-feed-button>.button-box,#ub-feed-button:hover:active>.button-box{padding:0;margin:0;border:0;background-color:transparent}
+#ub-feed-button>hbox>.button-menu-dropmarker,#ub-feed-button>hbox>.button-text{display:none}
+#ub-feed-button{-moz-appearance:none;min-width:0;padding:0 2px!important;list-style-image:url("chrome://browser/skin/livemark-item.png");-moz-image-region: rect(0px 36px 18px 18px)}
+#ub-feed-button:hover{-moz-image-region:rect(18px 36px 36px 18px)}
+#ub-feed-button[open="true"],#ub-feed-button:hover:active {-moz-image-region: rect(54px 36px 72px 18px)}
 
 /* end of Extension styles */
 

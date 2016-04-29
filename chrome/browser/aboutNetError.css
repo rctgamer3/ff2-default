@@ -161,7 +161,16 @@ button:disabled {
   cursor: pointer;
 }
 
-div#certificateErrorReporting {
+#advancedButton {
+  display: none;
+}
+
+#certificateErrorReporting,
+#reportSentMessage {
+  display: none;
+}
+
+div#weakCryptoAdvanced {
   display: none;
   float: right;
   /* Align with the "Try Again" button */
@@ -169,11 +178,13 @@ div#certificateErrorReporting {
   -moz-margin-end: 24px;
 }
 
-div#certificateErrorReporting a {
+div#certificateErrorReporting a,
+div#weakCryptoAdvanced a {
   text-decoration: none;
 }
 
-div#certificateErrorReporting a:hover {
+div#certificateErrorReporting a:hover,
+div#weakCryptoAdvanced a:hover {
   text-decoration: underline;
 }
 
@@ -185,7 +196,8 @@ span.downArrow {
   transform: scaleY(0.7);
 }
 
-div#certificateErrorReportingPanel {
+div#certificateErrorReportingPanel,
+div#weakCryptoAdvancedPanel {
   /* Hidden until the link is clicked */
   display: none;
   background-color: white;
@@ -198,6 +210,17 @@ div#certificateErrorReportingPanel {
   position: absolute;
   width: 75%;
   margin-top: 10px;
+}
+
+
+#overrideWeakCryptoPanel {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: flex-start;
+  margin-top: 1em;
 }
 
 div#certificateErrorReportingPanel:-moz-dir(ltr) {

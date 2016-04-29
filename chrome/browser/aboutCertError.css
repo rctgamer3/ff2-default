@@ -70,3 +70,51 @@ h2 {
 .expander[collapsed] > button:-moz-dir(rtl) {
   background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed-rtl.png");
 }
+#certificateErrorDebugInformation {
+  display: none;
+  position: relative;
+  min-width: 13em;
+  max-width: 52em;
+  border-radius: 10px;
+  background: -moz-Field;
+  margin: 4em auto;
+  border: 1px solid rgb(255, 189, 9);
+  padding: 3em;
+  padding-inline-start: 30px;
+}
+
+#certificateErrorText {
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 1em 0;
+}
+
+#errorCode {
+  white-space: nowrap;
+}
+
+/* Advanced section is hidden via inline styles until the link is clicked */
+#advancedPanel {
+  background-color: white;
+  color: var(--in-content-text-color);
+  border: 1px lightgray solid;
+  /* Don't use top padding because the default p style has top padding, and it
+   * makes the overall div look uneven */
+  padding: 0 12px 10px;
+  margin-top: 10px;
+}
+
+.hostname {
+  font-weight: bold;
+}
+
+#automaticallyReportInFuture {
+  cursor: pointer;
+}
+
+#reportCertificateErrorRetry,
+#certificateErrorReporting,
+#reportSendingMessage,
+#reportSentMessage {
+  display: none;
+}

@@ -6314,3 +6314,11 @@ panel[type="arrow"]:not([animate="false"]) {
   transform: none;
   opacity: 1
 }
+
+/* browsing context urlbar fixes */
+#urlbar-icons {
+  -moz-box-ordinal-group: 1
+}
+.autocomplete-history-dropmarker.urlbar-history-dropmarker, #urlbar-go-button, #urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {
+  -moz-box-ordinal-group: 2
+}

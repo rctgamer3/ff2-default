@@ -1198,12 +1198,12 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-#loop-button > .toolbarbutton-badge-container {
+#loop-button {
   list-style-image: url(chrome://browser/skin/loop/toolbar-override.png);
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-toolbar[brighttext] #loop-button > .toolbarbutton-badge-container {
+toolbar[brighttext] #loop-button {
   list-style-image: url(chrome://browser/skin/loop/toolbar-inverted.png);
 }
 

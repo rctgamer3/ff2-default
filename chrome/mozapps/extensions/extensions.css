@@ -51,7 +51,7 @@
 
 #detail-view .global-warning {
   padding: 4px 12px;
-  border-bottom: 1px solid #CAD4E0;  
+  border-bottom: 1px solid #CAD4E0;
 }
 
 @media (max-width: 600px) {
@@ -60,8 +60,8 @@
   }
 
   .global-warning .warning-icon {
-    background-color: #FFF;
-    box-shadow: 0px 0px 2px 5px #FFF;
+    background-color: #fff;
+    box-shadow: 0 0 2px 5px #fff;
     border-radius: 10px;
   }
 }
@@ -113,7 +113,6 @@
   height: 15px;
   margin: 3px 0;
 }
-
 
 /*** view alert boxes ***/
 
@@ -463,7 +462,6 @@
   filter: grayscale(1);
 }
 
-
 .addon-view[type="theme"] .icon {
   list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
 }
@@ -722,7 +720,9 @@
   margin-bottom: 2em;
 }
 
+
 /*** detail view ***/
+
 
 #detail-view .loading {
   opacity: 0;
@@ -1074,7 +1074,7 @@ menulist { /* Fixes some styling inconsistencies */
 }
 
 .download-progress .status {
-  text-shadow: #FFF 0 0 2px;
+  text-shadow: #fff 0 0 2px;
 }
 
 /*** install status ***/
@@ -1236,3 +1236,30 @@ button.button-link:not([disabled="true"]):active:hover {
 #detail-view[active="true"] #detail-experiment-bullet {
   fill: rgb(106, 201, 20);
 }
+
+/*** info UI for add-ons that have been disabled for being unsigned ***/
+
+#show-disabled-unsigned-extensions:not(:hover) {
+  background-color: #fcf8ed;
+}
+
+#disabled-unsigned-addons-info {
+  margin-bottom: 2em;
+  -moz-margin-end: 48px;
+}
+
+#disabled-unsigned-addons-heading {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+#signing-dev-info {
+  font-style: italic;
+}
+
+#detail-findUpdates-btn[hidden] {
+  display: -moz-box;
+  visibility: hidden;
+}
+

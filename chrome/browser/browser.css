@@ -6315,6 +6315,56 @@ panel[type="arrow"]:not([animate="false"]) {
   opacity: 1
 }
 
+/* Firefox control panel fixes */
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
+  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
+  max-width: 16px;
+}
+#identity-box.unknownIdentity #identity-icon {
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon {
+  opacity: 0.3;
+}
+
+#connection-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 2px;
+  visibility: collapse;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon {
+  list-style-image: url("chrome://browser/skin/identity-icons-https.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon:hover,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px) !important;
+}
+ 
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon:hover:active,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px) !important;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-active-loaded.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
+  visibility: visible;
+}
+
 /* browsing context urlbar fixes */
 #urlbar-icons {
   -moz-box-ordinal-group: 1
@@ -6322,6 +6372,19 @@ panel[type="arrow"]:not([animate="false"]) {
 .autocomplete-history-dropmarker.urlbar-history-dropmarker, #urlbar-go-button, #urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {
   -moz-box-ordinal-group: 2
 }
+
+/* #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #identity-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+  background: #fff;
+} */
+
+/* #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #identity-icon, */
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-active-blocked.svg);
+background:#fff url(chrome://browser/skin/bad-content-blocked-16.png) !important;
+  visibility: visible;
+}
+
 
 /* urlbar background color hack - thanks /u/marciiF ! */
 #urlbar {

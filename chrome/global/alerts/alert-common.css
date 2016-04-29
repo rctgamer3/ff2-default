@@ -3,11 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* ===== alert.css =====================================================
-  == Styles specific to the alerts dialog.
+  == Shared styles specific to the alerts dialog.
   ======================================================================= */
 
 @import url("chrome://global/skin/");
-@import url("chrome://global/skin/alerts/alert-common.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -27,25 +26,45 @@
   animation-name: alert-closing-animation;
 }
 
+@keyframes alert-animation {
+  from {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes alert-clicked-animation {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes alert-closing-animation {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (resolution: 2dppx) {
+  #alertIcon {
+    image-rendering: -moz-crisp-edges;
+  }
+}
+
 #alertImage {
   max-width: 48px;
   max-height: 48px;
   list-style-image: url(chrome://global/skin/alerts/notification-48.png);
   object-fit: scale-down;
-  margin: 0;
-}
-
-.alertBox {
-  border: 1px solid #7B969C;
-  border-radius: 3px;
-  background-color: -moz-Dialog;
-}
-
-.alertImageBox {
-  padding: 8px 0;
-  width: 64px;
-  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.6));
-  -moz-border-end: 1px solid rgba(0,0,0,.1);
+  margin: 0 7px 7px;
 }
 
 .alertTextBox {
@@ -71,8 +90,7 @@
 .alertTitle {
   -moz-box-flex: 1;
   font-weight: bold;
-  font-size: 110%;
-  padding: 2px 8px ;
+  padding: 6px 8px 0;
   width: 255px;
 }
 
@@ -80,56 +98,46 @@
   -moz-box-align: start;
 }
 
-label {
-  cursor: inherit;
+#alertBox:not([hasOrigin]) > box > #alertTextBox,
+#alertFooter {
+  padding-bottom: 5px;
 }
 
-.alertText[clickable="true"] {
-  cursor: pointer;
-  color: #1455D6;
-  text-decoration: underline;
-}
-
-.alertText[clickable="true"]:hover:active {
-  color: #424F63;
-}
-
-@keyframes alert-animation {
-  from {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.alertCloseButton {
-  -moz-appearance: none;
-  padding: 4px 2px;
-  border: none !important;
-}
-
-.alertCloseBox {
-  /* The close button is larger on Windows and has a large
-     circle around it, so we add more space between the close
-     button and the edge of the window. */
-  margin-inline-end: 2px;
+#alertSourceLabel {
+  -moz-box-flex: 1;
+  font-size: 83.334%;
+  color: GrayText;
 }
 
 #alertSettings {
-  /* The close button is larger on Windows, so the
-     gear button is moved over to accomodate it and
-     keep the two buttons horizontally aligned together. */
-  margin-inline-end: 5px;
+  -moz-appearance: none;
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 20px;
+  min-width: 0;
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
+  margin-inline-end: 0;
+  margin-bottom: 0;
 }
 
-#alertBox:not([hasOrigin]) > box > #alertTextBox > #alertFooter,
-#alertImage:not([src]) {
-  display: block !important;
+#alertSettings > .button-box {
+  padding: 0;
+}
+
+#alertSettings:hover {
+  background-color: rgb(128,128,128);
+}
+
+#alertSettings[open],
+#alertSettings:hover:active {
+  background-color: rgb(102,102,102);
+}
+
+#alertSettings[focusedViaMouse]:-moz-focusring > .button-box {
+  border-color: transparent;
+}
+
+#alertSettings > .button-box > .button-menu-dropmarker,
+#alertSettings > .button-box > .box-inherit > .button-text {
+  display: none;
 }

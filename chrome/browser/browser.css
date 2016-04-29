@@ -836,7 +836,8 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 /* tabview button */
 
 #tabview-button,
-#menu_tabview {
+#menu_tabview,
+#tabGroups-tabview-button {
   list-style-image: url(chrome://browser/skin/tabview/tabview.png);
 }
 
@@ -881,9 +882,13 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 }
 
 /* simple fix for the tabview button in the tabstoolbar */
-#TabsToolbar #tabview-button {
+#TabsToolbar #tabview-button, #TabsToolbar #tabGroups-tabview-button {
   margin: 0;
   padding: 0;
+}
+
+#tabGroups-tabview-button .toolbarbutton-text {
+  display: none
 }
 
 /* download manager button */

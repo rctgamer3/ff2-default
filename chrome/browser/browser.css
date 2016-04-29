@@ -3139,6 +3139,105 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   margin: 0px;
 }
 
+
+.translate-notification-icon,
+#translate-notification-icon {
+  list-style-image: url(chrome://browser/skin/translation-16.png);
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.translated-notification-icon,
+#translated-notification-icon {
+  list-style-image: url(chrome://browser/skin/translation-16.png);
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.popup-notification-icon[popupid="servicesInstall"] {
+  list-style-image: url(chrome://browser/skin/social/services-64.png);
+}
+#servicesInstall-notification-icon {
+  list-style-image: url(chrome://browser/skin/social/services-16.png);
+}
+
+/* EME notifications */
+
+.popup-notification-icon[popupid="drmContentPlaying"],
+#eme-notification-icon {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
+}
+
+#eme-notification-icon:hover:active {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains-pressed");
+}
+
+#eme-notification-icon[firstplay=true] {
+  animation: emeTeachingMoment 0.2s linear 0s 5 normal;
+}
+
+@keyframes emeTeachingMoment {
+  0% {transform: translateX(0); }
+  25% {transform: translateX(3px) }
+  75% {transform: translateX(-3px) }
+  100% { transform: translateX(0); }
+}
+
+/* HiDPI notification icons */
+@media (min-resolution: 1.1dppx) {
+  #notification-popup-box {
+    border-image: url("chrome://browser/skin/urlbar-arrow@2x.png") 0 16 0 0 fill;
+  }
+
+  .notification-anchor-icon {
+    list-style-image: url(chrome://global/skin/icons/information-32.png);
+  }
+
+  .webRTC-shareDevices-notification-icon,
+  #webRTC-shareDevices-notification-icon {
+    list-style-image: url(chrome://browser/skin/webRTC-shareDevice-16@2x.png);
+  }
+
+  .webRTC-sharingDevices-notification-icon,
+  #webRTC-sharingDevices-notification-icon {
+    list-style-image: url(chrome://browser/skin/webRTC-sharingDevice-16@2x.png);
+  }
+
+  .webRTC-shareMicrophone-notification-icon,
+  #webRTC-shareMicrophone-notification-icon {
+    list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-16@2x.png);
+  }
+
+  .webRTC-sharingMicrophone-notification-icon,
+  #webRTC-sharingMicrophone-notification-icon {
+    list-style-image: url(chrome://browser/skin/webRTC-sharingMicrophone-16@2x.png);
+  }
+
+  .webRTC-shareScreen-notification-icon,
+  #webRTC-shareScreen-notification-icon {
+    list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16@2x.png);
+  }
+
+  .webRTC-sharingScreen-notification-icon,
+  #webRTC-sharingScreen-notification-icon {
+    list-style-image: url(chrome://browser/skin/webRTC-sharingScreen-16@2x.png);
+  }
+
+  .popup-notification-icon[popupid="webRTC-sharingDevices"],
+  .popup-notification-icon[popupid="webRTC-shareDevices"] {
+    list-style-image: url(chrome://browser/skin/webRTC-shareDevice-64@2x.png);
+  }
+
+  .popup-notification-icon[popupid="webRTC-sharingMicrophone"],
+  .popup-notification-icon[popupid="webRTC-shareMicrophone"] {
+    list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-64@2x.png);
+  }
+
+  .popup-notification-icon[popupid="webRTC-sharingScreen"],
+  .popup-notification-icon[popupid="webRTC-shareScreen"] {
+    list-style-image: url(chrome://browser/skin/webRTC-shareScreen-64@2x.png);
+  }
+
+}
+
 /* Translation infobar */
 
 notification[value="translation"] .messageImage {

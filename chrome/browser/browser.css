@@ -134,6 +134,11 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
               0 0 2px 1px hsla(211,65%,85%,.15) inset;
 }
+#appmenu-button[label="Pale Moon"] {
+  background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
+  border-color: rgba(6,42,83,.9);
+}
+
 #appmenu-button:hover:not(:active):not([open]) {
   background-image: radial-gradient(farthest-side at bottom, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
                     radial-gradient(farthest-side at bottom, rgb(236,133,0), rgba(255,229,172,0)),
@@ -161,6 +166,16 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
               0 0 2px 1px hsla(210,48%,90%,.4) inset,
               0 -1px 0 hsla(210,48%,90%,.2) inset;
 }
+#appmenu-button[label="Pale Moon"]:hover:not(:active):not([open]) {
+  background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
+                    radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
+                    linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%);
+  border-color: rgba(6,42,83,.9);
+  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+              0 0 2px 1px rgba(169,234,250,.7) inset,
+              0 -1px 0 rgba(169,234,250,.5) inset;
+}
+
 #appmenu-button:hover:active,
 #appmenu-button[open] {
   background-image: linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%);
@@ -178,6 +193,10 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
   background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
   box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
               0 1px 1px rgba(0,0,0,.2) inset;
+}
+#appmenu-button[label="Pale Moon"]:hover:active,
+#appmenu-button[label="Pale Moon"][open] {
+  background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%);
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
@@ -643,7 +662,7 @@ menuitem.bookmark-item {
   min-width: 0;
 }
 
-:-moz-any(#back-button, #forward-button, #stop-button, #reload-button, #home-button, #downloads-button, #history-button, #history-panelmenu, #bookmarks-menu-button, #bookmarks-button, #print-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button).toolbarbutton-1 {
+:-moz-any(#back-button, #forward-button, #stop-button, #reload-button, #home-button, #downloads-button, #history-button, #history-panelmenu, #bookmarks-menu-button, #bookmarks-button, #print-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #history-menu-button).toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
@@ -884,20 +903,31 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 
 /* history sidebar button */
 
+#history-menu-button,
 #history-button {
   -moz-image-region: rect(0px 168px 24px 144px);
 }
+#history-menu-button:not([disabled="true"]):not([checked="true"]):hover,
 #history-button:not([disabled="true"]):not([checked="true"]):hover {
   -moz-image-region: rect(24px 168px 48px 144px);
 }
+#history-menu-button[disabled="true"],
 #history-button[disabled="true"] {
   -moz-image-region: rect(48px 168px 72px 144px);
 }
+
+#history-menu-button[checked="true"],
 #history-button[checked="true"] {
   -moz-image-region: rect(72px 168px 96px 144px);
 }
+#history-menu-button:hover:active,
+#history-menu-button[open],
 #history-button:not([disabled="true"]):not([checked="true"]):hover:active {
   -moz-image-region: rect(96px 168px 120px 144px);
+}
+
+#history-menu-button.toolbarbutton-1 {
+  -moz-box-orient: horizontal;
 }
 
 /* bookmark sidebar & menu buttons */
@@ -4833,6 +4863,10 @@ notification.pluginVulnerable .messageImage {
     margin-bottom: 1px; /* compensate white outer border */
     box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
                 0 0 2px 1px rgba(255,255,255,.25) inset;
+  }
+  #appmenu-button[label="Pale Moon"] {
+    background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
+    border-color: rgba(6,42,83,.9);
   }
 
   #main-window[privatebrowsingmode=temporary] #appmenu-button {

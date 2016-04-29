@@ -3983,7 +3983,7 @@ html|*#gcli-output-frame {
   background-position: -16px center;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.1dppx) {
   .gclitoolbar-input-node::before {
     background-image: url("chrome://browser/skin/devtools/commandline-icon@2x.png");
   }

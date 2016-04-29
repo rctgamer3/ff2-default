@@ -6322,3 +6322,33 @@ panel[type="arrow"]:not([animate="false"]) {
 .autocomplete-history-dropmarker.urlbar-history-dropmarker, #urlbar-go-button, #urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {
   -moz-box-ordinal-group: 2
 }
+
+/* urlbar background color hack - thanks /u/marciiF ! */
+#urlbar {
+  position: relative !important;
+  transition-property: border-color !important;
+  z-index: 0 !important;
+}
+
+#urlbar::after,
+#identity-box::after {
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#urlbar::after {
+  box-shadow: inherit;
+  pointer-events: none;
+}
+#identity-box::after {
+  z-index: -1;
+}
+
+#identity-box:-moz-any(.verifiedDomain, .verifiedIdentity)::after {
+  background-color: #F5F6BE;
+}

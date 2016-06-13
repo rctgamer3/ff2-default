@@ -836,8 +836,7 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 /* tabview button */
 
 #tabview-button,
-#menu_tabview,
-#tabGroups-tabview-button {
+#menu_tabview {
   list-style-image: url(chrome://browser/skin/tabview/tabview.png);
 }
 

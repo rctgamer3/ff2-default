@@ -4,7 +4,7 @@ body {
   background:#f0f0f0;
   color:#000;
   font-size:12px;
-  font-family:message-box, Segoe UI, sans-serif;
+  font-family:message-box, "Segoe UI", sans-serif;
 }
 #container {
   margin:0 auto;

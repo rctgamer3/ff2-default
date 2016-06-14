@@ -2,7 +2,6 @@ body {
   margin-top:1em;
   padding:3em;
   background:#f0f0f0;
-  color:-moz-FieldText;
   color:#000;
   font-size:12px;
   font-family:message-box, Segoe UI, sans-serif;
@@ -31,10 +30,11 @@ hr {width:80%;border-bottom:1px solid #aaa}
 .strike {text-decoration:line-through}
 .hidden {display:none}
 .footer {padding-top:30px;text-align:center;font-style:italic}
+nav{display:flex;width:20vw;justify-content:space-between}
 img {border:0}
 img.favicon {margin-top:1px;padding-right:5px;width:16px;height:16px;vertical-align:text-bottom}
 img.textbottom {vertical-align:text-bottom}
-.menu {margin-left:0;max-width:30%}
+.menu {margin-left:0;max-width:20vw}
 a.active {font-weight:700}
 a.download-stable {
   padding:7px 10px 8px;

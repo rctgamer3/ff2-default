@@ -6,13 +6,13 @@
     <!-- properties -->
     <em:id>{fd2f951f-77ea-4938-9493-0c892c027a13}</em:id>
     <em:name>Firefox 2, the theme, reloaded</em:name>
-    <em:version>1.0.11</em:version>
+    <em:version>1.0.12</em:version>
     <em:type>4</em:type>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>29.0a2</em:minVersion>
-        <em:maxVersion>39.*</em:maxVersion>
+        <em:minVersion>43.0a1</em:minVersion>
+        <em:maxVersion>50.*</em:maxVersion>
       </Description>
     </em:targetApplication>
     <em:targetApplication>

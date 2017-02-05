@@ -9,11 +9,11 @@
   -moz-binding: url("chrome://global/skin/globalBindings.xml#tabbrowser-tabs") !important;
   padding-top: 0px;
   background: -moz-dialog url("chrome://global/skin/icons/tabbrowser-tabs-bkgnd.png") !important;
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 .tabbrowser-tabs[overflow="true"] {
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 /**
@@ -33,7 +33,7 @@
 
 .tabbrowser-tab > .tab-image-middle {
   padding-top: 0px;
-  -moz-padding-start: 1px;
+  padding-inline-start: 1px;
 }
 
 .tabbrowser-tab[busy] > .tab-image-middle > .tab-icon > .tab-icon-image {
@@ -146,7 +146,7 @@
 
 .tab-icon-image {
   margin-top: 1px;
-  -moz-margin-end: 1px;
+  margin-inline-end: 1px;
   width: 16px;
   height: 16px;
   list-style-image: url("chrome://global/skin/icons/folder-item.png");
@@ -207,7 +207,7 @@ tabpanels {
  * In-tab close button
  */
 .tab-close-button > .toolbarbutton-icon {
-  -moz-margin-end: 0px !important;
+  margin-inline-end: 0px !important;
   margin-top: 0px;
 }
 
@@ -279,8 +279,8 @@ tabpanels {
   padding: 0px;
   width: 18px;
   height: 19px;
-  -moz-margin-start: 0px;
-  -moz-margin-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   list-style-image: url("chrome://global/skin/icons/tab-arrow-start.png");
   -moz-image-region: rect(0, 11px, 14px, 0);
   background-repeat: no-repeat;
@@ -438,8 +438,8 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box {
   width: 16px !important;
   height: 19px !important;
   border: 0px !important;
-  -moz-padding-start: 4px !important;
-  -moz-padding-end: 4px !important;
+  padding-inline-start: 4px !important;
+  padding-inline-end: 4px !important;
   padding: 0px;
 }
 
@@ -448,7 +448,7 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box {
 }
 
 .tabs-alltabs-button > .toolbarbutton-icon {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .tabs-alltabs-button > .toolbarbutton-menu-dropmarker {

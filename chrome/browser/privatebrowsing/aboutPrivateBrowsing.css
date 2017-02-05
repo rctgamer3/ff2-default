@@ -38,7 +38,7 @@ body {
     border: 1px solid ThreeDShadow;
     border-radius: 10px;
     padding: 3em;
-    -moz-padding-start: 30px;
+    padding-inline-start: 30px;
     background: url("chrome://browser/skin/privatebrowsing/private-browsing.svg") left 0 no-repeat -moz-Field;
     background-origin: content-box;
 }

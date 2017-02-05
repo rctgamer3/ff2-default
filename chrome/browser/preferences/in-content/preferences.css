@@ -121,7 +121,7 @@ treecol {
 
 #useFirefoxSync  {
   font-size: 90%;
-  -moz-margin-end: 8px !important;
+  margin-inline-end: 8px !important;
 }
 
 #getStarted {
@@ -133,7 +133,7 @@ treecol {
 }
 
 #downloadFolder {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 /* Applications Pane Styles */
@@ -163,11 +163,11 @@ treecol {
 
 
 .actionsMenu > menupopup > menuitem {
-  -moz-padding-start: 10px !important;
+  padding-inline-start: 10px !important;
 }
 
 .actionsMenu > menupopup > menuitem > .menu-iconic-left {
-  -moz-margin-end: 8px !important;
+  margin-inline-end: 8px !important;
 }
 
 /* XXX This style is for bug 740213 and should be removed once that
@@ -190,7 +190,7 @@ description > html|a {
 #weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-normal) > label,
 #weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-small) > label {
   /* no margin-start for elements at the begin of a line */
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #advancedPrefs {
@@ -210,7 +210,7 @@ description > html|a {
 }
 
 .indent {
-  -moz-margin-start: 33px;
+  margin-inline-start: 33px;
 }
 
 #trackingProtectionImage {
@@ -274,8 +274,8 @@ tree:not(#rejectsTree) {
 }
 
 :-moz-any(dialog, window, prefwindow) groupbox {
-  -moz-margin-start: 8px;
-  -moz-margin-end: 8px;
+  margin-inline-start: 8px;
+  margin-inline-end: 8px;
 }
 
 /**
@@ -456,7 +456,7 @@ tree:not(#rejectsTree) {
 }
 
 .fxaAccountBoxButtons > button:first-child {
-  margin-right: 14px !important;
+  margin-inline-end: 14px !important;
 }
 
 .fxaSyncIllustration {
@@ -519,16 +519,16 @@ tree:not(#rejectsTree) {
 }
 
 .actionsMenu > .menulist-label-box > .menulist-icon {
-  -moz-margin-end: 9px;
+  margin-inline-end: 9px;
 }
 
 textbox + button,
 filefield + button {
-  -moz-margin-start: -4px;
+  margin-inline-start: -4px;
 }
 
 #dialogTitle {
-  -moz-margin-start: 13px !important;
+  margin-inline-start: 13px !important;
 }
 
 .actionButtons {

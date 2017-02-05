@@ -12,7 +12,7 @@ body {
   border: 1px solid #A0A0A0;
   border-radius: 10px;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: #FFF;
 }
 
@@ -27,7 +27,7 @@ body {
     max-width: 50%;
     margin: 0 auto;
     min-height: 36px;
-    -moz-padding-start: 38px;
+    padding-inline-start: 38px;
   }
 
   button {
@@ -94,7 +94,7 @@ body {
 
 #message-box {
   margin-top: 2em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
 }
 
 #activation-frame {

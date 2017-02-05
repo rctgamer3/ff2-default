@@ -105,7 +105,7 @@ xul|menulist > xul|*.menulist-label-box {
 xul|button[type="menu"] > xul|*.button-box > xul|*.button-menu-dropmarker {
   -moz-appearance: none;
   margin: 1px 0;
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
   padding: 0;
   width: 10px;
   height: 16px;
@@ -160,8 +160,8 @@ xul|*.help-button > xul|*.button-box > xul|*.button-text {
 }
 
 xul|*.spinbuttons-button {
-  -moz-margin-start: 10px !important;
-  -moz-margin-end: 2px !important;
+  margin-inline-start: 10px !important;
+  margin-inline-end: 2px !important;
 }
 
 xul|*.spinbuttons-up {
@@ -209,8 +209,8 @@ xul|button[type="menu"] > xul|menupopup xul|menu,
 xul|button[type="menu"] > xul|menupopup xul|menuitem {
   -moz-appearance: none;
   color: #333;
-  -moz-padding-start: 10px;
-  -moz-padding-end: 30px;
+  padding-inline-start: 10px;
+  padding-inline-end: 30px;
 }
 
 xul|menulist > xul|menupopup > xul|menu[_moz-menuactive="true"],
@@ -309,8 +309,8 @@ xul|*.category {
   -moz-appearance: none;
   color: #c1c1c1;
   -moz-border-end-width: 0;
-  -moz-padding-start: 15px;
-  -moz-padding-end: 21px;
+  padding-inline-start: 15px;
+  padding-inline-end: 21px;
   min-height: 40px;
   transition: background-color 150ms;
 }
@@ -335,7 +335,7 @@ xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[cur
   line-height: 22px;
   font-size: 1.25rem;
   padding-bottom: 2px;
-  -moz-padding-start: 9px;
+  padding-inline-start: 9px;
   margin: 0;
 }
 
@@ -372,13 +372,13 @@ xul|*.fileFieldContentBox {
 }
 
 xul|*.fileFieldIcon {
-  -moz-margin-start: 10px;
-  -moz-margin-end: 0;
+  margin-inline-start: 10px;
+  margin-inline-end: 0;
 }
 
 xul|*.fileFieldLabel {
-  -moz-margin-start: -26px;
-  -moz-padding-start: 36px;
+  margin-inline-start: -26px;
+  padding-inline-start: 36px;
 }
 
 xul|textbox:-moz-locale-dir(rtl),
@@ -399,7 +399,7 @@ xul|filefield + xul|button:-moz-locale-dir(rtl) {
 
 xul|textbox + xul|button,
 xul|filefield + xul|button {
-  -moz-border-start: none;
+  border-inline-start: none;
 }
 
 xul|caption {

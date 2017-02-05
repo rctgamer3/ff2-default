@@ -240,7 +240,7 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 
 #wrapper-edit-controls:-moz-any([place="palette"],[place="panel"]) > #edit-controls,
 #wrapper-zoom-controls:-moz-any([place="palette"],[place="panel"]) > #zoom-controls {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #PanelUI-contents {
@@ -363,7 +363,7 @@ toolbarbutton[constrain-size="true"][cui-areatype="menu-panel"] > .toolbarbutton
 .panelUI-grid .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   -moz-box-align: center;
   width: 16px;
-  -moz-margin-start: -16px;
+  margin-inline-start: -16px;
   height: 51px;
   margin-bottom: 2.2em;
   padding: 0;
@@ -471,7 +471,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #personal-bookmarks[cui-areatype="toolbar"][overflowedItem=true] > #bookmarks-toolbar-placeholder > .toolbarbutton-icon {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button,
@@ -599,30 +599,30 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #PanelUI-customize > .toolbarbutton-icon,
 #PanelUI-help > .toolbarbutton-icon,
 #PanelUI-quit > .toolbarbutton-icon {
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 
 #PanelUI-fxa-icon {
-  -moz-padding-start: 15px;
-  -moz-padding-end: 15px;
+  padding-inline-start: 15px;
+  padding-inline-end: 15px;
 }
 
 #PanelUI-fxa-label,
 #PanelUI-customize {
   flex: 1;
-  -moz-padding-start: 15px;
-  -moz-border-start-style: none;
+  padding-inline-start: 15px;
+  border-inline-start-style: none;
 }
 
 #PanelUI-footer-fxa[fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
 #PanelUI-footer-fxa[fxaprofileimage="enabled"]:not([fxastatus="error"]) > #PanelUI-fxa-status > #PanelUI-fxa-label {
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 #PanelUI-update-status {
   width: calc(22.35em + 30px);
-  -moz-padding-start: 15px;
-  -moz-border-start-style: none;
+  padding-inline-start: 15px;
+  border-inline-start-style: none;
 }
 
 #PanelUI-update-status {
@@ -731,7 +731,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-quit {
-  -moz-border-end-style: none;
+  border-inline-end-style: none;
   list-style-image: url(chrome://browser/skin/menuPanel-exit.png);
 }
 
@@ -772,7 +772,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   margin: 0px 7px;
   padding: 0px;
   border: 0px none;
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 
 #PanelUI-footer-fxa[fxaprofileimage="enabled"] > #PanelUI-fxa-status > #PanelUI-fxa-avatar {

@@ -1287,7 +1287,6 @@ toolbar[brighttext] #loop-button {
   padding-inline-end: 2px;
 }
 
-#userContext-icons {display:none!important}
 
 #urlbar[pageproxystate="invalid"] > #urlbar-icons > :not(#go-button),
 #urlbar[pageproxystate="valid"] > #urlbar-icons > #go-button {

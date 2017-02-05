@@ -2402,6 +2402,124 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   border: 1px dotted -moz-DialogText;
 }
 
+.tab-icon-image[sharing]:not([selected]),
+.tab-sharing-icon-overlay {
+  animation: 3s linear tab-sharing-icon-pulse infinite;
+}
+
+/* This should remain identical to identity-box-sharing-icon-pulse in identity-block.inc.css */
+@keyframes tab-sharing-icon-pulse {
+  0%, 16.66%, 83.33%, 100% {
+    opacity: 0;
+  }
+  33.33%, 66.66% {
+    opacity: 1;
+  }
+}
+
+.tab-icon-image[sharing]:not([selected]) {
+  animation-delay: -1.5s;
+}
+
+.tab-sharing-icon-overlay {
+  /* 16px of the icon + 6px of margin-inline-end of .tab-icon-image */
+  margin-inline-start: -22px;
+  position: relative;
+}
+
+.tab-sharing-icon-overlay[sharing="camera"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera-sharing");
+}
+
+.tab-sharing-icon-overlay[sharing="microphone"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone-sharing");
+}
+
+.tab-sharing-icon-overlay[sharing="screen"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen-sharing");
+}
+
+.tab-icon-overlay {
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-inline-start: -15px;
+  margin-inline-end: -1px;
+  position: relative;
+}
+
+.tab-icon-overlay[crashed] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/crashed.svg");
+}
+
+.tab-icon-overlay[soundplaying],
+.tab-icon-overlay[muted]:not([crashed]),
+.tab-icon-overlay[blocked]:not([crashed]) {
+  border-radius: 10px;
+}
+
+.tab-icon-overlay[soundplaying]:hover,
+.tab-icon-overlay[muted]:not([crashed]):hover,
+.tab-icon-overlay[blocked]:not([crashed]):hover {
+  background-color: white;
+}
+
+.tab-icon-overlay[soundplaying] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio");
+}
+
+.tab-icon-overlay[muted]:not([crashed]) {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted");
+}
+
+.tab-icon-sound {
+  margin-inline-start: 4px;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+.tab-icon-sound[soundplaying],
+.tab-icon-sound[muted],
+.tab-icon-sound[blocked] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
+  filter: url(chrome://global/skin/filters.svg#fill);
+  fill: currentColor;
+}
+
+.tab-icon-sound[muted] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
+}
+
+.tab-icon-sound[blocked] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-blocked);
+}
+
+.tab-icon-sound:-moz-lwtheme-darktext[soundplaying],
+.tab-icon-sound:-moz-lwtheme-darktext[muted],
+.tab-icon-sound:-moz-lwtheme-darktext[blocked] {
+  filter: url(chrome://global/skin/filters.svg#fill) drop-shadow(1px 1px 1px white);
+}
+
+.tab-icon-sound:-moz-lwtheme-brighttext[soundplaying],
+.tab-icon-sound:-moz-lwtheme-brighttext[muted],
+.tab-icon-sound:-moz-lwtheme-brighttext[blocked] {
+  filter: url(chrome://global/skin/filters.svg#fill) drop-shadow(1px 1px 1px black);
+}
+
+.tab-icon-sound[soundplaying]:not(:hover),
+.tab-icon-sound[muted]:not(:hover),
+.tab-icon-sound[blocked]:not(:hover) {
+  opacity: .8;
+}
+
+.tab-icon-sound[soundplaying-scheduledremoval]:not([muted]):not(:hover),
+.tab-icon-overlay[soundplaying-scheduledremoval]:not([muted]):not(:hover) {
+  transition: opacity .3s linear var(--soundplaying-removal-delay);
+  opacity: 0;
+}
+
+
 /* Tab DnD indicator */
 .tab-drop-indicator {
   list-style-image: url(chrome://browser/skin/tabbrowser/tabDragIndicator.png);

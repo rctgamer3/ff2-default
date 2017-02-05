@@ -40,6 +40,10 @@ findbar > hbox > hbox {
 findbar .find-status-icon {
 -moz-box-ordinal-group: 8
 }
+.findbar-entire-word {
+  -moz-box-ordinal-group: 8
+}
+
 findbar .findbar-find-fast,
 findbar .find-status {
 -moz-box-ordinal-group: 9

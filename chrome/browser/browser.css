@@ -5378,9 +5378,11 @@ toolbarpaletteitem[place="toolbar"] {
 
 #UITourHighlightContainer {
   -moz-appearance: none;
+  -moz-window-shadow: none;
   border: none;
   background-color: transparent;
-  /* This is a buffer to compensate for the movement in the "wobble" effect */
+  /* This is a buffer to compensate for the movement in the "wobble" effect,
+     and for the box-shadow of #UITourHighlight. */
   padding: 4px;
 }
 
@@ -5396,7 +5398,7 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #UITourTooltipBody {
-  -moz-margin-end: 14px;
+  margin-inline-end: 14px;
 }
 
 #UITourTooltipBody > vbox {
@@ -5404,14 +5406,14 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #UITourTooltipIconContainer {
-  -moz-margin-start: -16px;
+  margin-inline-start: -16px;
 }
 
 #UITourTooltipIcon {
   width: 48px;
   height: 48px;
-  -moz-margin-start: 28px;
-  -moz-margin-end: 28px;
+  margin-inline-start: 28px;
+  margin-inline-end: 28px;
 }
 
 #UITourTooltipTitle,
@@ -5422,14 +5424,14 @@ toolbarpaletteitem[place="toolbar"] {
 #UITourTooltipTitle {
   font-size: 1.45rem;
   font-weight: bold;
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   margin: 0 0 9px 0;
 }
 
 #UITourTooltipDescription {
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   font-size: 1.15rem;
   line-height: 1.8rem;
   margin-bottom: 0; /* Override global.css */
@@ -5440,7 +5442,7 @@ toolbarpaletteitem[place="toolbar"] {
   border: none;
   background-color: transparent;
   min-width: 0;
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   margin-top: -2px;
 }
 
@@ -5460,16 +5462,23 @@ toolbarpaletteitem[place="toolbar"] {
   margin: 0 15px;
 }
 
+#UITourTooltipButtons > label:first-child,
 #UITourTooltipButtons > button:first-child {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
+}
+
+#UITourTooltipButtons > label:last-child,
+#UITourTooltipButtons > button:last-child {
+  margin-inline-end: 0;
 }
 
 #UITourTooltipButtons > button[image] > .button-box > .button-icon {
   width: 16px;
   height: 16px;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
+#UITourTooltipButtons > label,
 #UITourTooltipButtons > button .button-text {
   font-size: 1.15rem;
 }
@@ -5569,7 +5578,7 @@ notification.heartbeat {
 .messageImage.heartbeat {
   width: 36px;
   height: 36px;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
 }
 
 .messageImage.heartbeat.pulse-onshow {
@@ -5878,7 +5887,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton,
   height: 16px;
 }
 /* string l10n */
-#customization-titlebar-visibility-button:not([checkState="1"]) > hbox:after{-moz-margin-start:4px;-moz-margin-end:4px;color:#fff;background:#ff003f;display: block!important;white-space:pre-wrap!important}
+#customization-titlebar-visibility-button:not([checkState="1"]) > hbox:after{margin-inline-start:4px;margin-inline-end:4px;color:#fff;background:#ff003f;display: block!important;white-space:pre-wrap!important}
 /* EN  */ #main-window[title^="Customize Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after,
 /* ENGB*/ #main-window[title^="Customise Firefox"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:" Required for the Firefox 2 theme to work properly. Please enable. "}
 /* NL  */ #main-window[title^="Firefox aanpassen"] #customization-titlebar-visibility-button[checkState="0"] > hbox:after {content:" Vereist voor het goed functioneren van het Firefox 2 thema. Graag aanzetten. "}

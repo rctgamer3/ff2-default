@@ -7,3 +7,4 @@ skin	os_target	ff2-default	chrome/os_target/mac/		os=Darwin
 skin	os_target	ff2-default	chrome/os_target/win/		os=WINNT
 skin	os_target	ff2-default	chrome/os_target/lin/		os=Linux
 
+override	chrome://global/skin/media/videocontrols.css	chrome://global/skin/media/videocontrols53.css	appversion>52

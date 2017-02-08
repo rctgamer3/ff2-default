@@ -97,7 +97,7 @@ td {
   display: none;
 }
 
-#action-box:-moz-dir(rtl) {
+#action-box:-moz-locale-dir(rtl) {
   float: left;
 }
 

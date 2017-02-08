@@ -67,7 +67,7 @@ ul {
   padding-inline-start: 0;
 }
 
-#errorPageContainer:-moz-dir(rtl) {
+#errorPageContainer:-moz-locale-dir(rtl) {
   background-position: right 0;
 }
 
@@ -110,7 +110,7 @@ ul {
   opacity: .4;
 }
 
-#brand:-moz-dir(rtl) {
+#brand:-moz-locale-dir(rtl) {
   right: auto;
   left: 0;
 }

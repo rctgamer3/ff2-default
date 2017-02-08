@@ -37,7 +37,7 @@ h2 {
   background-origin: content-box;
 }
 
-#errorPageContainer:-moz-dir(rtl) {
+#errorPageContainer:-moz-locale-dir(rtl) {
   background-position: right 0;
 }
 
@@ -59,7 +59,7 @@ h2 {
   cursor: pointer;
 }
 
-.expander > button:-moz-dir(rtl) {
+.expander > button:-moz-locale-dir(rtl) {
   background-position: right center;
 }
 
@@ -67,7 +67,7 @@ h2 {
   background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed.png");
 }
 
-.expander[collapsed] > button:-moz-dir(rtl) {
+.expander[collapsed] > button:-moz-locale-dir(rtl) {
   background-image: url("chrome://browser/skin/aboutCertError_sectionCollapsed-rtl.png");
 }
 #certificateErrorDebugInformation {

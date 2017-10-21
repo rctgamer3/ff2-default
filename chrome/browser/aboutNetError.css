@@ -32,7 +32,7 @@ h1 {
 
 ul, ol {
   margin: 0;
-  -moz-margin-start: 1.5em;
+  margin-inline-start: 1.5em;
   padding: 0;
 }
 
@@ -52,7 +52,7 @@ ul {
   border: 1px solid ThreeDShadow;
   border-radius: 10px;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: url("chrome://global/skin/icons/warning-large.png") left 0 no-repeat -moz-Field;
   background-origin: content-box;
 }
@@ -63,20 +63,21 @@ ul {
 
 #errorTitleText {
   background: none;
-  -moz-margin-start: 0;
-  -moz-padding-start: 0;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
 }
 
-#errorPageContainer:-moz-dir(rtl) {
+#errorPageContainer:-moz-locale-dir(rtl) {
   background-position: right 0;
 }
 
-#errorTitle {
-  -moz-margin-start: 80px;
+#errorTitle,
+.title {
+  margin-inline-start: 80px;
 }
 
 #errorLongContent {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 #errorShortDesc > p {
@@ -88,7 +89,7 @@ ul {
 }
 
 #errorLongDesc {
-  -moz-padding-end: 3em;
+  padding-inline-end: 3em;
   font-size: 110%;
 }
 
@@ -97,7 +98,7 @@ ul {
 
 #errorTryAgain {
   margin-top: 2em;
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
   min-width: 0;
 }
 
@@ -105,11 +106,11 @@ ul {
   position: absolute;
   right: 0;
   bottom: -1.5em;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   opacity: .4;
 }
 
-#brand:-moz-dir(rtl) {
+#brand:-moz-locale-dir(rtl) {
   right: auto;
   left: 0;
 }
@@ -161,31 +162,70 @@ button:disabled {
   cursor: pointer;
 }
 
-div#certificateErrorReporting {
+#prefChangeContainer {
   display: none;
-  float: right;
-  /* Align with the "Try Again" button */
-  margin-top: 24px;
-  -moz-margin-end: 24px;
 }
 
-div#certificateErrorReporting a {
-  text-decoration: none;
+#learnMoreContainer {
+  display: none;
 }
 
-div#certificateErrorReporting a:hover {
-  text-decoration: underline;
+#certErrorAndCaptivePortalButtonContainer {
+  display: none;
 }
 
-span.downArrow {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0.6em;
-  -moz-margin-start: 0.5em;
-  transform: scaleY(0.7);
+body:not(.neterror) #certErrorAndCaptivePortalButtonContainer {
+  display: flex;
 }
 
-div#certificateErrorReportingPanel {
+body:not(.neterror) #netErrorButtonContainer {
+  display: none;
+}
+
+#errorTryAgain {
+  margin-top: 1.2em;
+  min-width: 150px;
+}
+
+#returnButton {
+  min-width: 250px;
+}
+
+#advancedButton {
+  display: none;
+}
+
+body.captiveportal #returnButton {
+  display: none;
+}
+
+body:not(.captiveportal) #openPortalLoginPageButton {
+  display: none;
+}
+
+#openPortalLoginPageButton {
+  margin-inline-start: 0;
+}
+
+body:not(.neterror) #advancedButton {
+  display: block;
+}
+
+#certificateErrorReporting {
+  display: none;
+}
+
+.container {
+  position: relative;
+}
+
+#advancedPanelContainer {
+  position: absolute;
+  padding: 24px 0;
+  width: 100%;
+}
+
+.advanced-panel {
   /* Hidden until the link is clicked */
   display: none;
   background-color: white;
@@ -195,17 +235,16 @@ div#certificateErrorReportingPanel {
   padding: 0 12px 12px 12px;
   box-shadow: 0 0 4px #ddd;
   font-size: 0.9em;
-  position: absolute;
-  width: 75%;
-  margin-top: 10px;
 }
 
-div#certificateErrorReportingPanel:-moz-dir(ltr) {
-  left: 34%;
-}
-
-div#certificateErrorReportingPanel:-moz-dir(rtl) {
-  right: 0;
+#overrideWeakCryptoPanel {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: flex-start;
+  margin-top: 1em;
 }
 
 span#hostname {
@@ -216,25 +255,38 @@ span#hostname {
   cursor: pointer;
 }
 
-#reportingState {
-  padding-left: 150px;
+#errorCode:not([href]) {
+  color: var(--in-content-page-color);
+  cursor: text;
+  text-decoration: none;
 }
 
-#reportSendingMessage {
-  position: relative;
+#errorCode[href] {
+  white-space: nowrap;
+}
+
+#badCertTechnicalInfo {
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+#certificateErrorReporting {
   display: none;
 }
 
-#reportSentMessage {
-  position: relative;
+#certificateErrorDebugInformation {
   display: none;
+  background-color: var(--in-content-box-background-hover) !important;
+  border-top: 1px solid var(--in-content-border-color);
+  position: absolute;
+  left: 0%;
+  top: 100%;
+  width: 65%;
+  padding: 1em 17.5%;
 }
 
-button#reportCertificateError {
-  position: relative;
-}
-
-button#reportCertificateErrorRetry {
-  position: relative;
-  display: none;
+#certificateErrorText {
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 1em 0;
 }

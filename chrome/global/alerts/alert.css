@@ -7,8 +7,33 @@
   ======================================================================= */
 
 @import url("chrome://global/skin/");
+@import url("chrome://global/skin/alerts/alert-common.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#alertBox[animate] {
+  animation-timing-function: cubic-bezier(.12,1.23,.48,1.09);
+}
+
+#alertBox[animate][clicked] {
+  animation-duration: .6s;
+  animation-name: alert-clicked-animation;
+}
+
+/* This is used if the close button is clicked
+   before the animation has finished. */
+#alertBox[animate][closing] {
+  animation-duration: .6s;
+  animation-name: alert-closing-animation;
+}
+
+#alertImage {
+  max-width: 48px;
+  max-height: 48px;
+  list-style-image: url(chrome://global/skin/alerts/notification-48.png);
+  object-fit: scale-down;
+  margin: 0;
+}
 
 .alertBox {
   border: 1px solid #7B969C;
@@ -20,33 +45,39 @@
   padding: 8px 0;
   width: 64px;
   background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.6));
-  -moz-border-end: 1px solid rgba(0,0,0,.1);
+  border-inline-end: 1px solid rgba(0,0,0,.1);
 }
 
 .alertTextBox {
-  padding: 8px;
-  -moz-padding-start: 16px;
+  padding-top: 4px;
+  /* The text box width is increased to make up for the lack of image when one
+     is not provided. 349px is the text box width when a picture is present,
+     255px, plus the width of the image, 80px, and the margins, 7px each. */
+  width: 349px;
+}
+
+#alertBox[hasImage] > box > #alertTextBox {
   width: 255px;
 }
 
-.alertTextBox,
-.alertCloseBox {
-  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+#alertBox:not([hasImage]) > box > #alertTextBox {
+  padding-inline-start: 8px;
+}
+
+#alertTextLabel {
+  padding-inline-end: 8px;
 }
 
 .alertTitle {
+  -moz-box-flex: 1;
   font-weight: bold;
   font-size: 110%;
+  padding: 2px 8px ;
+  width: 255px;
 }
 
-#alertImage {
-  max-width: 48px;
-  max-height: 48px;
-  list-style-image: url(chrome://global/skin/alerts/notification-48.png);
-}
-
-#alertNotification[clickable="true"] {
-  cursor: pointer;
+#alertFooter {
+  -moz-box-align: start;
 }
 
 label {
@@ -67,10 +98,10 @@ label {
   from {
     opacity: 0;
   }
-  6.25% {
+  5% {
     opacity: 1;
   }
-  93.75% {
+  95% {
     opacity: 1;
   }
   to {
@@ -84,6 +115,21 @@ label {
   border: none !important;
 }
 
-.alertCloseButton > .toolbarbutton-text {
-  display: none;
+.alertCloseBox {
+  /* The close button is larger on Windows and has a large
+     circle around it, so we add more space between the close
+     button and the edge of the window. */
+  margin-inline-end: 2px;
+}
+
+#alertSettings {
+  /* The close button is larger on Windows, so the
+     gear button is moved over to accomodate it and
+     keep the two buttons horizontally aligned together. */
+  margin-inline-end: 5px;
+}
+
+#alertBox:not([hasOrigin]) > box > #alertTextBox > #alertFooter,
+#alertImage:not([src]) {
+  display: block !important;
 }

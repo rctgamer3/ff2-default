@@ -45,7 +45,7 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 .menu-description {
   font-style: italic;
   color: -moz-mac-menutextdisable;
-  -moz-margin-start: 1ex !important;
+  margin-inline-start: 1ex !important;
 }
 
 .menu-accel,
@@ -67,7 +67,7 @@ menuitem[src] {
 .menu-iconic > .menu-iconic-left > .menu-iconic-icon,
 menuitem[image] > .menu-iconic-left > .menu-iconic-icon,
 menuitem[src] > .menu-iconic-left > .menu-iconic-icon {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
   width: 16px;
   height: 16px;
   list-style-image: inherit;
@@ -177,7 +177,7 @@ menulist:not([editable="true"]) > menupopup > menuitem[selected="true"]::before 
   content: '\2713'; /* a checkmark */
   display: block;
   width: 15px;
-  -moz-margin-start: -15px;
+  margin-inline-start: -15px;
 }
 
 /* ::::: menuseparator ::::: */

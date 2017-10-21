@@ -6,27 +6,20 @@
     <!-- properties -->
     <em:id>{fd2f951f-77ea-4938-9493-0c892c027a13}</em:id>
     <em:name>Firefox 2, the theme, reloaded</em:name>
-    <em:version>1.0.11</em:version>
+    <em:version>1.0.14.1</em:version>
     <em:type>4</em:type>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>29.0a2</em:minVersion>
-        <em:maxVersion>39.*</em:maxVersion>
+        <em:minVersion>50.0</em:minVersion>
+        <em:maxVersion>*</em:maxVersion>
       </Description>
     </em:targetApplication>
-    <em:targetApplication>
-      <Description>
-        <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
-        <em:minVersion>25.0</em:minVersion>
-        <em:maxVersion>25.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-    <em:description>The default Firefox 2 theme for Australis (Firefox 29 and newer).</em:description>
+    <em:description>The default Firefox 2 theme.</em:description>
     <em:creator>borr</em:creator>
     <em:developer>fax8</em:developer>
     <em:developer>rctgamer3</em:developer>
-    <em:homepageURL>http://www.varesano.net/contents/projects/firefox 2 theme firefox 3x</em:homepageURL>
+    <em:homepageURL>https://rctgamer3.github.io/ff2-default</em:homepageURL>
     <em:internalName>ff2-default</em:internalName>
   </Description>
 </RDF>

@@ -40,6 +40,10 @@ findbar > hbox > hbox {
 findbar .find-status-icon {
 -moz-box-ordinal-group: 8
 }
+.findbar-entire-word {
+  -moz-box-ordinal-group: 8
+}
+
 findbar .findbar-find-fast,
 findbar .find-status {
 -moz-box-ordinal-group: 9
@@ -63,9 +67,9 @@ findbar spacer {
 }
 
 .findbar-closebutton > .toolbarbutton-icon {
-  -moz-margin-end: 0;
-  -moz-padding-end: 2px;
-  -moz-padding-start: 2px;
+  margin-inline-end: 0;
+  padding-inline-end: 2px;
+  padding-inline-start: 2px;
 }
 
 .findbar-closebutton:hover {
@@ -142,15 +146,15 @@ findbar {
   list-style-image: none;
   margin-top: 2px;
   margin-bottom: 0px;
-  -moz-margin-start: 12px;
-  -moz-margin-end: 0px;
+  margin-inline-start: 12px;
+  margin-inline-end: 0px;
   width: 16px;
   height: 16px;
 }
 
 .findbar-find-status {
   margin: 0 !important;
-  -moz-margin-start: 3px !important;
+  margin-inline-start: 3px !important;
   padding: 2px !important;
 }
 

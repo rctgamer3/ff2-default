@@ -40,7 +40,7 @@ menulist[disabled="true"] {
 .menulist-description {
   font-style: italic;
   color: GrayText;
-  -moz-margin-start: 1ex !important;
+  margin-inline-start: 1ex !important;
 }
 
 /* ::::: editable menulists ::::: */
@@ -80,7 +80,7 @@ html|*.menulist-editable-input {
 .menulist-compact > .menulist-dropmarker {
   -moz-appearance: none;
   display: -moz-box;
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
   padding: 0 !important;
   list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
 }

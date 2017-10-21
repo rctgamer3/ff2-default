@@ -3,439 +3,163 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 body {
-  padding: 64px 0;
-  max-width: 660px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 64px 51px;
 }
 
-.light,
-.light-button {
+body.loaded {
+  transition: color 0.4s, background-color 0.4s;
+}
+
+body.light {
   color: #333333;
   background-color: #ffffff;
 }
 
-.dark,
-.dark-button {
+body.dark {
   color: #eeeeee;
   background-color: #333333;
 }
 
-.sepia,
-.sepia-button {
-  color: #333333;
-  background-color: #f0ece7;
+body.dark *::-moz-selection {
+  background-color: #FFFFFF;
+  color: #0095DD;
+}
+body.dark a::-moz-selection {
+  color: #DD4800;
 }
 
-.sans-serif {
-  font-family: sans-serif;
+body.sepia {
+  color: #5b4636;
+  background-color: #f4ecd8;
 }
 
-.serif {
-  font-family: serif;
+body.sans-serif,
+body.sans-serif .remove-button {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-.font-size1 {
-  font-size: 10px;
+body.serif,
+body.serif .remove-button  {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-.font-size2 {
+#container {
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+#container.font-size1 {
   font-size: 12px;
 }
 
-.font-size3 {
+#container.font-size2 {
   font-size: 14px;
 }
 
-.font-size4  {
+#container.font-size3 {
   font-size: 16px;
 }
 
-.font-size5 {
+#container.font-size4  {
   font-size: 18px;
 }
 
-.font-size6 {
+#container.font-size5 {
   font-size: 20px;
 }
 
-.font-size7 {
+#container.font-size6 {
   font-size: 22px;
 }
 
-.font-size8 {
+#container.font-size7 {
   font-size: 24px;
 }
 
-.font-size9 {
+#container.font-size8 {
   font-size: 26px;
 }
 
-
-/* Loading/error message */
-
-.message {
-  margin-top: 40px;
-  display: none;
-  text-align: center;
-  width: 100%;
-  font-size: 0.9rem;
+#container.font-size9 {
+  font-size: 28px;
 }
 
-/* Header */
-
-.header {
-  text-align: start;
-  display: none;
+#container.content-width1 {
+  max-width: 20em;
 }
 
-.domain {
-  font-size: 0.9rem;
-  line-height: 1.33rem;
-  padding-bottom: 4px;
-  font-family: sans-serif;
-  text-decoration: none;
-  border-bottom: 1px solid;
-  color: #0095dd;
+#container.content-width2 {
+  max-width: 25em;
 }
 
-.light > .container > .header > .domain,
-.sepia > .container > .header > .domain {
-  border-bottom-color: #333333;
+#container.content-width3 {
+  max-width: 30em;
 }
 
-.dark > .container > .header > .domain {
-  border-bottom-color: #eeeeee;
+#container.content-width4  {
+  max-width: 35em;
 }
 
-.header > h1 {
-  font-size: 1.33rem;
-  line-height: 1.66rem;
-  width: 100%;
-  margin: 30px 0;
-  padding: 0;
+#container.content-width5 {
+  max-width: 40em;
 }
 
-.header > .credits {
-  font-size: 0.9rem;
-  line-height: 1.33rem;
-  margin: 0 0 30px 0;
-  padding: 0;
-  font-style: italic;
+#container.content-width6 {
+  max-width: 45em;
 }
 
-/* Content */
-
-.content {
-  display: none;
-  font-size: 1rem;
-  line-height: 1.44rem;
+#container.content-width7 {
+  max-width: 50em;
 }
 
-.content h1,
-.content h2,
-.content h3 {
-  font-weight: bold;
+#container.content-width8 {
+  max-width: 55em;
 }
 
-.content h1 {
-  font-size: 1.33rem;
-  line-height: 1.66rem;
+#container.content-width9 {
+  max-width: 60em;
 }
 
-.content h2 {
-  font-size: 1.1rem;
-  line-height: 1.66rem;
+/* Override some controls and content styles based on color scheme */
+
+body.light > .container > .header > .domain {
+  border-bottom-color: #333333 !important;
 }
 
-.content h3 {
-  font-size: 1rem;
-  line-height: 1.66rem;
+body.sepia > .container > .header > .domain {
+  border-bottom-color: #5b4636 !important;
 }
 
-.content a {
-  text-decoration: underline;
-  font-weight: normal;
+body.dark > .container > .header > .domain {
+  border-bottom-color: #eeeeee !important;
 }
 
-.content a,
-.content a:visited,
-.content a:hover,
-.content a:active {
-  color: #0095dd;
+body.sepia > .container > .footer {
+  background-color: #dedad4 !important;
 }
 
-.content * {
-  max-width: 100%;
-  height: auto;
+body.light blockquote {
+  border-inline-start: 2px solid #333333 !important;
 }
 
-.content p,
-.content img,
-.content code,
-.content pre,
-.content blockquote,
-.content ul,
-.content ol,
-.content li {
-  margin: 0 0 30px 0;
+body.sepia blockquote {
+  border-inline-start: 2px solid #5b4636 !important;
 }
 
-.content .wp-caption,
-.content figure {
-  margin: 0 30px 30px 30px;
+body.dark blockquote {
+  border-inline-start: 2px solid #eeeeee !important;
 }
 
-.content .caption,
-.content .wp-caption-text,
-.content figcaption {
-  font-size: 0.9rem;
-  line-height: 1.33rem;
-  font-style: italic;
+/* Add toolbar transition base on loaded class  */
+
+body.loaded .toolbar {
+  transition: transform 0.3s ease-out;
 }
 
-.content code,
-.content pre {
-  white-space: pre-wrap;
+body:not(.loaded) .toolbar:-moz-locale-dir(ltr) {
+  transform: translateX(-100%);
 }
 
-.content blockquote {
-  padding: 0;
-  -moz-padding-start: 16px;
-}
-
-.light > .container > .content blockquote,
-.sepia > .container > .content blockquote {
-  -moz-border-start: 2px solid #333333;
-}
-
-.dark > .container > .content blockquote {
-  -moz-border-start: 2px solid #eeeeee;
-}
-
-.content ul,
-.content ol {
-  padding: 0;
-}
-
-.content ul {
-  -moz-padding-start: 30px;
-  list-style: disk;
-}
-
-.content ol {
-  -moz-padding-start: 30px;
-  list-style: decimal;
-}
-
-/*======= Controls toolbar =======*/
-
-.toolbar {
-  font-family: sans-serif;
-  position: fixed;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: #FBFBFB;
-  -moz-user-select: none;
-  border-right: 1px solid #B5B5B5;
-}
-
-.button {
-  color: white;
-  display: block;
-  background-position: center;
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  height: 40px;
-  width: 40px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid #c1c1c1;
-}
-
-.button[hidden] {
-  display: none;
-}
-
-.dropdown {
-  text-align: center;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.dropdown li {
-  margin: 0px;
-  padding: 0px;
-}
-
-/*======= Font style popup =======*/
-
-.dropdown-popup {
-  min-width: 250px;
-  text-align: start;
-  position: absolute;
-  left: 48px; /* offset to account for toolbar width */
-  z-index: 1000;
-  background-color: #FBFBFB;
-  visibility: hidden;
-  border-radius: 4px;
-  border: 1px solid #B5B5B5;
-  box-shadow: 0px 1px 12px #666;
-}
-
-.dropdown-popup > hr {
-  width: 100%;
-  height: 0px;
-  border: 0px;
-  border-top: 1px solid #B5B5B5;
-  margin: 0;
-}
-
-.open > .dropdown-popup {
-  visibility: visible;
-}
-
-.dropdown-arrow {
-  position: absolute;
-  top: 30px; /* offset arrow from top of popup */
-  left: -16px;
-  width: 24px;
-  height: 24px;
-  background-image: url("chrome://global/skin/reader/RM-Type-Controls-Arrow.svg");
-  display: block;
-}
-
-#font-type-buttons,
-#font-size-buttons,
-#color-scheme-buttons {
-  display: flex;
-  flex-direction: row;
-}
-
-#font-type-buttons > button,
-#font-size-buttons > button,
-#color-scheme-buttons > button {
-  text-align: center;
-  border-left: 1px solid #B5B5B5;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 0;
-  padding: 10px;
-}
-
-#font-type-buttons > button,
-#font-size-buttons > button {
-  width: 50%;
-  background-color: transparent;
-}
-
-#color-scheme-buttons > button {
-  width: 33%;
-  font-size: 14px;
-}
-
-#font-type-buttons > button:first-child,
-#font-size-buttons > button:first-child,
-#color-scheme-buttons > button:first-child {
-  border-left: 0px;
-}
-
-#font-type-buttons > button {
-  display: inline-block;
-  font-size: 48px;
-  border-bottom: 3px solid transparent;
-}
-
-#font-type-buttons > button:active:hover,
-#font-type-buttons > button.selected {
-  border-bottom: 3px solid #FC6420;
-}
-
-#font-type-buttons > button > div {
-  color: #666;
-  font-size: 12px;
-}
-
-.button:hover,
-#font-size-buttons > button:hover {
-  background-color: #EBEBEB;
-}
-
-.dropdown.open,
-.button:active,
-#font-size-buttons > button:active,
-#font-size-buttons > button.selected {
-  background-color: #DADADA;
-}
-
-/* Only used on Android */
-#font-size-sample {
-  display: none;
-}
-
-.serif-button {
-  font-family: serif;
-}
-
-.minus-button,
-.plus-button {
-  background-color: transparent;
-  border: 0;
-  height: 50px;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/*======= Toolbar icons =======*/
-
-/* Android-only controls */
-.share-button {
-  display: none;
-}
-
-.close-button {
-  background-image: url("chrome://global/skin/reader/RM-Close-24x24.svg");
-  height: 68px;
-  background-position: center 8px;
-}
-
-.close-button:active,
-.close-button:hover {
-  background-image: url("chrome://global/skin/reader/RM-Close-hover-24x24.svg");
-  background-color: #d94141;
-}
-
-.style-button {
-  background-image: url("chrome://global/skin/reader/RM-Type-Controls-24x24.svg");
-}
-
-.toggle-button.on {
-  background-image: url("chrome://global/skin/reader/RM-Delete-24x24.svg");
-}
-
-.toggle-button {
-  background-image: url("chrome://global/skin/reader/RM-Add-24x24.svg");
-}
-
-.list-button {
-  background-image: url("chrome://global/skin/reader/RM-Reading-List-24x24.svg");
-}
-.list-button.on {
-  background-color: #d9d9d9;
-}
-
-.minus-button {
-  background-image: url("chrome://global/skin/reader/RM-Minus-24x24.svg");
-}
-
-.plus-button {
-  background-image: url("chrome://global/skin/reader/RM-Plus-24x24.svg");
+body:not(.loaded) .toolbar:-moz-locale-dir(rtl) {
+  transform: translateX(100%);
 }

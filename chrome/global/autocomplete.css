@@ -21,8 +21,8 @@ textbox:not(.padded) {
 textbox.padded {
   padding-top: 1px;
   padding-bottom: 1px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
 }
 
 .autocomplete-textbox-container {
@@ -77,7 +77,7 @@ panel[type="autocomplete-richlistbox"],
 }
 
 .autocomplete-treebody::-moz-tree-cell-text {
-  -moz-padding-start: 8px;
+  padding-inline-start: 8px;
 }
 
 treechildren.autocomplete-treebody::-moz-tree-row(selected) {

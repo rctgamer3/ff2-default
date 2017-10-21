@@ -22,7 +22,7 @@
   border: 1px solid ThreeDShadow;
   border-radius: 10px;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: -moz-Field;
 }
 
@@ -57,7 +57,7 @@
 }
 
 #icon {
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   max-width: 64px;
   max-height: 64px;
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
@@ -100,11 +100,11 @@
   list-style-image: url("chrome://mozapps/skin/extensions/alerticon-warning.png");
   width: 16px;
   height: 16px;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 #allow {
-  -moz-margin-start: 84px;
+  margin-inline-start: 84px;
   margin-bottom: 20px;
 }
 

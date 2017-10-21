@@ -50,7 +50,7 @@ body {
 .item-summary-container {
   display: flex;
   flex-flow: column;
-  -moz-padding-start: 4px;
+  padding-inline-start: 4px;
   overflow: hidden;
 }
 

@@ -528,3 +528,86 @@ filefield + button {
   margin-right: 8px !important;
   margin-left: 8px !important;
 }
+
+/* fx56 dialogOverlay */
+
+/**
+ * Dialog
+ */
+
+.dialogOverlay {
+  visibility: hidden;
+}
+
+.dialogOverlay[topmost="true"] {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.dialogBox {
+  background-color: #fbfbfb;
+  background-clip: content-box;
+  color: #424e5a;
+  font-size: 14px;
+  /* `transparent` will use the dialogText color in high-contrast themes and
+     when page colors are disabled */
+  border: 1px solid transparent;
+  border-radius: 3.5px;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);
+  display: -moz-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dialogBox[resizable="true"] {
+  resize: both;
+  overflow: hidden;
+  min-height: 20em;
+  min-width: 66ch;
+}
+
+.dialogBox > .groupbox-title {
+  padding: 3.5px 0;
+  background-color: #F1F1F1;
+  border-bottom: 1px solid #C1C1C1;
+}
+
+.dialogTitle {
+  text-align: center;
+  -moz-user-select: none;
+}
+
+#fxaContentWrapper {
+  -moz-box-flex: 1;
+}
+
+#noFxaGroup {
+  -moz-box-flex: 1;
+  margin: 0;
+}
+
+.help-button {
+  position: fixed;
+  left: 0;
+  /* Needs to have enough gap from the bottom to not
+     get behind the status panel (bug 1357841). */
+  bottom: 2rem;
+  font-size: 13px;
+  line-height: 13px;
+  height: 14px;
+  background-position: 15px;
+  padding-inline-start: 35px;
+  white-space: nowrap;
+}
+
+.help-button:-moz-locale-dir(rtl) {
+  left: auto;
+  right: 0;
+  background-position: right 15px top 0;
+}
+
+.help-button:link,
+.help-button:visited {
+  text-decoration: none;
+}
+
+/* end fx56 overlay fix */

@@ -819,14 +819,6 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
   -moz-image-region: rect(96px 120px 120px 96px);
 }
 
-/* Reload/Stop Uncombine, displaynone'd urlbar buttons as they aren't needed anymore */
-#urlbar-reload-button,
-#urlbar-stop-button,
-#urlbar-go-button {
-  /* Disabled in Australis 
-  display: none !important */
-}
-
 #urlbar-container[combined] + #reload-button,
 #urlbar-container[combined] + #reload-button + #stop-button{
   visibility: visible !important;
@@ -1997,11 +1989,11 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   border-top: 1px solid GrayText;
 }
 
-#urlbar-reload-button, #urlbar-stop-button, #urlbar-stop-button {
+#urlbar #reload-button, #urlbar #stop-button {
   background-color: -moz-Dialog !important;
 }
 
-#urlbar-reload-button, #urlbar-stop-button {
+#urlbar #reload-button, #urlbar #stop-button {
 list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
 padding: 0 !important;
 margin-right: 0 !important;
@@ -2009,34 +2001,34 @@ margin-inline-end: 0 !important;
 border: 0 !important;
 }
 
-#urlbar-reload-button .toolbarbutton-icon,
-#urlbar-stop-button .toolbarbutton-icon,
+#urlbar #reload-button .toolbarbutton-icon,
+#urlbar #stop-button .toolbarbutton-icon,
 #urlbar-go-button {
   margin-right: 0 !important;
 }
-#urlbar-reload-button {
+#urlbar #reload-button {
   -moz-image-region: rect(0px 64px 16px 48px);
 }
-#urlbar-reload-button:not([disabled="true"]):hover {
+#urlbar #reload-button:not([disabled="true"]):hover {
   -moz-image-region: rect(16px 64px 32px 48px);
 }
-#urlbar-reload-button #reload-button[disabled="true"] {
+#urlbar #reload-button #reload-button[disabled="true"] {
   -moz-image-region: rect(32px 64px 48px 48px);
 }
-#urlbar-reload-button:not([disabled="true"]):hover:active {
+#urlbar #reload-button:not([disabled="true"]):hover:active {
   -moz-image-region: rect(64px 64px 80px 48px);
 }
 
-#urlbar-stop-button {
+#urlbar #stop-button {
   -moz-image-region: rect(0px 48px 16px 32px);
 }
-#urlbar-stop-button:not([disabled="true"]):hover {
+#urlbar #stop-button:not([disabled="true"]):hover {
   -moz-image-region: rect(16px 48px 32px 32px);
 }
-#urlbar-stop-button[disabled="true"] {
+#urlbar #stop-button[disabled="true"] {
   -moz-image-region: rect(32px 48px 48px 32px);
 }
-#urlbar-stop-button:not([disabled="true"]):hover:active {
+#urlbar #stop-button:not([disabled="true"]):hover:active {
   -moz-image-region: rect(64px 48px 80px 32px);
 }
 
@@ -2069,27 +2061,26 @@ border: 0 !important;
 margin-right: 0 !important
 }
 
-#urlbar-reload-button .toolbarbutton-icon,
-urlbar-stop-button .toolbarbutton-icon,
-#urlbar-stop-button .toolbarbutton-icon {
+#urlbar #reload-button .toolbarbutton-icon,
+#urlbar #stop-button .toolbarbutton-icon {
 padding: 2px !important;
 }
 
 /* this SHOULD fix the urlbar reload button bug not appearing */
 /* still buggy while connecting, though. */
-#urlbar[focused="true"] #urlbar-reload-button:not([disabled]) {
+#urlbar[focused="true"] #urlbar #reload-button:not([disabled]) {
     visibility: visible !important
 }
 
-#urlbar[focused="true"] #urlbar-reload-button[disabled] {
+#urlbar[focused="true"] #urlbar #reload-button[disabled] {
   display:none
 }
 
-#urlbar[focused="true"] #urlbar-reload-button[disabled] + #urlbar-stop-button {
+#urlbar[focused="true"] #urlbar #reload-button[disabled] + #urlbar #stop-button {
     visibility: visible !important
 }
 
-#urlbar[focused="true"] #urlbar-reload-button[displaystop="true"] {
+#urlbar[focused="true"] #urlbar #reload-button[displaystop="true"] {
   display: none !important
 }
 
@@ -4985,14 +4976,6 @@ background-image: -moz-image-rect(url(chrome://global/skin/icons/close.png),0,50
 /* kill the back/forward dropbarker button, since it uses alltabs styles */
 #ctr_back-forward-dropmarker,#wrapper-ctr_back-forward-dropmarker {display:none!important}
 
-/* Pale Moon fixes */
-#main-window[title_normal="Pale Moon"] :-moz-any(#urlbar-reload-button,#urlbar-stop-button,#urlbar-go-button){display:none}
-#ub-feed-button,#ub-feed-button>.button-box,#ub-feed-button:hover:active>.button-box{padding:0;margin:0;border:0;background-color:transparent}
-#ub-feed-button>hbox>.button-menu-dropmarker,#ub-feed-button>hbox>.button-text{display:none}
-#ub-feed-button{-moz-appearance:none;min-width:0;padding:0 2px!important;list-style-image:url("chrome://browser/skin/livemark-item.png");-moz-image-region: rect(0px 36px 18px 18px)}
-#ub-feed-button:hover{-moz-image-region:rect(18px 36px 36px 18px)}
-#ub-feed-button[open="true"],#ub-feed-button:hover:active {-moz-image-region: rect(54px 36px 72px 18px)}
-
 /* Feed Sidebar fixes */
 #feedbar-open-all, #feedbar-period-button, #feedbar-stop-button, #feedbar-frequency-button, #search-toggle {list-style-image:url("chrome://browser/skin/Toolbar-small.png")}
 :-moz-any(#feedbar-open-all, #feedbar-period-button, #feedbar-frequency-button, #feedbar-stop-button, #search-toggle)[disabled],
@@ -5103,7 +5086,7 @@ list-style-image: url("chrome://mozapps/skin/extensions/category-extensions.png"
 }
 #main-window[customizing] #urlbar-go-button {margin-left: 0 !important;margin-right:-20px !important}
 
-#main-window[customizing] :-moz-any(#urlbar-reload-button, #urlbar-stop-button) {display: none}
+#main-window[customizing] :-moz-any(#urlbar #reload-button, #urlbar #stop-button) {display: none}
 /* fix for borderless searchbar */
 #main-window[customizing] :-moz-any(#urlbar, .searchbar-textbox) > .autocomplete-textbox-container > .textbox-input-box {
   visibility: visible !important;
@@ -6186,7 +6169,7 @@ panel[type="arrow"]:not([animate="false"]) {
 #urlbar-icons {
   -moz-box-ordinal-group: 1
 }
-.autocomplete-history-dropmarker.urlbar-history-dropmarker, #urlbar-go-button, #urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {
+.autocomplete-history-dropmarker.urlbar-history-dropmarker, #urlbar-go-button, #urlbar #reload-button, #urlbar #stop-button, #urlbar-go-button {
   -moz-box-ordinal-group: 2
 }
 
@@ -6231,4 +6214,12 @@ background:#fff url(chrome://browser/skin/bad-content-blocked-16.png) !important
 
 #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity)::after {
   background-color: #F5F6BE;
+}
+
+/* final 56 update */
+#nav-bar #back-button .toolbarbutton-menu-dropmarker {
+  display: none
+}
+#nav-bar #forward-button .toolbarbutton-menu-dropmarker {
+  display: none
 }

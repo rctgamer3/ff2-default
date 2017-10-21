@@ -1,5 +1,10 @@
 # Firefox 2, the theme, reloaded
-The default Firefox 2 theme (designed/made by Radiant Core) updated for Firefox 50 and above.
+The default Firefox 2 theme (designed/made by Radiant Core) updated for Firefox 55 and above.
+
+**This (complete) theme will stop working on November 14, 2017 because Complete Themes will stop working in Firefox 57.**
+However, if and when the new Theming API is mature enough to continue developing the theme on/for, I'll be sure to try and make a WebExtension version of the theme.
+
+For now: "_So Long, and Thanks for All the Fish._"
 
 ## Install
 
@@ -10,8 +15,8 @@ The default Firefox 2 theme (designed/made by Radiant Core) updated for Firefox 
 Firefox 2, the theme, reloaded is currently being developed and maintained by:
 - [rctgamer3](https://github.com/rctgamer3) ([@rctgamer3](https://twitter.com/rctgamer3))
 
-#### Inactive developers:
-- Fabio (fax8) ([@fax8](https://twitter.com/fax8))
+#### Former developers:
+- Fabio (fax8) ([@fax8](https://twitter.com/fax8)) (deceased)
 - Dmitry (borr) ([@qborrd](https://twitter.com/qborrd))
 
 ## Bugs & Issues

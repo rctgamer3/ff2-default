@@ -14,7 +14,6 @@ prefwindow,
   color: #424E5A;
 }
 
-
 * {
   -moz-user-select: text;
 }
@@ -23,6 +22,22 @@ button,
 treecol {
   /* override the * rule */
   -moz-user-select: none;
+}
+
+#engineList treechildren::-moz-tree-image(engineShown, checked),
+#blocklistsTree treechildren::-moz-tree-image(selectionCol, checked) {
+  list-style-image: url("chrome://global/skin/in-content/check.svg#check");
+  width: 21px;
+  height: 21px;
+}
+
+#engineList treechildren::-moz-tree-image(engineShown, checked, selected),
+#blocklistsTree treechildren::-moz-tree-image(selectionCol, checked, selected) {
+  list-style-image: url("chrome://global/skin/in-content/check.svg#check-inverted");
+}
+
+#engineList treechildren::-moz-tree-row,
+#blocklistsTree treechildren::-moz-tree-row {
 }
 
 /* Category List */
@@ -121,7 +136,7 @@ treecol {
 
 #useFirefoxSync  {
   font-size: 90%;
-  -moz-margin-end: 8px !important;
+  margin-inline-end: 8px !important;
 }
 
 #getStarted {
@@ -133,7 +148,7 @@ treecol {
 }
 
 #downloadFolder {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 /* Applications Pane Styles */
@@ -163,11 +178,37 @@ treecol {
 
 
 .actionsMenu > menupopup > menuitem {
-  -moz-padding-start: 10px !important;
+  padding-inline-start: 10px !important;
 }
 
 .actionsMenu > menupopup > menuitem > .menu-iconic-left {
-  -moz-margin-end: 8px !important;
+  margin-inline-end: 8px !important;
+}
+
+/* Privacy pane */
+
+.doNotTrackLearnMore {
+  margin-inline-start: calc(1em + 30px);
+  margin-bottom: 1em;
+  font-weight: normal;
+}
+
+.doNotTrackLearnMore > label {
+  font-size: 1em !important;
+  margin-left: 0;
+}
+
+/* Collapse the non-active vboxes in decks to use only the height the
+   active vbox needs */
+#historyPane:not([selectedIndex="1"]) > #historyDontRememberPane,
+#historyPane:not([selectedIndex="2"]) > #historyCustomPane,
+#weavePrefsDeck:not([selectedIndex="1"]) > #hasAccount,
+#weavePrefsDeck:not([selectedIndex="2"]) > #needsUpdate,
+#weavePrefsDeck:not([selectedIndex="3"]) > #noFxaAccount,
+#weavePrefsDeck:not([selectedIndex="4"]) > #hasFxaAccount,
+#fxaLoginStatus:not([selectedIndex="1"]) > #fxaLoginUnverified,
+#fxaLoginStatus:not([selectedIndex="2"]) > #fxaLoginRejected {
+  visibility: collapse;
 }
 
 /* XXX This style is for bug 740213 and should be removed once that
@@ -176,21 +217,15 @@ description > html|a {
   cursor: pointer;
 }
 
-#noFxaAccount {
-  /* Overriding the margins from the base preferences.css theme file.
-     These overrides can be simplified by fixing bug 1027174 */
-  margin: 0;
-}
-
 #weavePrefsDeck > vbox > label,
 #weavePrefsDeck > vbox > groupbox,
 #weavePrefsDeck > vbox > description,
 #weavePrefsDeck > vbox > #pairDevice > label,
 #weavePrefsDeck > #needsUpdate > hbox > #loginError,
-#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-normal) > label,
-#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-small) > label {
-  /* no margin-start for elements at the begin of a line */
-  -moz-margin-start: 0;
+#weavePrefsDeck > #hasFxaAccount > vbox > label,
+#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-normal) > label {
+  /* no margin-inline-start for elements at the beginning of a line */
+  margin-inline-start: 0;
 }
 
 #advancedPrefs {
@@ -210,7 +245,7 @@ description > html|a {
 }
 
 .indent {
-  -moz-margin-start: 33px;
+  margin-inline-start: 33px;
 }
 
 #trackingProtectionImage {
@@ -274,25 +309,219 @@ tree:not(#rejectsTree) {
 }
 
 :-moz-any(dialog, window, prefwindow) groupbox {
-  -moz-margin-start: 8px;
-  -moz-margin-end: 8px;
+  margin-inline-start: 8px;
+  margin-inline-end: 8px;
 }
 
 /**
  * End sub-dialog
  */
 
+/**
+ * Sync
+ */
+
+#fxaProfileImage {
+  max-width: 60px;
+  border-radius: 50%;
+  list-style-image: url(chrome://browser/skin/fxa/default-avatar.svg);
+  margin-inline-end: 15px;
+  image-rendering: -moz-crisp-edges;
+}
+
+#fxaLoginStatus[hasName] #fxaProfileImage {
+  max-width: 80px;
+}
+
+#fxaProfileImage.actionable {
+  cursor: pointer;
+}
+
+#fxaProfileImage.actionable:hover {
+  box-shadow: 0px 0px 0px 1px #0095DD;
+}
+
+#fxaProfileImage.actionable:hover:active {
+  box-shadow: 0px 0px 0px 1px #ff9500;
+}
+
+#noFxaAccount {
+  padding-top: 15px;
+}
+
+#fxaContentWrapper {
+  -moz-box-flex: 1;
+}
+
+#noFxaGroup {
+  -moz-box-flex: 1;
+  margin: 0;
+}
+
+#fxaContentWrapper {
+  padding-right: 15px;
+}
+
+#noFxaGroup > vbox,
+#fxaGroup {
+  -moz-box-align: start;
+}
+
+#fxaSyncEngines > vbox:first-child {
+  margin-right: 80px;
+}
+
+#fxaSyncComputerName {
+  margin-inline-start: 0px;
+  -moz-box-flex: 1;
+}
+
+#tosPP-small-ToS {
+  margin-bottom: 14px;
+}
+
+#noFxaCaption {
+  font-weight: bold;
+  margin-bottom: 11px;
+}
+
+.fxaSyncIllustration {
+  margin-top: 35px;
+}
+
+#syncOptions caption {
+  margin-bottom: 11px;
+}
+
+#fxaDeviceName {
+  margin-bottom: 27.5px;
+}
+
+#noFxaDescription {
+  margin-bottom: 20px !important;
+}
+
+.separator {
+  border-bottom: 1px solid var(--in-content-header-border-color);
+}
+
+.fxaAccountBox {
+  border: 1px solid #D1D2D3;
+  border-radius: 5px;
+  padding: 14px 20px 14px 14px;
+}
+
+#signedOutAccountBoxTitle {
+  font-weight: bold;
+}
+
+.fxaAccountBoxButtons {
+  margin-bottom: 0 !important;
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+}
+
+.fxaAccountBoxButtons > * {
+  -moz-box-flex: 1;
+}
+
+.fxaAccountBoxButtons > button {
+  text-align: center;
+  padding-left: 11px;
+  padding-right: 11px;
+  margin: 0;
+  min-width: 0;
+}
+
+.fxaAccountBoxButtons > button:first-child {
+  margin-inline-end: 14px !important;
+}
+
+.fxaSyncIllustration {
+  width: 231px;
+  list-style-image: url(chrome://browser/skin/fxa/sync-illustration.png)
+}
+
+#fxaLoginStatus[hasName] #fxaEmailAddress1 {
+  font-size: 1.1rem;
+}
+
+#fxaEmailAddress1,
+#fxaEmailAddress2,
+#fxaEmailAddress3 {
+  word-break: break-all;
+}
+
+.fxaFirefoxLogo {
+  list-style-image: url(chrome://browser/skin/fxa/logo.png);
+  max-width: 64px;
+  margin-inline-end: 14px;
+}
+
+.fxaMobilePromo {
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+#fxaLoginRejectedWarning {
+  list-style-image: url(chrome://browser/skin/warning.svg);
+  filter: drop-shadow(0 1px 0 hsla(206, 50%, 10%, .15));
+  margin: 4px 8px 0px 0px;
+}
+
+#syncOptions {
+  margin-bottom: 27.5px;
+}
+
+.androidLink {
+  background-image: url("chrome://browser/skin/fxa/android.png");
+}
+
+.iOSLink {
+  background-image: url("chrome://browser/skin/fxa/ios.png");
+}
+
+.androidLink,
+.iOSLink {
+  margin: 0 0 0 2px;
+  padding-left: 28px;
+  padding-top: 6px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: 24px 28px;
+}
+
+#tosPP-small {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (min-resolution: 1.1dppx) {
+  .androidLink {
+    background-image: url("chrome://browser/skin/fxa/android@2x.png");
+  }
+  .iOSLink {
+    background-image: url("chrome://browser/skin/fxa/ios@2x.png");
+  }
+  .fxaSyncIllustration {
+    list-style-image: url(chrome://browser/skin/fxa/sync-illustration@2x.png)
+  }
+  .fxaFirefoxLogo {
+    list-style-image: url(chrome://browser/skin/fxa/logo@2x.png);
+  }
+}
 .actionsMenu > .menulist-label-box > .menulist-icon {
-  -moz-margin-end: 9px;
+  margin-inline-end: 9px;
 }
 
 textbox + button,
 filefield + button {
-  -moz-margin-start: -4px;
+  margin-inline-start: -4px;
 }
 
 #dialogTitle {
-  -moz-margin-start: 13px !important;
+  margin-inline-start: 13px !important;
 }
 
 .actionButtons {

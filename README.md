@@ -1,9 +1,9 @@
 # Firefox 2, the theme, reloaded
-The default Firefox 2 theme (designed/made by Radiant Core) updated for Firefox 20 and above.
+The default Firefox 2 theme (designed/made by Radiant Core) updated for Firefox 50 and above.
 
 ## Install
 
-[Latest stable version](http://addons.mozilla.org/addon/6898)  
+[Latest stable version](https://addons.mozilla.org/addon/6898)  
 [Latest beta build/version](https://addons.mozilla.org/addon/6898/#beta-channel)
 
 ## Development

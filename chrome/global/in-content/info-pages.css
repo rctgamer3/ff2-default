@@ -33,21 +33,21 @@ h2 {
   border: 1px solid ThreeDShadow;
   border-radius: 10px;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: url("chrome://global/skin/icons/warning-large.png") left 0 no-repeat -moz-Field;
   background-origin: content-box;
 }
 
-.container:-moz-dir(rtl) {
+.container:-moz-locale-dir(rtl) {
   background-position: right 0;
 }
 
 .title {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 .description {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 
@@ -90,14 +90,14 @@ treechildren::-moz-tree-image(partial) {
 }
 
 #errorLongDesc {
-  -moz-padding-end: 3em;
+  padding-inline-end: 3em;
   font-size: 110%;
 }
 
 ul, ol {
   margin: 0;
   padding: 0;
-  -moz-margin-start: 1.5em;
+  margin-inline-start: 1.5em;
 }
 
 ul > li, ol > li {
@@ -119,18 +119,18 @@ ul {
 
 #errorTryAgain {
   margin-top: 2em;
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 #brand {
   position: absolute;
   right: 0;
   bottom: -1.5em;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   opacity: .4;
 }
 
-#brand:-moz-dir(rtl) {
+#brand:-moz-locale-dir(rtl) {
   right: auto;
   left: 0;
 }

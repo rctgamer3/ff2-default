@@ -34,14 +34,14 @@ richlistitem[type="download"][alternate="true"]:not([selected="true"]) {
 .downloadTarget {
   margin-bottom: 2px;
   font-size: larger;
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
   cursor: inherit;
 }
 
 .downloadDetails {
   font-size: 100%;
   margin-bottom: 2px;
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
 }
 
 .downloadButton {
